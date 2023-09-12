@@ -30,6 +30,7 @@ const footerHTML = () => {
                 <img
                   width="25px"
                   class="instagramIcon"
+                  alt="instagramIcon"
                   src="img/instagram.svg"
                 />
               </a>
@@ -44,6 +45,7 @@ const footerHTML = () => {
                 <img
                   width="28px"
                   class="emailIcon"
+                  alt="emailIcon"
                   src="img/envelope-regular.svg"
                 />
               </a>

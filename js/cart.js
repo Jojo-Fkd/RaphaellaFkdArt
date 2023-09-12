@@ -88,7 +88,7 @@ for (let i = 0; i < cartArr.length; i++) {
   const li = document.createElement("li");
 
   li.innerHTML = `
-    <img oncontextmenu="return false;" draggable="false" src="${obj.itemImg}" />
+    <img oncontextmenu="return false;" draggable="false" alt="image of ${obj.itemImg}" src="${obj.itemImg}" />
   `;
   checkOutImageContainer.appendChild(li);
 

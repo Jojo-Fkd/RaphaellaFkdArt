@@ -172,7 +172,7 @@ const initApp2 = () => {
                 <div class="gallery_close_btn"></div>
             </section>
             <div class="gallery_open_item ${value.itemClass}">
-              <img oncontextmenu="return false;" draggable="false" loading="lazy" src="${value.itemSrc}" />
+              <img oncontextmenu="return false;" draggable="false" loading="lazy" alt="image of ${value.itemSrc}" src="${value.itemSrc}" />
               <div class="gallery_open_item_name"><span>${value.itemName}</span></div>
             </div>
             `;
