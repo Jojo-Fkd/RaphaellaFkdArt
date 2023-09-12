@@ -1,0 +1,69 @@
+/* NAV ELEMENTS */
+
+.nav-elements li:first-child::before {
+  transform: scaleX(1);
+}
+
+.nav-elements li:hover::before {
+  transform: scaleX(1);
+}
+
+/* GENERAL STYLES */
+
+#main-content h2::before {
+  transform: translateX(23px);
+  animation: lineExpand 0.8s ease;
+}
+
+.status {
+  height: 50vh;
+  display: grid;
+  place-content: center;
+}
+
+.status p {
+  font-family: var(--DESCRIPTION_FONT);
+  font-size: 2rem;
+  color: var(--BTNCOLOR);
+  white-space: none;
+  padding: 2rem;
+}
+
+@keyframes lineExpand {
+  from {
+    transform: translateX(23px) scaleX(0);
+  }
+  to {
+    transform: translateX(23px) scaleX(1);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .status p {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .status p {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .status p {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .status p {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 366px) {
+  .status p {
+    font-size: 1rem;
+  }
+}

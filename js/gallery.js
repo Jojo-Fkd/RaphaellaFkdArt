@@ -1,0 +1,166 @@
+document.addEventListener("readystatechange", (event) => {
+  if (event.target.readyState === "complete") {
+    initApp2();
+  }
+});
+
+const initApp2 = () => {
+  const galleryContainer = document.querySelector(".gallery ul");
+  const galleryOpenBg = document.querySelector(".gallery_open");
+
+  const galleryItemData = [
+    {
+      itemSrc: `img/end-time-original.jpeg`,
+      itemName: "End Times",
+      itemClass: "unclassed",
+    },
+    {
+      itemSrc: `img/brothers.jpeg`,
+      itemName: "Brothers",
+      itemClass: "unclassed",
+    },
+    {
+      itemSrc: `img/eye-buoquet-in-a-vase.jpeg`,
+      itemName: "Eye Bouquet in a vase",
+      itemClass: "unclassed",
+    },
+    {
+      itemSrc: `img/the-silenced-queen-original-piece.jpeg`,
+      itemName: "The Silenced Queen",
+      itemClass: "unclassed",
+    },
+    {
+      itemSrc: `img/forever-flower.jpeg`,
+      itemName: "Forever Flower",
+      itemClass: "unclassed",
+    },
+    {
+      itemSrc: `img/self-portrait_1.jpeg`,
+      itemName: "Self Portrait",
+      itemClass: "unclassed",
+    },
+    {
+      itemSrc: `img/under-the-red-moon.jpeg`,
+      itemName: "Under The Red Moon",
+      itemClass: "unclassed",
+    },
+    {
+      itemSrc: `img/self-portrait_9.jpg`,
+      itemName: "Self Portrait",
+      itemClass: "smaller",
+    },
+    {
+      itemSrc: `img/self-portrait_2.jpeg`,
+      itemName: "Self Portrait",
+      itemClass: "unclassed",
+    },
+    {
+      itemSrc: `img/self-portrait_3.jpeg`,
+      itemName: "Self Portrait",
+      itemClass: "unclassed",
+    },
+    {
+      itemSrc: `img/self_portrait_4.JPEG`,
+      itemName: "Self Portrait",
+      itemClass: "unclassed",
+    },
+    {
+      itemSrc: `img/the-three-maidens-original-piece.jpeg`,
+      itemName: "The Three Maidens",
+      itemClass: "unclassed",
+    },
+    {
+      itemSrc: `img/under-the-white-moon.jpeg`,
+      itemName: "Under The White Moon",
+      itemClass: "unclassed",
+    },
+    {
+      itemSrc: `img/self-portrait_10.jpeg`,
+      itemName: "Self Portrait",
+      itemClass: "smaller",
+    },
+    {
+      itemSrc: `img/self-portrait_5.jpeg`,
+      itemName: "Self Portrait",
+      itemClass: "unclassed",
+    },
+    {
+      itemSrc: `img/self-portrait_6.JPEG`,
+      itemName: "Self Portrait",
+      itemClass: "unclassed",
+    },
+    {
+      itemSrc: `img/kifu-ayin-original-piece.JPEG`,
+      itemName: "<span>(ክፉ ዓይን)</span>",
+      itemClass: "unclassed",
+    },
+    {
+      itemSrc: `img/damsel-in-distress-original-piece.JPEG`,
+      itemName: "Damsel In Distress",
+      itemClass: "unclassed",
+    },
+    {
+      itemSrc: `img/aynamawa-original-piece.jpeg`,
+      itemName: "Aynamawa <span>(ኣይናማዋ)",
+      itemClass: "unclassed",
+    },
+    {
+      itemSrc: `img/affinity.jpeg`,
+      itemName: "Affinity",
+      itemClass: "smaller",
+    },
+    {
+      itemSrc: `img/self-portrait_7.jpg`,
+      itemName: "Self Portrait",
+      itemClass: "unclassed",
+    },
+    {
+      itemSrc: `img/self-portrait_8.jpg`,
+      itemName: "Self Portrait",
+      itemClass: "unclassed",
+    },
+    {
+      itemSrc: `img/gemboye-original.jpeg`,
+      itemName: "Gemboye <span>(ገምቦዬ)</span>",
+      itemClass: "unclassed",
+    },
+  ];
+  galleryItemData.forEach((value) => {
+    let li = document.createElement("li");
+    li.innerHTML = `
+        <img oncontextmenu="return false;" draggable="false" src="${value.itemSrc}" loading="lazy" alt="image of ${value.itemName}" />
+        <div class="image_blur"></div>
+        <div class="image_name">${value.itemName}</div>
+    `;
+    li.className = value.itemClass;
+    galleryContainer.appendChild(li);
+    li.addEventListener("mouseover", () => {
+      li.classList.add("active");
+      setTimeout(() => {
+        li.classList.remove("active");
+      }, 3000);
+    });
+    li.addEventListener("mouseout", () => {
+      li.classList.remove("active");
+    });
+    li.onclick = () => {
+      galleryOpenBg.innerHTML = `
+            <section>
+                <div class="gallery_close_btn"></div>
+            </section>
+            <div class="gallery_open_item ${value.itemClass}">
+              <img oncontextmenu="return false;" draggable="false" loading="lazy" src="${value.itemSrc}" />
+              <div class="gallery_open_item_name"><span>${value.itemName}</span></div>
+            </div>
+            `;
+      galleryOpenBg.classList.add("active");
+      const closeBtn = galleryOpenBg.querySelector("section");
+      closeBtn.onclick = () => {
+        galleryOpenBg.classList.remove("active");
+      };
+      galleryOpenBg.onclick = () => {
+        galleryOpenBg.classList.remove("active");
+      };
+    };
+  });
+};
