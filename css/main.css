@@ -1167,8 +1167,8 @@ body {
 
 @media screen and (max-width: 731px) {
   #footer_section {
-    gap: 1.6rem;
-    padding: 1.5rem 0;
+    gap: 2rem;
+    padding: 2rem 0;
   }
 
   #main_footer_content {
