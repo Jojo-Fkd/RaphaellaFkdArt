@@ -5,6 +5,7 @@ document.addEventListener("readystatechange", (event) => {
 });
 
 const initApp2 = () => {
+  const body = document.querySelector("body");
   const galleryContainer = document.querySelector(".gallery ul");
   const galleryOpenBg = document.querySelector(".gallery_open");
 
@@ -176,13 +177,16 @@ const initApp2 = () => {
               <div class="gallery_open_item_name"><span>${value.itemName}</span></div>
             </div>
             `;
+      body.classList.add("covered");
       galleryOpenBg.classList.add("active");
       const closeBtn = galleryOpenBg.querySelector("section");
       closeBtn.onclick = () => {
         galleryOpenBg.classList.remove("active");
+        body.classList.remove("covered");
       };
       galleryOpenBg.onclick = () => {
         galleryOpenBg.classList.remove("active");
+        body.classList.remove("covered");
       };
     };
   });
