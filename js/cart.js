@@ -58,7 +58,6 @@ for (let i = 0; i < cartArr.length; i++) {
 
   const cancelBtn = figure.querySelector(".delete_btn");
   cancelBtn.onclick = () => {
-    figure.remove();
     cartArr.splice(i, 1);
     localStorage.setItem("CART", JSON.stringify(cartArr));
     scrollTo(0, 0);
