@@ -161,7 +161,7 @@ originalShopData.forEach((value) => {
       firstItem2.style.opacity === "1"
         ? (firstItem2.style.opacity = "0")
         : (firstItem2.style.opacity = "1");
-    }, 5000);
+    }, 3000);
 
     // PROCEEDING TO SHOPPING CART
 
