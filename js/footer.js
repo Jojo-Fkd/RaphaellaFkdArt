@@ -32,7 +32,7 @@ const footerHTML = () => {
                   class="instagramIcon"
                   alt="instagramIcon"
                   src="img/instagram.svg"
-                />
+                  />
               </a>
             </li>
             <li id="copyright">Raphaellafkdart, 2023</li>
