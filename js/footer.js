@@ -26,7 +26,7 @@ const footerHTML = () => {
                 </p>
                 <div class="description_tail"></div>
               </div>
-              <a href="https://insta.openinapp.co/pfee0" target="_blank">
+              <a href="https://www.instagram.com/raphaellafkdart" target="_blank">
                 <img
                   width="25px"
                   class="instagramIcon"
