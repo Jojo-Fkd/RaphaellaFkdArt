@@ -136,7 +136,7 @@
 
 #proceed_page .back_btn_container {
   max-width: 100vw;
-  padding: 1rem 4.5rem;
+  padding: 1.2rem 4.5rem;
 }
 
 #proceed_page .back_btn {
@@ -151,7 +151,6 @@
 
 #proceed_page figure {
   display: flex;
-  margin-top: 2rem;
   padding: 0 4.5rem;
   gap: 2rem;
 }
@@ -275,13 +274,15 @@
   }
 
   #proceed_page .item-name {
-    font-size: 2.8rem;
+    font-size: 2.9rem;
+    white-space: nowrap;
   }
 
   #proceed_page .availability,
   #proceed_page .value,
-  #proceed_page .date {
-    font-size: 1.2rem;
+  #proceed_page .date,
+  #proceed_page .price {
+    font-size: 1.4rem;
   }
 
   #proceed_page .purchase {
@@ -320,6 +321,19 @@
 @media screen and (max-width: 775px) {
   .item_details div {
     width: 90vw;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  #proceed_page .item-name {
+    font-size: 2.3rem;
+  }
+
+  #proceed_page .availability,
+  #proceed_page .value,
+  #proceed_page .date,
+  #proceed_page .price {
+    font-size: 1.2rem;
   }
 }
 

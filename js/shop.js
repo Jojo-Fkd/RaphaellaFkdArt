@@ -189,7 +189,6 @@ originalShopData.forEach((value) => {
       } else {
         alert("Item has already been added to your cart.");
         location.reload();
-        window.scrollTo(0, 0);
         return;
       }
     };
@@ -335,7 +334,6 @@ originalShopData.forEach((value) => {
       const cancelBtn = form.querySelector(".cancel_btn");
       cancelBtn.onclick = () => {
         location.reload();
-        window.scrollTo(0, 0);
       };
       window.scrollTo(0, 0);
     };
