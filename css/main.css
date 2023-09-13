@@ -981,6 +981,8 @@ body {
   font-family: var(--NAVIGATION_FONT);
   font-size: 1rem;
   letter-spacing: 0.5px;
+  outline: none;
+  outline-color: none;
 }
 
 .sign_up form label button {
