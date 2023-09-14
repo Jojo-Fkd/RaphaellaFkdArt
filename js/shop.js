@@ -334,6 +334,7 @@ originalShopData.forEach((value) => {
       const cancelBtn = form.querySelector(".cancel_btn");
       cancelBtn.onclick = () => {
         location.reload();
+        window.scrollTo(0, 0);
       };
       window.scrollTo(0, 0);
     };
