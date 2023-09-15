@@ -356,9 +356,15 @@ originalShopData.forEach((value) => {
                 <li>On the bank No field enter: 100010121318</li>
                 <li>On the Amount field enter: br 5,000</li>
                 <li>Click Confirm</li>
-                <li>Click the button below to confirm your action.</li>
+                <li>Take a Screenshot of the transaction.</li>
+                <li>Click the "Add Image" button to your right</li>
+                <li>Choose the Screenshot you just took</li>
               </ol>
             </article>
+            <section class="screenshot_container">
+              <div class="screenshot"></div>
+              <button>Add Image</button>
+            </section>
           `;
           paymentPage.appendChild(section);
           section.id = "payment_section";

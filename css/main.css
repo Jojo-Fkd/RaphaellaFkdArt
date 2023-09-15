@@ -938,6 +938,8 @@ body {
 #payment_section {
   padding: 2rem;
   width: 100vw;
+  display: flex;
+  justify-content: space-between;
 }
 
 #payment_section header h3 {
@@ -959,6 +961,58 @@ body {
   font-size: 1.2rem;
   font-weight: lighter;
   margin-top: 1rem;
+}
+
+.screenshot_container {
+  display: flex;
+  gap: 1rem;
+}
+
+.screenshot {
+  height: 70vh;
+  width: 50vw;
+  border: 1px solid;
+}
+
+#payment_section button {
+  background: transparent;
+  border: 1px solid;
+  margin-top: 0.2rem;
+  border-radius: 5px;
+  width: 120px;
+  height: 40px;
+  display: grid;
+  place-content: center;
+  font-family: var(--NAVIGATION_FONT);
+  font-weight: light;
+  color: black;
+  font-size: 1.1rem !important;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.6s;
+}
+
+#payment_section button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -10px;
+  height: inherit;
+  width: 0;
+  background: #6a2828;
+  transform: skewX(-20deg);
+  transition: all 0.6s;
+  z-index: -1;
+}
+
+#payment_section button:hover {
+  color: white;
+  border: 1px solid #6a2828;
+}
+
+#payment_section button:hover::after {
+  width: 140px;
 }
 
 /* FOOTER STYLES */
