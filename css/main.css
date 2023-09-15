@@ -928,6 +928,133 @@ body {
   }
 }
 
+/* PAYMENT PAGE */
+
+.payment_page {
+  height: 100vh;
+  max-width: 100vw;
+}
+
+#payment_section {
+  padding: 2rem;
+  width: 100vw;
+}
+
+#payment_section header h3 {
+  font-family: var(--NAVIGATION_FONT);
+  font-size: 3rem;
+  font-weight: lighter;
+}
+
+#payment_section header span {
+  font-family: var(--PRICE_FONT);
+  font-size: 0.8rem;
+  display: block;
+  transform: translateY(-11px);
+  color: rgba(0, 0, 0, 0.7);
+}
+
+#payment_section ol li {
+  font-family: var(--NAVIGATION_FONT);
+  font-size: 1.2rem;
+  font-weight: lighter;
+  margin-top: 1rem;
+}
+
+#payment_section button {
+  background: transparent;
+  border: 1px solid;
+  margin-top: 2rem;
+  border-radius: 5px;
+  width: 100px;
+  height: 40px;
+  display: grid;
+  place-content: center;
+  font-family: var(--NAVIGATION_FONT);
+  font-weight: light;
+  color: black;
+  font-size: 1.1rem !important;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.6s;
+}
+
+#payment_section button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -10px;
+  height: inherit;
+  width: 0;
+  background: #6a2828;
+  transform: skewX(-20deg);
+  transition: all 0.6s;
+  z-index: -1;
+}
+
+#payment_section button:hover {
+  color: white;
+  border: 1px solid #6a2828;
+}
+
+#payment_section button:hover::after {
+  width: 120px;
+}
+
+/* PAYMENT POPUP */
+
+#payment_popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(10px);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  opacity: 0;
+  z-index: -1;
+  transition: all .4s ease-in;
+}
+
+#payment_popup.active {
+  z-index: 100;
+  opacity: 1;
+}
+
+#payment_popup section {
+  margin-right: 20rem;
+  height: 200px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.1);
+}
+
+#payment_popup section header {
+  display: grid;
+  place-items: center;
+}
+
+#payment_popup section header h3 {
+  font-size: 1.8rem;
+}
+
+#payment_popup section article {
+  display: grid;
+  place-items: center;
+}
+
+#payment_popup section article h4 {
+  font-family: var(--PRICE_FONT);
+  font-weight: lighter;
+}
+
 /* FOOTER STYLES */
 
 #footer_section {
