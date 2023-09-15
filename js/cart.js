@@ -110,7 +110,46 @@ for (let i = 0; i < cartArr.length; i++) {
     window.scrollTo(0, 0);
     shoppingCart.style.display = "none";
     checkOutPage.style.display = "block";
-
+    const paymentPage = document.querySelector(".payment_page");
+    const paymentChoices = checkOutPage.querySelectorAll("#payment_method li");
+    paymentChoices.forEach((btn) => {
+      btn.onclick = () => {
+        const bank =
+          btn.innerText === "CBE"
+            ? "Commercial Bank Of Ethiopia"
+            : btn.innerText === "Telebirr"
+            ? "Ethio Telecom"
+            : btn.innerText === "BOA"
+            ? "Bank Of Abisynia"
+            : "Commercial Bank Of Ethiopia";
+        const section = document.createElement("section");
+        section.innerHTML = `
+            <article>
+              <header>
+                <h3>${btn.innerText}</h3>
+                <span>${bank}</span>
+              </header>
+              <ol class="steps">
+                <li>Open the CBE birr app and enter your pin</li>
+                <li>Click the transfer button</li>
+                <li>On the bank No field enter: 100010121318</li>
+                <li>On the Amount field enter: br 5,000</li>
+                <li>Click Confirm</li>
+                <li>Take a Screenshot of the transaction.</li>
+                <li>Click the "Add Image" button to your right</li>
+                <li>Choose the Screenshot you just took</li>
+              </ol>
+            </article>
+            <section class="screenshot_container">
+              <div class="screenshot"></div>
+              <button>Add Image</button>
+            </section>
+          `;
+        paymentPage.appendChild(section);
+        section.id = "payment_section";
+        checkOutPage.style.display = "none";
+      };
+    });
     const cancelBtn = document.querySelector(".cancel_btn");
     cancelBtn.onclick = () => {
       window.scrollTo(0, 0);
