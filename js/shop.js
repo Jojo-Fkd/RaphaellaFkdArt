@@ -358,33 +358,11 @@ originalShopData.forEach((value) => {
                 <li>Click Confirm</li>
                 <li>Click the button below to confirm your action.</li>
               </ol>
-              <button class="action_confirmation">Ok</button>
             </article>
-            <section id="payment_popup">
-              <section>
-                <header>
-                  <h3>Confirmed</h3>
-                  <div class="styler"></div>
-                </header>
-                <article>
-                  <h4>You will recieve an email after verification</h4>
-                  <button>Ok</button>
-                </article>
-              </section>
-            </section>
           `;
           paymentPage.appendChild(section);
           section.id = "payment_section";
           purchasePage.style.display = "none";
-          const paymentPopup = section.querySelector("#payment_popup");
-          const okBtn = section.querySelector(".action_confirmation");
-          okBtn.onclick = () => {
-            paymentPopup.classList.toggle("active");
-            const okBtn = paymentPopup.querySelector("section article button");
-            okBtn.onclick = () => {
-              location.reload();
-            };
-          };
         };
       });
 
