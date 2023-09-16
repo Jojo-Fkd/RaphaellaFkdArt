@@ -114,14 +114,25 @@ for (let i = 0; i < cartArr.length; i++) {
     const paymentChoices = checkOutPage.querySelectorAll("#payment_method li");
     paymentChoices.forEach((btn) => {
       btn.onclick = () => {
+        // IDENTIFICATION
+        const bankNo =
+          btn.innerText === "CBE birr"
+            ? "100043158608"
+            : btn.innerText === "Telebirr"
+            ? `<span>+251</span> 960420004`
+            : btn.innerText === "BOA"
+            ? "112367179"
+            : "";
+        // PAYMENT METHODS
         const bank =
-          btn.innerText === "CBE"
+          btn.innerText === "CBE birr"
             ? "Commercial Bank Of Ethiopia"
             : btn.innerText === "Telebirr"
             ? "Ethio Telecom"
             : btn.innerText === "BOA"
             ? "Bank Of Abisynia"
-            : "Commercial Bank Of Ethiopia";
+            : "";
+
         const section = document.createElement("section");
         section.innerHTML = `
             <article>
@@ -130,14 +141,13 @@ for (let i = 0; i < cartArr.length; i++) {
                 <span>${bank}</span>
               </header>
               <ol class="steps">
-                <li>Open the CBE birr app and enter your pin</li>
-                <li>Click the transfer button</li>
-                <li>On the bank No field enter: 100010121318</li>
-                <li>On the Amount field enter: br 5,000</li>
-                <li>Click Confirm</li>
+                <li class="indetification">My Indentification: ${bankNo}</li>
+                <li>Total Amount: ${JSON.stringify(
+                  Number(checkOutPrice) + deliveryCost
+                )}</li>
                 <li>Take a Screenshot of the transaction.</li>
-                <li>Click the "Add Image" button to your right</li>
-                <li>Choose the Screenshot you just took</li>
+                <li>Click the "Add Image" button to your right.</li>
+                <li>Choose the Screenshot you just took.</li>
               </ol>
             </article>
             <section class="screenshot_container">
