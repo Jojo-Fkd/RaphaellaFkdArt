@@ -372,11 +372,21 @@ originalShopData.forEach((value) => {
               </ol>
             </article>
             <section class="screenshot_container">
-              <div class="screenshot"></div>
-              <button>Add Image</button>
+              <img src="" class="screenshot">
+              <label for="input-file">Add Image</label>
+              <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file" />
             </section>
           `;
           paymentPage.appendChild(section);
+          let screenShot = section.querySelector(".screenshot");
+          let inputFile = section.querySelector(
+            ".screenshot_container #input-file"
+          );
+
+          inputFile.onchange = () => {
+            screenShot.src = URL.createObjectURL(inputFile.files[0]);
+          };
+
           section.id = "payment_section";
           purchasePage.style.display = "none";
         };

@@ -150,13 +150,20 @@ for (let i = 0; i < cartArr.length; i++) {
                 <li>Choose the Screenshot you just took.</li>
               </ol>
             </article>
-            <section class="screenshot_container">
-              <div class="screenshot"></div>
-              <button>Add Image</button>
+           <section class="screenshot_container">
+              <img class="screenshot">
+              <label for="input-file">Add Image</label>
+              <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file" />
             </section>
           `;
         paymentPage.appendChild(section);
         section.id = "payment_section";
+        let screenShot = section.querySelector(".screenshot");
+        let inputFile = section.querySelector("#input-file");
+
+        inputFile.onchange = () => {
+          screenShot.src = URL.createObjectURL(inputFile.files[0]);
+        };
         checkOutPage.style.display = "none";
       };
     });

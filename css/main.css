@@ -983,12 +983,16 @@ body {
 }
 
 .screenshot {
-  aspect-ratio: 3 / 4;
-  width: 40vw;
+  aspect-ratio: 2 / 4;
+  height: 80vh;
   border: 1px solid;
 }
 
-#payment_section button {
+#payment_section input {
+  display: none;
+}
+
+#payment_section label {
   background: transparent;
   border: 1px solid;
   margin-top: 0.2rem;
@@ -1007,7 +1011,7 @@ body {
   transition: all 0.6s;
 }
 
-#payment_section button::after {
+#payment_section label::after {
   content: "";
   position: absolute;
   top: 0;
@@ -1020,12 +1024,12 @@ body {
   z-index: -1;
 }
 
-#payment_section button:hover {
+#payment_section label:hover {
   color: white;
   border: 1px solid #6a2828;
 }
 
-#payment_section button:hover::after {
+#payment_section label:hover::after {
   width: 140px;
 }
 
@@ -1040,20 +1044,12 @@ body {
     flex-direction: column;
     align-items: center;
   }
-
-  .screenshot {
-    width: 35vw;
-  }
 }
 
 @media screen and (max-width: 709px) {
   .screenshot_container {
     width: 100vw;
     align-items: center;
-  }
-
-  .screenshot {
-    width: 248px;
   }
 }
 
