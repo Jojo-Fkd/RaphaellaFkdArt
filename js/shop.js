@@ -361,11 +361,13 @@ originalShopData.forEach((value) => {
                 <h3>${btn.innerText}</h3>
                 <span>${bank}</span>
               </header>
-              <ol class="steps">
+              <ul>
                 <li class="indetification">My Indentification: ${bankNo}</li>
                 <li>Total Amount: ${JSON.stringify(
                   addedPriceFinal + Number(deliveryPrice)
                 )}</li>
+              </ul>
+              <ol class="steps">
                 <li>Take a Screenshot of the transaction.</li>
                 <li>Click the "Add Image" button to your right.</li>
                 <li>Choose the Screenshot you just took.</li>
