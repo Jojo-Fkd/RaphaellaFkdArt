@@ -110,8 +110,8 @@ for (let i = 0; i < cartArr.length; i++) {
     window.scrollTo(0, 0);
     shoppingCart.style.display = "none";
     checkOutPage.style.display = "block";
-    const paymentPage = document.querySelector(".payment_page");
     const paymentChoices = checkOutPage.querySelectorAll("#payment_method li");
+    const section = document.querySelector(".payment_page #payment_section");
     paymentChoices.forEach((btn) => {
       btn.onclick = () => {
         // IDENTIFICATION
@@ -133,7 +133,6 @@ for (let i = 0; i < cartArr.length; i++) {
             ? "Bank Of Abisynia"
             : "";
 
-        const section = document.createElement("section");
         section.innerHTML = `
             <article>
               <header>
@@ -160,10 +159,11 @@ for (let i = 0; i < cartArr.length; i++) {
               <section class="screenshot_buttons">
                 <label for="input-file">Add Image</label>
                 <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file" />
+                <button type="submit" id="done" />Done</button>
               </section>
             </section>
           `;
-        paymentPage.appendChild(section);
+
         const screenShotBtns = section.querySelector(
           ".screenshot_container .screenshot_buttons"
         );
@@ -172,25 +172,22 @@ for (let i = 0; i < cartArr.length; i++) {
         let inputFile = section.querySelector(
           ".screenshot_container #input-file"
         );
+        const submitBtn = screenShotBtns.querySelector("#done");
+        submitBtn.style.display = "none";
 
         inputFile.onchange = () => {
           screenShot.src = URL.createObjectURL(inputFile.files[0]);
           label.innerText = "Change Image";
-          if (screenShotBtns.children.length === 2) {
-            const button = document.createElement("button");
-            button.innerText = "Done";
-            screenShotBtns.appendChild(button);
+          if (inputFile) {
+            submitBtn.style.display = "block";
           }
         };
-        section.id = "payment_section";
-        checkOutPage.style.display = "none";
       };
     });
     const cancelBtn = document.querySelector(".cancel_btn");
     cancelBtn.onclick = () => {
       window.scrollTo(0, 0);
-      shoppingCart.style.display = "block";
-      checkOutPage.style.display = "none";
+      location.reload();
     };
   };
 }
