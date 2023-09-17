@@ -368,18 +368,27 @@ originalShopData.forEach((value) => {
                 )}</li>
               </ul>
               <ol class="steps">
+                <li>
+                  Make the payment in the ${btn.innerText} app.
+                </li>
                 <li>Take a Screenshot of the transaction.</li>
                 <li>Click the "Add Image" button to your right.</li>
                 <li>Choose the Screenshot you just took.</li>
               </ol>
             </article>
             <section class="screenshot_container">
-              <img src="" class="screenshot">
-              <label for="input-file">Add Image</label>
-              <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file" />
+              <img class="screenshot">
+              <section class="screenshot_buttons">
+                <label for="input-file">Add Image</label>
+                <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file" />  
+              </section>
             </section>
           `;
           paymentPage.appendChild(section);
+          const screenShotBtns = section.querySelector(
+            ".screenshot_container .screenshot_buttons"
+          );
+          const label = section.querySelector("label");
           let screenShot = section.querySelector(".screenshot");
           let inputFile = section.querySelector(
             ".screenshot_container #input-file"
@@ -387,8 +396,13 @@ originalShopData.forEach((value) => {
 
           inputFile.onchange = () => {
             screenShot.src = URL.createObjectURL(inputFile.files[0]);
+            label.innerText = "Change Image";
+            if (screenShotBtns.children.length === 2) {
+              const button = document.createElement("button");
+              button.innerText = "Done";
+              screenShotBtns.appendChild(button);
+            }
           };
-
           section.id = "payment_section";
           purchasePage.style.display = "none";
         };

@@ -998,12 +998,13 @@ body {
   display: none;
 }
 
-#payment_section label {
+#payment_section label,
+#payment_section button {
   background: transparent;
   border: 1px solid;
   margin-top: 0.2rem;
   border-radius: 5px;
-  width: 120px;
+  width: 150px;
   height: 40px;
   display: grid;
   place-content: center;
@@ -1017,7 +1018,8 @@ body {
   transition: all 0.6s;
 }
 
-#payment_section label::after {
+#payment_section label::after,
+#payment_section button::after {
   content: "";
   position: absolute;
   top: 0;
@@ -1030,13 +1032,19 @@ body {
   z-index: -1;
 }
 
-#payment_section label:hover {
+#payment_section label:hover,
+#payment_section button:hover {
   color: white;
   border: 1px solid #6a2828;
 }
 
-#payment_section label:hover::after {
-  width: 140px;
+#payment_section label:hover::after,
+#payment_section button:hover::after {
+  width: 170px;
+}
+
+#payment_section button {
+  margin-top: 1rem;
 }
 
 /* PAYMENT PAGE RESPONSIVE DESIGN */
@@ -1048,7 +1056,7 @@ body {
   }
 
   .screenshot_container {
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
   }
 }

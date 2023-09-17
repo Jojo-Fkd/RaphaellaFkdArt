@@ -1,6 +1,6 @@
 window.scrollTo(0, 0);
 
-const cartArr = JSON.parse(localStorage.getItem("CART")) || [];
+let cartArr = JSON.parse(localStorage.getItem("CART")) || [];
 
 const emptyCondition = document.querySelector(".empty_condition");
 
@@ -147,6 +147,9 @@ for (let i = 0; i < cartArr.length; i++) {
                 )}</li>
               </ul>
               <ol class="steps">
+                <li>
+                  Make the payment in the ${btn.innerText} app.
+                </li>
                 <li>Take a Screenshot of the transaction.</li>
                 <li>Click the "Add Image" button to your right.</li>
                 <li>Choose the Screenshot you just took.</li>
@@ -154,18 +157,32 @@ for (let i = 0; i < cartArr.length; i++) {
             </article>
            <section class="screenshot_container">
               <img class="screenshot">
-              <label for="input-file">Add Image</label>
-              <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file" />
+              <section class="screenshot_buttons">
+                <label for="input-file">Add Image</label>
+                <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file" />
+              </section>
             </section>
           `;
         paymentPage.appendChild(section);
-        section.id = "payment_section";
+        const screenShotBtns = section.querySelector(
+          ".screenshot_container .screenshot_buttons"
+        );
+        const label = section.querySelector("label");
         let screenShot = section.querySelector(".screenshot");
-        let inputFile = section.querySelector("#input-file");
+        let inputFile = section.querySelector(
+          ".screenshot_container #input-file"
+        );
 
         inputFile.onchange = () => {
           screenShot.src = URL.createObjectURL(inputFile.files[0]);
+          label.innerText = "Change Image";
+          if (screenShotBtns.children.length === 2) {
+            const button = document.createElement("button");
+            button.innerText = "Done";
+            screenShotBtns.appendChild(button);
+          }
         };
+        section.id = "payment_section";
         checkOutPage.style.display = "none";
       };
     });
