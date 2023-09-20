@@ -83,6 +83,7 @@ const originalShopData = [
 const cartArr = JSON.parse(localStorage.getItem("CART")) || [];
 
 originalShopData.forEach((value) => {
+  window.scrollTo(0, 0);
   // FIGURE GENERATION
   const figure = document.createElement("figure");
   figure.innerHTML = `

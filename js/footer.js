@@ -4,7 +4,7 @@ const footerHTML = () => {
   section.innerHTML = `
        <section id="main_footer_content">
           <section class="sign_up">
-            <form action="">
+            <form action="" name="submit-to-google-sheets">
               <span class="input-label"
                 >Sign up to receive news and updates !</span
               >
@@ -55,6 +55,19 @@ const footerHTML = () => {
       
   `;
   section.id = "footer_section";
+  // FORM SUBMIT
+
+  const scriptURL =
+    "https://script.google.com/macros/s/AKfycbxJGZwW3PUDqX6BzHzGdVozH5fZGH0bnSrEgC5DucOWlzDbGVcYx9CNIjkheibe3NNNHw/exec";
+  const form = section.querySelector("form");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    fetch(scriptURL, { method: "POST", body: new FormData(form) })
+      .then(() => alert("Success!"), location.reload())
+      .catch(() => alert("Failed to send!"), location.reload());
+  });
+
   // ICON HOVER JS
   const instagramIcon = section.querySelector(".instagramIcon");
   instagramIcon.addEventListener("mouseenter", () => {
