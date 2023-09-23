@@ -193,7 +193,7 @@
       const scriptURL =
         "https://script.google.com/macros/s/AKfycbxJGZwW3PUDqX6BzHzGdVozH5fZGH0bnSrEgC5DucOWlzDbGVcYx9CNIjkheibe3NNNHw/exec";
       const form2 = document.getElementById("form");
-
+      const popupContainer = document.querySelector(".popup_container");
       form2.addEventListener("submit", (e) => {
         e.preventDefault();
         fetch(scriptURL, { method: "POST", body: new FormData(form) })
