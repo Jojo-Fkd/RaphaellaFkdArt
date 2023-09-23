@@ -182,6 +182,12 @@ body.covered {
   color: var(--BACKGROUND);
 }
 
+.shopping-option_popup p {
+  font-family: var(--DESCRIPTION_FONT);
+  font-size: 1.2rem;
+  transform: translateY(-20px);
+}
+
 /* GENERAL POPUP RESPONSIVE DESIGN */
 
 @media screen and (max-width: 500px) {
@@ -307,10 +313,24 @@ body.covered {
 
 /* RESPONSIVE DESIGN */
 
+@media screen and (max-width: 501px) {
+  .success_popup_footer p,
+  .failed_popup_footer p {
+    font-size: 1rem;
+  }
+}
+
 @media screen and (max-width: 385px) {
   .success_popup h3,
-  .failed_popup h3 {
+  .failed_popup h3,
+  .success_popup_footer h3,
+  .failed_popup_footer h3 {
     transform: translateY(5px);
+  }
+
+  .success_popup_footer p,
+  .failed_popup_footer p {
+    font-size: 0.9rem;
   }
 }
 

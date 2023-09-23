@@ -98,6 +98,21 @@
           </li>
         </ul>
       </section>
+      <!-- FOOTER SIGN UP POPUPS -->
+      <section class="shopping-option_popup success_popup_footer">
+        <header>
+          <h3>Successful</h3>
+          <div class="styler"></div>
+        </header>
+        <p>You'll recieve notifications to your email inbox.</p>
+      </section>
+      <section class="shopping-option_popup failed_popup_footer">
+        <header>
+          <h3>Failed</h3>
+          <div class="styler"></div>
+        </header>
+        <p>Try Again.</p>
+      </section>
     </div>
     <section class="shopping-cart">
       <header>
@@ -296,13 +311,31 @@
     <script>
       const scriptURL =
         "https://script.google.com/macros/s/AKfycbxJGZwW3PUDqX6BzHzGdVozH5fZGH0bnSrEgC5DucOWlzDbGVcYx9CNIjkheibe3NNNHw/exec";
-      const form = document.getElementById("form");
+      const form2 = document.getElementById("form");
 
-      form.addEventListener("submit", (e) => {
+      form2.addEventListener("submit", (e) => {
         e.preventDefault();
         fetch(scriptURL, { method: "POST", body: new FormData(form) })
-          .then(() => alert("Success!"))
-          .catch(() => alert("Failed to send!"));
+          .then(() => {
+            popupContainer.classList.add("blur");
+            const successPopupFooter = document.querySelector(
+              ".success_popup_footer"
+            );
+            successPopupFooter.classList.add("active");
+            setTimeout(() => {
+              location.reload();
+            }, 3000);
+          })
+          .catch(() => {
+            popupContainer.classList.add("active");
+            const failedPopupFooter = document.querySelector(
+              ".failed_popup_footer"
+            );
+            failedPopupFooter.classList.add("active");
+            setTimeout(() => {
+              location.reload();
+            });
+          });
       });
       const instagramIcon = document.querySelector(".instagramIcon");
       instagramIcon.addEventListener("mouseenter", () => {
