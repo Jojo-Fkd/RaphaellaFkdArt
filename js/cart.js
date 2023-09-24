@@ -130,7 +130,7 @@ for (let i = 0; i < cartArr.length; i++) {
             : btn.innerText === "Telebirr"
             ? "Ethio Telecom"
             : btn.innerText === "BOA"
-            ? "Bank Of Abisynia"
+            ? "Bank Of Abyssinia"
             : "";
 
         section.innerHTML = `
@@ -147,41 +147,16 @@ for (let i = 0; i < cartArr.length; i++) {
               </ul>
               <ol class="steps">
                 <li>
-                  Make the payment in the ${btn.innerText} app.
+                  Make the transaction in the ${btn.innerText} app.
                 </li>
-                <li>Take a Screenshot of the transaction.</li>
-                <li>Click the "Add Image" button to your right.</li>
-                <li>Choose the Screenshot you just took.</li>
+                <li>When the transaction is successful, click Done.</li>
               </ol>
-            </article>
-           <section class="screenshot_container">
-              <img class="screenshot">
-              <section class="screenshot_buttons">
-                <label for="input-file">Add Image</label>
-                <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file" />
-                <button type="submit" id="done" />Done</button>
+              <section>
+                <button type="button"><a href="#">Back</a></button>
+                <button type="submit">Done</button>
               </section>
-            </section>
+            </article>
           `;
-
-        const screenShotBtns = section.querySelector(
-          ".screenshot_container .screenshot_buttons"
-        );
-        const label = section.querySelector("label");
-        let screenShot = section.querySelector(".screenshot");
-        let inputFile = section.querySelector(
-          ".screenshot_container #input-file"
-        );
-        const submitBtn = screenShotBtns.querySelector("#done");
-        submitBtn.style.display = "none";
-
-        inputFile.onchange = () => {
-          screenShot.src = URL.createObjectURL(inputFile.files[0]);
-          label.innerText = "Change Image";
-          if (inputFile) {
-            submitBtn.style.display = "block";
-          }
-        };
       };
     });
     const cancelBtn = document.querySelector(".cancel_btn");

@@ -994,8 +994,7 @@ body {
   list-style: circle;
 }
 
-#payment_section ol,
-.screenshot_container {
+#payment_section ol {
   padding: 2rem;
 }
 
@@ -1011,31 +1010,20 @@ body {
   color: rgba(0, 0, 0, 0.5);
 }
 
-.screenshot_container {
+#payment_section article section {
   display: flex;
   gap: 1rem;
+  align-items: center;
+  padding: 1rem;
 }
 
-.screenshot {
-  aspect-ratio: 2 / 4;
-  height: 80vh;
-  border: 1px solid;
-}
-
-#payment_section input[type="file"] {
-  display: none;
-}
-
-#payment_section label,
-#payment_section #done {
+#payment_section article button {
   background: transparent;
   border: 1px solid;
-  margin-top: 0.2rem;
+  margin-top: 0.5rem;
   border-radius: 5px;
-  width: 150px;
+  width: 125px;
   height: 40px;
-  display: grid;
-  place-content: center;
   font-family: var(--NAVIGATION_FONT);
   font-weight: light;
   color: black;
@@ -1046,8 +1034,17 @@ body {
   transition: all 0.6s;
 }
 
-#payment_section label::after,
-#payment_section #done::after {
+#payment_section article button a:any-link {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-content: center;
+}
+
+#payment_section article button::after {
   content: "";
   position: absolute;
   top: 0;
@@ -1060,19 +1057,13 @@ body {
   z-index: -1;
 }
 
-#payment_section label:hover,
-#payment_section #done:hover {
+#payment_section article button:hover {
   color: white;
   border: 1px solid #6a2828;
 }
 
-#payment_section label:hover::after,
-#payment_section #done:hover::after {
-  width: 170px;
-}
-
-#payment_section #done {
-  margin-top: 1rem;
+#payment_section article button:hover::after {
+  width: 150px;
 }
 
 /* PAYMENT PAGE RESPONSIVE DESIGN */
@@ -1081,18 +1072,6 @@ body {
   #payment_section ul li,
   #payment_section ol li {
     font-size: 1.1rem;
-  }
-
-  .screenshot_container {
-    flex-direction: column-reverse;
-    align-items: center;
-  }
-}
-
-@media screen and (max-width: 709px) {
-  .screenshot_container {
-    width: 100vw;
-    align-items: center;
   }
 }
 
