@@ -144,6 +144,7 @@ for (let i = 0; i < cartArr.length; i++) {
                 <li>Total Amount: ${JSON.stringify(
                   Number(checkOutPrice) + deliveryCost
                 )}</li>
+                <li>Reason: Original Piece (${value.itemName}) purchase.</li>
               </ul>
               <ol class="steps">
                 <li>

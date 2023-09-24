@@ -257,6 +257,7 @@ originalShopData.forEach((value) => {
                 <li>Total Amount: ${JSON.stringify(
                   addedPriceFinal + Number(deliveryPrice)
                 )}</li>
+                <li>Reason: Original Piece (${value.itemName}) purchase.</li>
               </ul>
               <ol class="steps">
                 <li>
