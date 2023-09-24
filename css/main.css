@@ -334,6 +334,21 @@ body.covered {
   }
 }
 
+/* PAYMENT SUCCESS POPUP */
+
+.payment_popup {
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.payment_popup p {
+  display: flex;
+  gap: 0.2rem;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem !important;
+}
+
 /* POPUP ACTIVATION */
 
 .shopping-option_popup.active {

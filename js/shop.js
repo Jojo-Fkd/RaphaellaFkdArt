@@ -266,10 +266,20 @@ originalShopData.forEach((value) => {
               </ol>
               <section>
                 <button type="button"><a href="#">Back</a></button>
-                <button type="submit">Done</button>
+                <button type="submit" id="done">Done</button>
               </section>
             </article>
           `;
+          const doneBtn = section.querySelector("#done");
+          doneBtn.onclick = () => {
+            popUpContainer.classList.add("blur");
+            const paymentPopup = popUpContainer.querySelector(".payment_popup");
+            paymentPopup.classList.add("active");
+            const okBtn = paymentPopup.querySelector("ul li");
+            okBtn.onclick = () => {
+              location.reload();
+            };
+          };
         };
       });
 

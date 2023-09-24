@@ -153,10 +153,21 @@ for (let i = 0; i < cartArr.length; i++) {
               </ol>
               <section>
                 <button type="button"><a href="#">Back</a></button>
-                <button type="submit">Done</button>
+                <button type="submit" id="done">Done</button>
               </section>
             </article>
           `;
+        const doneBtn = section.querySelector("#done");
+        doneBtn.onclick = () => {
+          popUpContainer.classList.add("blur");
+          popUpContainer.classList.add("payment_version");
+          const paymentPopup = popUpContainer.querySelector(".payment_popup");
+          paymentPopup.classList.add("active");
+          const okBtn = paymentPopup.querySelector("ul li");
+          okBtn.onclick = () => {
+            location.reload();
+          };
+        };
       };
     });
     const cancelBtn = document.querySelector(".cancel_btn");
