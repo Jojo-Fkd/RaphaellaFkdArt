@@ -183,9 +183,9 @@
     <script>
       const btn = document.getElementById("button");
       const popupContainer = document.querySelector(".popup_container");
-      const form = document.querySelector("#main-content form");
+      const contactForm = document.querySelector("#main-content form");
 
-      form.addEventListener("submit", function (event) {
+      contactForm.addEventListener("submit", function (event) {
         event.preventDefault();
 
         btn.textContent = "Sending...";
@@ -276,9 +276,9 @@
     <script>
       const scriptURL =
         "https://script.google.com/macros/s/AKfycbxJGZwW3PUDqX6BzHzGdVozH5fZGH0bnSrEgC5DucOWlzDbGVcYx9CNIjkheibe3NNNHw/exec";
-      const form2 = document.querySelector("#footer_form");
+      const form = document.querySelector("#footer_form");
 
-      form2.addEventListener("submit", (e) => {
+      form.addEventListener("submit", (e) => {
         e.preventDefault();
         fetch(scriptURL, { method: "POST", body: new FormData(form) })
           .then(() => {
