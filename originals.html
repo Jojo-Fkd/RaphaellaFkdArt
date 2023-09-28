@@ -286,7 +286,7 @@
       <section id="footer_section">
         <section id="main_footer_content">
           <section class="sign_up">
-            <form id="form">
+            <form id="footer_form">
               <span class="input-label"
                 >Sign up to receive news and updates !</span
               >
@@ -296,7 +296,7 @@
               </label>
             </form>
           </section>
-          <p class="advertisement"><span>Powered by</span> Millary</p>
+          <p class="advertisement"><span>Powered by</span> JFKD</p>
         </section>
         <section id="sub_footer_content">
           <ul>
@@ -340,6 +340,22 @@
       </section>
     </footer>
     <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbxJGZwW3PUDqX6BzHzGdVozH5fZGH0bnSrEgC5DucOWlzDbGVcYx9CNIjkheibe3NNNHw/exec";
+      const form = document.querySelector("#footer_form");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then(() => {
+            alert("Success");
+            location.reload();
+          })
+          .catch((err) => {
+            alert("Falied");
+            location.reload();
+          });
+      });
       const instagramIcon = document.querySelector(".instagramIcon");
       instagramIcon.addEventListener("mouseenter", () => {
         const description = document.querySelector(".description:first-child");
