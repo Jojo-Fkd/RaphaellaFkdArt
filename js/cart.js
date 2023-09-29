@@ -158,17 +158,31 @@ for (let i = 0; i < cartArr.length; i++) {
               </section>
             </article>
           `;
-        const doneBtn = section.querySelector("#done");
-        doneBtn.onclick = () => {
-          popUpContainer.classList.add("blur");
-          popUpContainer.classList.add("payment_version");
-          const paymentPopup = popUpContainer.querySelector(".payment_popup");
-          paymentPopup.classList.add("active");
-          const okBtn = paymentPopup.querySelector("ul li");
-          okBtn.onclick = () => {
-            location.reload();
+        /*   const form = document.querySelector("#checkout_page form");
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          let params = {
+            from_name: form.querySelector("#full_name").value,
+            from_address: form.querySelector("#physical_address").value,
+            from_number: `+251${form.querySelector("#number").value}`,
+            from_email: form.querySelector("#email").value,
+            from_item: obj.itemName,
+            from_price: obj.itemPrice,
+            from_method: btn.innerText,
           };
-        };
+          emailjs
+            .send("service_b6cs0jg", "template_fj566gr", params)
+            .then(() => {
+              popUpContainer.classList.add("blur");
+              const paymentPopup =
+                popUpContainer.querySelector(".payment_popup");
+              paymentPopup.classList.add("active");
+              const okBtn = paymentPopup.querySelector("ul li");
+              okBtn.onclick = () => {
+                location.reload();
+              };
+            });
+        }); */
       };
     });
     const cancelBtn = document.querySelector(".cancel_btn");

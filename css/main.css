@@ -557,9 +557,27 @@ body {
 
 #main-content header,
 .shopping-cart header {
-  margin: 1rem;
   display: grid;
   place-content: center;
+  position: relative;
+  height: 20vh;
+}
+
+#main-content header h4 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: none;
+  place-content: center;
+  font-family: var(--NAVIGATION_FONT);
+  font-weight: lighter;
+  color: var(--BTNCOLOR);
+  transform: translateY(5px);
+}
+
+#main-content header h4.achieved {
+  display: grid;
 }
 
 #main-content h2,

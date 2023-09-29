@@ -193,17 +193,25 @@
       const scriptURL =
         "https://script.google.com/macros/s/AKfycbxJGZwW3PUDqX6BzHzGdVozH5fZGH0bnSrEgC5DucOWlzDbGVcYx9CNIjkheibe3NNNHw/exec";
       const form = document.querySelector("#footer_form");
+      const successPopupFooter = document.querySelector(
+        ".success_popup_footer"
+      );
+      const failedPopupFooter = document.querySelector(".failed_popup_footer");
 
       form.addEventListener("submit", (e) => {
         e.preventDefault();
         fetch(scriptURL, { method: "POST", body: new FormData(form) })
           .then(() => {
-            alert("Success");
+            popUpContainer.classList.add("blur");
+            successPopupFooter.classList.add("active");
             location.reload();
           })
           .catch((err) => {
-            alert("Falied");
-            location.reload();
+            popUpContainer.classList.add("blur");
+            failedPopupFooter.classList.add("active");
+            setTimeout(() => {
+              location.reload();
+            }, 2000);
           });
       });
       const instagramIcon = document.querySelector(".instagramIcon");

@@ -118,7 +118,7 @@
           <div class="styler"></div>
         </header>
         <ul>
-          <li><a href="originals.html">Ok</a></li>
+          <li><a href="">Ok</a></li>
         </ul>
       </section>
       <!-- FOOTER SIGN UP POPUPS -->
@@ -193,8 +193,9 @@
         const serviceID = "service_b6cs0jg";
         const templateID = "template_bqyy2q6";
 
-        emailjs.sendForm(serviceID, templateID, this).then(
-          () => {
+        emailjs
+          .send(serviceID, templateID, this)
+          .then(() => {
             popupContainer.classList.add("blur");
             const successPopup = document.querySelector(".success_popup");
             successPopup.classList.add("active");
@@ -203,17 +204,18 @@
               popupContainer.classList.remove("blur");
               successPopup.classList.remove("active");
             };
-          },
-          (err) => {
+          })
+          .catch((err) => {
+            popupContainer.classList.add("blur");
             const failedPopup = document.querySelector(".failed_popup");
             failedPopup.classList.add("active");
             okBtn = failedPopup.querySelector("li");
             okBtn.onclick = () => {
               popupContainer.classList.remove("blur");
               successPopup.classList.remove("active");
+              location.reload();
             };
-          }
-        );
+          });
       });
     </script>
     <footer>
@@ -277,17 +279,25 @@
       const scriptURL =
         "https://script.google.com/macros/s/AKfycbxJGZwW3PUDqX6BzHzGdVozH5fZGH0bnSrEgC5DucOWlzDbGVcYx9CNIjkheibe3NNNHw/exec";
       const form = document.querySelector("#footer_form");
+      const successPopupFooter = document.querySelector(
+        ".success_popup_footer"
+      );
+      const failedPopupFooter = document.querySelector(".failed_popup_footer");
 
       form.addEventListener("submit", (e) => {
         e.preventDefault();
         fetch(scriptURL, { method: "POST", body: new FormData(form) })
           .then(() => {
-            alert("Success");
+            popUpContainer.classList.add("blur");
+            successPopupFooter.classList.add("active");
             location.reload();
           })
           .catch((err) => {
-            alert("Falied");
-            location.reload();
+            popUpContainer.classList.add("blur");
+            failedPopupFooter.classList.add("active");
+            setTimeout(() => {
+              location.reload();
+            }, 2000);
           });
       });
       const instagramIcon = document.querySelector(".instagramIcon");

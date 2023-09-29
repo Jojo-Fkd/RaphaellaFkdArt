@@ -22,7 +22,7 @@ const originalShopData = [
     itemValue: "20 x 20 cm oil painting on canvas.",
     completionDate: "2023",
     itemDescription: "Self portrait.",
-    itemAvailability: "Available",
+    itemAvailability: "Sold",
   },
   {
     firstImage: `img/the-three-maidens-original-piece.jpeg`,
@@ -31,7 +31,7 @@ const originalShopData = [
     itemPrice: "ETB 9,000",
     itemValue: "30 x 60 cm oil painting on canvas.",
     completionDate: "2023",
-    itemAvailability: "Available",
+    itemAvailability: "Sold",
   },
   {
     firstImage: `img/gemboye-original.jpeg`,
@@ -40,7 +40,7 @@ const originalShopData = [
     itemPrice: "ETB 2,000",
     itemValue: "20 x 20 cm drawing with a wooden finish.",
     completionDate: "2023",
-    itemAvailability: "Available",
+    itemAvailability: "Sold",
   },
   {
     firstImage: `img/kifu-ayin-original-piece.JPEG`,
@@ -49,7 +49,7 @@ const originalShopData = [
     itemPrice: "ETB 5,500",
     itemValue: "30 x 30 cm acrylic painting on canvas",
     completionDate: "2022",
-    itemAvailability: "Available",
+    itemAvailability: "Sold",
   },
   {
     firstImage: `img/end-time-original.jpeg`,
@@ -58,7 +58,7 @@ const originalShopData = [
     itemPrice: "ETB 4,500",
     itemValue: "20 x 20 cm oil painting on canvas.",
     completionDate: "2021",
-    itemAvailability: "Available",
+    itemAvailability: "Sold",
   },
   {
     firstImage: `img/the-silenced-queen-original-piece.jpeg`,
@@ -67,7 +67,7 @@ const originalShopData = [
     itemPrice: "ETB 7,000",
     itemValue: "40 x 30 cm oil painting on canvas",
     completionDate: "2022",
-    itemAvailability: "Available",
+    itemAvailability: "Sold",
   },
   {
     firstImage: `img/damsel-in-distress-original-piece.JPEG`,
@@ -81,6 +81,17 @@ const originalShopData = [
 ];
 
 const cartArr = JSON.parse(localStorage.getItem("CART")) || [];
+
+const soldOutStatus = originalShopData.every((item) => {
+  return (
+    item.itemAvailability === "Sold" || item.itemAvailability === "Unavailable"
+  );
+});
+
+if (soldOutStatus === true) {
+  const soldOutH4 = document.querySelector("#main-content header h4");
+  soldOutH4.style.display = "grid";
+}
 
 originalShopData.forEach((value) => {
   window.scrollTo(0, 0);
@@ -145,6 +156,10 @@ originalShopData.forEach((value) => {
           </ul>
         </figcaption>
     `;
+    if (value.itemAvailability === "Sold") {
+      const figcaptionDiv = figure.querySelector("figcaption ul div");
+      figcaptionDiv.style.display = "none";
+    }
     proceedPage.appendChild(figure);
     window.scrollTo(0, 0);
     const backBtn = proceedPage.querySelector(".back_btn");
@@ -271,16 +286,31 @@ originalShopData.forEach((value) => {
               </section>
             </article>
           `;
-          const doneBtn = section.querySelector("#done");
-          doneBtn.onclick = () => {
-            popUpContainer.classList.add("blur");
-            const paymentPopup = popUpContainer.querySelector(".payment_popup");
-            paymentPopup.classList.add("active");
-            const okBtn = paymentPopup.querySelector("ul li");
-            okBtn.onclick = () => {
-              location.reload();
+          const form = document.querySelector("#purchase_page form");
+          form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            let params = {
+              from_name: form.querySelector("#full_name").value,
+              from_address: form.querySelector("#physical_address").value,
+              from_number: `+251${form.querySelector("#number").value}`,
+              from_email: form.querySelector("#email").value,
+              from_item: value.itemName,
+              from_price: value.itemPrice,
+              from_method: btn.innerText,
             };
-          };
+            emailjs
+              .send("service_b6cs0jg", "template_fj566gr", params)
+              .then(() => {
+                popUpContainer.classList.add("blur");
+                const paymentPopup =
+                  popUpContainer.querySelector(".payment_popup");
+                paymentPopup.classList.add("active");
+                const okBtn = paymentPopup.querySelector("ul li");
+                okBtn.onclick = () => {
+                  location.reload();
+                };
+              });
+          });
         };
       });
 
