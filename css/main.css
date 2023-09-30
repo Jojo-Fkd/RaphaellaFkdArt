@@ -731,6 +731,49 @@ body {
   display: block;
 }
 
+/* FORM FILLED CHECK */
+
+#enabler_check {
+  margin-top: 2rem;
+}
+
+#enabler_check label {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+#enabler_check label article {
+  display: grid;
+  position: relative;
+  place-items: center;
+}
+
+#enabler_check label input {
+  appearance: none;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  height: 25px;
+  width: 25px;
+}
+
+#enabler_check label img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+#enabler_check label img.checkedIcon {
+  display: block;
+}
+
+#enabler_check label p {
+  font-family: var(--NAVIGATION_FONT);
+  font-size: 0.9rem;
+}
+
 /* PAYMENT METHODS */
 
 #payment_method {
@@ -759,6 +802,8 @@ body {
   cursor: pointer;
   position: relative;
   transition: all 0.6s;
+  display: grid;
+  place-content: center;
 }
 
 #payment_method ul li a:any-link {

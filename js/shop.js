@@ -6,8 +6,6 @@ const proceedPage = document.querySelector("#proceed_page");
 const popUpContainer = document.querySelector(".popup_container");
 proceedPage.style.display = "none";
 
-const purchasePage = document.querySelector("#purchase_page");
-purchasePage.style.display = "none";
 // ORIGINAL SHOP GENERATION AND DATA
 
 const item = document.querySelectorAll(".item");
@@ -149,12 +147,17 @@ originalShopData.forEach((value) => {
             <li class="date">${value.completionDate}</li>
             <li class="availability">${value.itemAvailability}</li>
             <div>
-              <button class="purchase">Purchase</button>
+              <button class="purchase">
+                <a href="purchase.html" target="_blank">Purchase</a>
+              </button>
               <button class="add_to_cart_btn">Add To Cart</button>
             </div>
           </ul>
         </figcaption>
     `;
+    const purchaseBtn = figure.querySelector(
+      "figcaption ul div button.purchase"
+    );
     if (value.itemAvailability === "Sold") {
       const figcaptionDiv = figure.querySelector("figcaption ul div");
       figcaptionDiv.style.display = "none";
@@ -182,8 +185,6 @@ originalShopData.forEach((value) => {
 
     const addToCartBtn = figure.querySelector(".add_to_cart_btn");
 
-    const purchaseBtn = figure.querySelector(".purchase");
-
     addToCartBtn.onclick = () => {
       let itemObj = {
         itemImg: value.firstImage,
@@ -207,129 +208,14 @@ originalShopData.forEach((value) => {
         return;
       }
     };
-    const purchaseImg = purchasePage.querySelector("figure img");
-    purchaseImg.src = value.firstImage;
-    const purchaseName = purchasePage.querySelector(
-      "figure figcaption .purchase_item_name"
-    );
-    purchaseName.innerHTML = value.itemName;
-    const subTotal = purchasePage.querySelector(".sub_total");
-    subTotal.innerText = value.itemPrice;
-    let deliveryPrice = purchasePage.querySelector(
-      ".delivery_cost span"
-    ).innerText;
-
-    const purchasePrice = purchasePage.querySelector(".total span");
-
-    let addedPriceCommaPos = value.itemPrice.indexOf(",");
-    let addedPrice = value.itemPrice.replace(
-      value.itemPrice.charAt(addedPriceCommaPos),
-      ""
-    );
-    const addedPriceFinal = Number(addedPrice.replace("ETB", ""));
-
-    purchasePrice.innerText = addedPriceFinal + Number(deliveryPrice);
-    // PROCEEDING TO PURCHASE
 
     purchaseBtn.onclick = () => {
-      proceedPage.style.display = "none";
-      purchasePage.style.display = "block";
-
-      // PAYMENT PAGE
-      const paymentChoices =
-        purchasePage.querySelectorAll("#payment_method li");
-      const section = document.querySelector(".payment_page #payment_section");
-      paymentChoices.forEach((btn) => {
-        btn.onclick = () => {
-          // IDENTIFICATION
-          const bankNo =
-            btn.innerText === "CBE birr"
-              ? "100043158608"
-              : btn.innerText === "Telebirr"
-              ? `<span>+251</span> 960420004`
-              : btn.innerText === "BOA"
-              ? "112367179"
-              : "";
-          // PAYMENT METHODS
-          const bank =
-            btn.innerText === "CBE birr"
-              ? "Commercial Bank Of Ethiopia"
-              : btn.innerText === "Telebirr"
-              ? "Ethio Telecom"
-              : btn.innerText === "BOA"
-              ? "Bank Of Abyssinia"
-              : "";
-
-          section.innerHTML = `
-            <article>
-              <header>
-                <h3>${btn.innerText}</h3>
-                <span>${bank}</span>
-              </header>
-              <ul>
-                <li class="indetification">My Indentification: ${bankNo}</li>
-                <li>Total Amount: ${JSON.stringify(
-                  addedPriceFinal + Number(deliveryPrice)
-                )}</li>
-                <li>Reason: Original Piece (${value.itemName}) purchase.</li>
-              </ul>
-              <ol class="steps">
-                <li>
-                  Make the transaction in the ${btn.innerText} app.
-                </li>
-                <li>When the transaction is successful, click Done.</li>
-              </ol>
-              <section>
-                <button type="button"><a href="#">Back</a></button>
-                <button type="submit" id="done">Done</button>
-              </section>
-            </article>
-          `;
-          const form = document.querySelector("#purchase_page form");
-          form.addEventListener("submit", (e) => {
-            e.preventDefault();
-            let params = {
-              from_name: form.querySelector("#full_name").value,
-              from_address: form.querySelector("#physical_address").value,
-              from_number: `+251${form.querySelector("#number").value}`,
-              from_email: form.querySelector("#email").value,
-              from_item: value.itemName,
-              from_price: value.itemPrice,
-              from_method: btn.innerText,
-            };
-            emailjs
-              .send("service_b6cs0jg", "template_fj566gr", params)
-              .then(() => {
-                popUpContainer.classList.add("blur");
-                const paymentPopup =
-                  popUpContainer.querySelector(".payment_popup");
-                paymentPopup.classList.add("active");
-                const okBtn = paymentPopup.querySelector("ul li");
-                okBtn.onclick = () => {
-                  location.reload();
-                };
-              })
-              .catch(() => {
-                popUpContainer.classList.add("blur");
-                const failedPaymentPopup = popUpContainer.querySelector(
-                  ".failed_payment_popup"
-                );
-                failedPaymentPopup.classList.add("active");
-                const okBtn = failedPaymentPopup.querySelector("ul li");
-                okBtn.onclick = () => {
-                  location.reload();
-                };
-              });
-          });
-        };
-      });
-
-      const cancelBtn = purchasePage.querySelector(".cancel_btn");
-      cancelBtn.onclick = () => {
-        location.reload();
-        window.scrollTo(0, 0);
+      let itemObj = {
+        itemImg: value.firstImage,
+        itemName: value.itemName,
+        itemPrice: value.itemPrice,
       };
-      window.scrollTo(0, 0);
+      localStorage.setItem("purchaseItem", JSON.stringify(itemObj));
     };
   };
 });
