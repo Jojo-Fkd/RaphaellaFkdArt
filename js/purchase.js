@@ -66,16 +66,16 @@ const paymentRendering = (btn) => {
                 <li>When the transaction is successful, click Done.</li>
               </ol>
               <section>
-                <button type="button"><a href="">Back</a></button>
+                <button type="button"><a href="#">Back</a></button>
                 <button type="submit" id="done">Done</button>
               </section>
             </article>
           `;
   const backBtn = section.querySelector("article section button:first-child");
-  backBtn.onclick = () => {
-    location.reload();
-  };
+  backBtn.onclick = () => {};
   const form = document.querySelector("#purchase_page form");
+  const popUpContainer = document.querySelector(".popup_container");
+  const loading = document.querySelector(".loading");
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     let params = {
@@ -84,14 +84,15 @@ const paymentRendering = (btn) => {
       from_number: `+251${form.querySelector("#number").value}`,
       from_email: form.querySelector("#email").value,
       from_item: purchaseItem.itemName,
-      from_price: purchaseItem.itemPrice,
+      from_price: `ETB ${purchaseItem.itemPrice}`,
       from_method: btn.innerText,
     };
+    popUpContainer.classList.add("blur");
+    loading.classList.add("activated");
     emailjs
       .send("service_b6cs0jg", "template_fj566gr", params)
       .then(() => {
-        const popUpContainer = document.querySelector(".popup_container");
-        popUpContainer.classList.add("blur");
+        loading.classList.remove("activated");
         const paymentPopup = popUpContainer.querySelector(".payment_popup");
         paymentPopup.classList.add("active");
         const okBtn = paymentPopup.querySelector("ul li");
@@ -125,10 +126,12 @@ checkBox.onclick = () => {
   const paymentChoices = purchasePage.querySelectorAll("#payment_method li");
 
   paymentChoices.forEach((btn) => {
-    btn.addEventListener("click", paymentRendering(btn));
     btn.innerHTML = `
       <a href="#payment_section">${btn.innerText}</a>
     `;
+    btn.onclick = () => {
+      paymentRendering(btn);
+    };
   });
 };
 

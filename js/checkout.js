@@ -1,17 +1,10 @@
 const checkOutPage = document.querySelector("#checkout_page");
-const checkOutArr = JSON.parse(localStorage.getItem("checkOutArr"));
+let cartArr = JSON.parse(localStorage.getItem("CART")) || [];
 /* CHECKOUT PAGE JS */
 const checkOutNames = [];
 const section = document.querySelector(".payment_page #payment_section");
 
-const paymentRendering = (obj, btn) => {
-  let deliveryCost = document.querySelector(".delivery_cost span");
-  deliveryCost = Number(deliveryCost.textContent);
-
-  const checkoutFinalPrice = document.querySelector(".total span");
-
-  checkoutFinalPrice.innerText = Number(obj.checkOutTotal) + deliveryCost;
-
+const paymentRendering = (obj, btn, checkOut) => {
   btn.onclick = () => {
     // IDENTIFICATION
     const bankNo =
@@ -40,9 +33,7 @@ const paymentRendering = (obj, btn) => {
               </header>
               <ul>
                 <li class="indetification">My Indentification: ${bankNo}</li>
-                <li>Total Amount: ${JSON.stringify(
-                  Number(obj.checkOutTotal) + deliveryCost
-                )}</li>
+                <li>Total Amount: ${JSON.stringify(checkOut)}</li>
                 <li>Reason: Multiple Original Pieces purchase.</li>
               </ul>
               <ol class="steps">
@@ -58,6 +49,8 @@ const paymentRendering = (obj, btn) => {
             </article>
           `;
     const form = document.querySelector("#checkout_page form");
+    const popUpContainer = document.querySelector(".popup_container");
+    const loading = document.querySelector(".loading");
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       let params = {
@@ -66,12 +59,13 @@ const paymentRendering = (obj, btn) => {
         from_number: `+251${form.querySelector("#number").value}`,
         from_email: form.querySelector("#email").value,
         from_item: JSON.stringify(checkOutNames),
-        from_price: Number(obj.checkOutTotal) + deliveryCost,
+        from_price: `$ETB {checkOut}`,
         from_method: btn.innerText,
       };
+      popUpContainer.classList.add("blur");
+      loading.classList.add("activated");
       emailjs.send("service_b6cs0jg", "template_fj566gr", params).then(() => {
-        const popUpContainer = document.querySelector(".popup_container");
-        popUpContainer.classList.add("blur");
+        loading.classList.remove("activated");
         const paymentPopup = popUpContainer.querySelector(".payment_popup");
         paymentPopup.classList.add("active");
         const okBtn = paymentPopup.querySelector("ul li");
@@ -82,8 +76,20 @@ const paymentRendering = (obj, btn) => {
     });
   };
 };
-for (let i = 0; i < checkOutArr.length; i++) {
-  const obj = checkOutArr[i];
+
+let checkOut = 0;
+
+for (let i = 0; i < cartArr.length; i++) {
+  const obj = cartArr[i];
+  let addedPriceCommaPos = obj.itemPrice.indexOf(",");
+  let addedPrice = obj.itemPrice.replace(
+    obj.itemPrice.charAt(addedPriceCommaPos),
+    ""
+  );
+  const addedPriceFinal = Number(addedPrice.replace("ETB", ""));
+
+  checkOut += addedPriceFinal;
+
   const checkOutImageContainer = document.querySelector(".checkout_images");
 
   const checkOutNameContainer = document.querySelector(".name_collection");
@@ -92,23 +98,30 @@ for (let i = 0; i < checkOutArr.length; i++) {
     ".checkout_item_details .main_details .prices li:first-child span"
   );
 
+  let deliveryCost = document.querySelector(".delivery_cost span");
+  deliveryCost = Number(deliveryCost.textContent);
+
+  const checkoutFinalPrice = document.querySelector(".total span");
+
   const imgLi = document.createElement("li");
 
   imgLi.innerHTML = `
-    <img oncontextmenu="return false;" draggable="false" alt="image of ${obj.checkOutImg}" src="${obj.checkOutImg}" />
+    <img oncontextmenu="return false;" draggable="false" alt="image of ${obj.itemImg}" src="${obj.itemImg}" />
   `;
   checkOutImageContainer.appendChild(imgLi);
 
   const nameLi = document.createElement("li");
 
-  nameLi.innerHTML = `${obj.checkOutName}`;
+  nameLi.innerHTML = `${obj.itemName}`;
   nameLi.className = "checkout_item_name";
 
   checkOutNameContainer.appendChild(nameLi);
 
-  checkOutNames.push(obj.checkOutName);
+  checkOutNames.push(obj.itemName);
 
-  checkOutTotalPrice.innerText = Number(obj.checkOutTotal);
+  checkOutTotalPrice.innerText = checkOut;
+
+  checkoutFinalPrice.innerText = checkOut + deliveryCost;
 
   const paymentChoices = checkOutPage.querySelectorAll("#payment_method li");
 
@@ -121,7 +134,7 @@ for (let i = 0; i < checkOutArr.length; i++) {
     checkedIcon.classList.toggle("checkedIcon");
 
     paymentChoices.forEach((btn) => {
-      btn.addEventListener("click", paymentRendering(obj, btn));
+      btn.addEventListener("click", paymentRendering(obj, btn, checkOut));
       btn.innerHTML = `
       <a href="#payment_section">${btn.innerText}</a>
     `;

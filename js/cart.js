@@ -2,7 +2,7 @@ window.scrollTo(0, 0);
 
 let cartArr = JSON.parse(localStorage.getItem("CART")) || [];
 
-let checkOutArr = JSON.parse(localStorage.getItem("checkOutArr")) || [];
+let checkOutArr = JSON.parse(localStorage.getItem("checkOutArr"));
 
 const emptyCondition = document.querySelector(".empty_condition");
 
@@ -72,15 +72,20 @@ for (let i = 0; i < cartArr.length; i++) {
 
   checkOutPriceContainer.innerText = Number(checkOutPrice);
 
-  checkOutBtn.onclick = () => {
+  /* checkOutBtn.onclick = () => {
     const checkOutObj = {
       checkOutImg: obj.itemImg,
       checkOutName: obj.itemName,
       checkOutTotal: Number(checkOutPrice),
     };
-    checkOutArr.push(checkOutObj);
-    localStorage.setItem("checkOutArr", JSON.stringify(checkOutArr));
-  };
+    let nameCondition = checkOutArr.some((item) => {
+      return item.checkOutName === checkOutObj.checkOutName;
+    });
+    if (nameCondition === false) {
+      checkOutArr.push(checkOutObj);
+      localStorage.setItem("checkOutArr", JSON.stringify(checkOutArr));
+    }
+  }; */
 }
 
 /* EMPTY CONDITION BUTTON TO SHOP LINKAGE */
