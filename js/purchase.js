@@ -118,8 +118,6 @@ const paymentRendering = (btn) => {
 const checkBox = document.querySelector("#enabler_check label article");
 const checkedIcon = document.querySelector("#enabler_check label img");
 
-const checkBoxInput = checkBox.querySelector("input");
-
 checkBox.onclick = () => {
   checkedIcon.classList.toggle("checkedIcon");
 

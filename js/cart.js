@@ -2,6 +2,8 @@ window.scrollTo(0, 0);
 
 let cartArr = JSON.parse(localStorage.getItem("CART")) || [];
 
+let checkOutArr = JSON.parse(localStorage.getItem("checkOutArr")) || [];
+
 const emptyCondition = document.querySelector(".empty_condition");
 
 const shoppingCart = document.querySelector(".shopping-cart");
@@ -14,9 +16,6 @@ const checkOutPriceContainer = document.querySelector(".checkout_price span");
 
 const checkOutBtn = document.querySelector(".checkout_btn");
 
-const checkOutPage = document.querySelector("#checkout_page");
-checkOutPage.style.display = "none";
-
 let checkOutPrice = Number(
   document.querySelector(".checkout_price span").textContent
 );
@@ -25,7 +24,6 @@ const pageState = () => {
   let length = shoppingCartContainer.children.length;
   if (length === 0) {
     emptyCondition.style.display = "flex";
-    checkOutPage.style.display = "none";
     checkOutTotal.style.display = "none";
   } else if (length > 0) {
     emptyCondition.style.display = "none";
@@ -74,122 +72,14 @@ for (let i = 0; i < cartArr.length; i++) {
 
   checkOutPriceContainer.innerText = Number(checkOutPrice);
 
-  /* CHECKOUT PAGE JS */
-
-  const checkOutImageContainer = document.querySelector(".checkout_images");
-
-  const checkOutNameContainer = document.querySelector(".name_collection");
-
-  const checkOutTotalPrice = document.querySelector(
-    ".checkout_item_details .main_details .prices li:first-child span"
-  );
-
-  const li = document.createElement("li");
-
-  li.innerHTML = `
-    <img oncontextmenu="return false;" draggable="false" alt="image of ${obj.itemImg}" src="${obj.itemImg}" />
-  `;
-  checkOutImageContainer.appendChild(li);
-
-  const li2 = document.createElement("li");
-
-  li2.innerHTML = `${obj.itemName}`;
-  li2.className = ".checkout_item_name";
-  checkOutNameContainer.appendChild(li2);
-
-  checkOutTotalPrice.innerText = Number(checkOutPrice);
-
-  const checkoutFinalPrice = document.querySelector(".total span");
-
-  let deliveryCost = document.querySelector(".delivery_cost span");
-  deliveryCost = Number(deliveryCost.textContent);
-
-  checkoutFinalPrice.innerText = Number(checkOutPrice) + deliveryCost;
-
   checkOutBtn.onclick = () => {
-    window.scrollTo(0, 0);
-    shoppingCart.style.display = "none";
-    checkOutPage.style.display = "block";
-    const paymentChoices = checkOutPage.querySelectorAll("#payment_method li");
-    const section = document.querySelector(".payment_page #payment_section");
-    paymentChoices.forEach((btn) => {
-      btn.onclick = () => {
-        // IDENTIFICATION
-        const bankNo =
-          btn.innerText === "CBE birr"
-            ? "100043158608"
-            : btn.innerText === "Telebirr"
-            ? `<span>+251</span> 960420004`
-            : btn.innerText === "BOA"
-            ? "112367179"
-            : "";
-        // PAYMENT METHODS
-        const bank =
-          btn.innerText === "CBE birr"
-            ? "Commercial Bank Of Ethiopia"
-            : btn.innerText === "Telebirr"
-            ? "Ethio Telecom"
-            : btn.innerText === "BOA"
-            ? "Bank Of Abyssinia"
-            : "";
-
-        section.innerHTML = `
-            <article>
-              <header>
-                <h3>${btn.innerText}</h3>
-                <span>${bank}</span>
-              </header>
-              <ul>
-                <li class="indetification">My Indentification: ${bankNo}</li>
-                <li>Total Amount: ${JSON.stringify(
-                  Number(checkOutPrice) + deliveryCost
-                )}</li>
-                <li>Reason: Original Piece (${obj.itemName}) purchase.</li>
-              </ul>
-              <ol class="steps">
-                <li>
-                  Make the transaction in the ${btn.innerText} app.
-                </li>
-                <li>When the transaction is successful, click Done.</li>
-              </ol>
-              <section>
-                <button type="button"><a href="#">Back</a></button>
-                <button type="submit" id="done">Done</button>
-              </section>
-            </article>
-          `;
-        /*   const form = document.querySelector("#checkout_page form");
-        form.addEventListener("submit", (e) => {
-          e.preventDefault();
-          let params = {
-            from_name: form.querySelector("#full_name").value,
-            from_address: form.querySelector("#physical_address").value,
-            from_number: `+251${form.querySelector("#number").value}`,
-            from_email: form.querySelector("#email").value,
-            from_item: obj.itemName,
-            from_price: obj.itemPrice,
-            from_method: btn.innerText,
-          };
-          emailjs
-            .send("service_b6cs0jg", "template_fj566gr", params)
-            .then(() => {
-              popUpContainer.classList.add("blur");
-              const paymentPopup =
-                popUpContainer.querySelector(".payment_popup");
-              paymentPopup.classList.add("active");
-              const okBtn = paymentPopup.querySelector("ul li");
-              okBtn.onclick = () => {
-                location.reload();
-              };
-            });
-        }); */
-      };
-    });
-    const cancelBtn = document.querySelector(".cancel_btn");
-    cancelBtn.onclick = () => {
-      window.scrollTo(0, 0);
-      location.reload();
+    const checkOutObj = {
+      checkOutImg: obj.itemImg,
+      checkOutName: obj.itemName,
+      checkOutTotal: Number(checkOutPrice),
     };
+    checkOutArr.push(checkOutObj);
+    localStorage.setItem("checkOutArr", JSON.stringify(checkOutArr));
   };
 }
 
