@@ -86,8 +86,8 @@ const soldOutStatus = originalShopData.every((item) => {
 });
 
 if (soldOutStatus === true) {
-  const soldOutH4 = document.querySelector("#main-content header h4");
-  soldOutH4.style.display = "grid";
+  const soldOutHeader = document.querySelector("#main-content header");
+  soldOutHeader.classList.add("achieved");
 }
 
 originalShopData.forEach((value) => {

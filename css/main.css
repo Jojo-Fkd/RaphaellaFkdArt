@@ -625,7 +625,7 @@ body {
   display: grid;
   place-content: center;
   position: relative;
-  height: 20vh;
+  margin: 1rem;
 }
 
 #main-content header h4 {
@@ -641,7 +641,12 @@ body {
   transform: translateY(5px);
 }
 
-#main-content header h4.achieved {
+#main-content header.achieved {
+  height: 20vh;
+  margin: 0;
+}
+
+#main-content header.achieved h4 {
   display: grid;
 }
 

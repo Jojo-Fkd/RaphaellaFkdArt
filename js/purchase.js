@@ -1,3 +1,5 @@
+const body = document.querySelector("body");
+
 const purchaseItem = JSON.parse(localStorage.getItem("purchaseItem"));
 
 const purchasePage = document.querySelector("#purchase_page");
@@ -76,6 +78,7 @@ const paymentRendering = (btn) => {
   const form = document.querySelector("#purchase_page form");
   const popUpContainer = document.querySelector(".popup_container");
   const loading = document.querySelector(".loading");
+  body.classList.add("covered");
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     let params = {

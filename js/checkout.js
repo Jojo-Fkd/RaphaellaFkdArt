@@ -1,5 +1,9 @@
+const body = document.querySelector("body");
+
 const checkOutPage = document.querySelector("#checkout_page");
+
 let cartArr = JSON.parse(localStorage.getItem("CART")) || [];
+
 /* CHECKOUT PAGE JS */
 const checkOutNames = [];
 const section = document.querySelector(".payment_page #payment_section");
@@ -51,6 +55,7 @@ const paymentRendering = (obj, btn, checkOut) => {
     const form = document.querySelector("#checkout_page form");
     const popUpContainer = document.querySelector(".popup_container");
     const loading = document.querySelector(".loading");
+    body.classList.add("covered");
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       let params = {
