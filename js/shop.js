@@ -21,8 +21,7 @@ const originalShopData = [
     itemPrice: "ETB 4,000",
     itemValue: "20 x 20 cm oil painting on canvas.",
     completionDate: "2023",
-    itemDescription: "Self portrait.",
-    itemAvailability: "Sold",
+    itemAvailability: "Available",
   },
   {
     firstImage: `img/the-three-maidens-original-piece.jpeg`,
@@ -31,7 +30,7 @@ const originalShopData = [
     itemPrice: "ETB 9,000",
     itemValue: "30 x 60 cm oil painting on canvas.",
     completionDate: "2023",
-    itemAvailability: "Sold",
+    itemAvailability: "Available",
   },
   {
     firstImage: `img/gemboye-original.jpeg`,
@@ -40,7 +39,7 @@ const originalShopData = [
     itemPrice: "ETB 2,000",
     itemValue: "20 x 20 cm drawing with a wooden finish.",
     completionDate: "2023",
-    itemAvailability: "Sold",
+    itemAvailability: "Available",
   },
   {
     firstImage: `img/kifu-ayin-original-piece.JPEG`,
@@ -49,7 +48,7 @@ const originalShopData = [
     itemPrice: "ETB 5,500",
     itemValue: "30 x 30 cm acrylic painting on canvas",
     completionDate: "2022",
-    itemAvailability: "Sold",
+    itemAvailability: "Available",
   },
   {
     firstImage: `img/end-time-original.jpeg`,
@@ -58,7 +57,7 @@ const originalShopData = [
     itemPrice: "ETB 4,500",
     itemValue: "20 x 20 cm oil painting on canvas.",
     completionDate: "2021",
-    itemAvailability: "Sold",
+    itemAvailability: "Available",
   },
   {
     firstImage: `img/the-silenced-queen-original-piece.jpeg`,
@@ -67,7 +66,7 @@ const originalShopData = [
     itemPrice: "ETB 7,000",
     itemValue: "40 x 30 cm oil painting on canvas",
     completionDate: "2022",
-    itemAvailability: "Sold",
+    itemAvailability: "Available",
   },
   {
     firstImage: `img/damsel-in-distress-original-piece.JPEG`,
@@ -306,6 +305,17 @@ originalShopData.forEach((value) => {
                   popUpContainer.querySelector(".payment_popup");
                 paymentPopup.classList.add("active");
                 const okBtn = paymentPopup.querySelector("ul li");
+                okBtn.onclick = () => {
+                  location.reload();
+                };
+              })
+              .catch(() => {
+                popUpContainer.classList.add("blur");
+                const failedPaymentPopup = popUpContainer.querySelector(
+                  ".failed_payment_popup"
+                );
+                failedPaymentPopup.classList.add("active");
+                const okBtn = failedPaymentPopup.querySelector("ul li");
                 okBtn.onclick = () => {
                   location.reload();
                 };

@@ -138,6 +138,19 @@
           <li>Ok</li>
         </ul>
       </section>
+      <section class="shopping-option_popup failed_payment_popup">
+        <header>
+          <h3>Submition Failed</h3>
+          <div class="styler"></div>
+        </header>
+        <p>
+          Try Again.
+          <span>This may be due to poor or no internet connection.</span>
+        </p>
+        <ul>
+          <li>Ok</li>
+        </ul>
+      </section>
       <!-- FOOTER SIGN UP POPUPS -->
       <section class="shopping-option_popup success_popup_footer">
         <header>
@@ -363,14 +376,16 @@
           .then(() => {
             popUpContainer.classList.add("blur");
             successPopupFooter.classList.add("active");
-            location.reload();
+            setTimeout(() => {
+              location.reload();
+            }, 3000);
           })
           .catch((err) => {
             popUpContainer.classList.add("blur");
             failedPopupFooter.classList.add("active");
             setTimeout(() => {
               location.reload();
-            }, 2000);
+            }, 3000);
           });
       });
       const instagramIcon = document.querySelector(".instagramIcon");
