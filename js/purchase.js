@@ -87,7 +87,7 @@ const paymentRendering = (btn) => {
       from_number: `+251${form.querySelector("#number").value}`,
       from_email: form.querySelector("#email").value,
       from_item: purchaseItem.itemName,
-      from_price: `ETB ${purchaseItem.itemPrice}`,
+      from_price: `${purchaseItem.itemPrice}`,
       from_method: btn.innerText,
     };
     popUpContainer.classList.add("blur");
