@@ -117,6 +117,9 @@ body.covered {
   border-radius: 50%;
   border-top: none;
   border-right: none;
+}
+
+.loading.activated .indication {
   animation: loading 1s infinite linear;
 }
 

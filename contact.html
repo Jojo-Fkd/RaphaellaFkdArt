@@ -136,6 +136,10 @@
         </header>
         <p>Try Again.</p>
       </section>
+      <!-- EMAIL SENDING... -->
+      <section class="loading">
+        <div class="indication"></div>
+      </section>
     </div>
     <main id="main-content">
       <header>
@@ -183,12 +187,14 @@
     <script>
       const btn = document.getElementById("button");
       const popupContainer = document.querySelector(".popup_container");
+      const loading = document.querySelector(".loading");
       const contactForm = document.querySelector("#main-content form");
 
       contactForm.addEventListener("submit", function (event) {
         event.preventDefault();
 
-        btn.textContent = "Sending...";
+        popupContainer.classList.add("blur");
+        loading.classList.add("activated");
 
         const serviceID = "service_b6cs0jg";
         const templateID = "template_bqyy2q6";
@@ -196,7 +202,7 @@
         emailjs
           .send(serviceID, templateID, this)
           .then(() => {
-            popupContainer.classList.add("blur");
+            loading.classList.remove("activated");
             const successPopup = document.querySelector(".success_popup");
             successPopup.classList.add("active");
             let okBtn = successPopup.querySelector("li");
@@ -206,7 +212,7 @@
             };
           })
           .catch((err) => {
-            popupContainer.classList.add("blur");
+            loading.classList.remove("activated");
             const failedPopup = document.querySelector(".failed_popup");
             failedPopup.classList.add("active");
             okBtn = failedPopup.querySelector("li");
@@ -286,14 +292,19 @@
 
       form.addEventListener("submit", (e) => {
         e.preventDefault();
+
+        popupContainer.classList.add("blur");
+        loading.classList.add("activated");
         fetch(scriptURL, { method: "POST", body: new FormData(form) })
           .then(() => {
-            popUpContainer.classList.add("blur");
+            loading.classList.remove("activated");
             successPopupFooter.classList.add("active");
-            location.reload();
+            setTimeout(() => {
+              location.reload();
+            }, 2000);
           })
           .catch((err) => {
-            popUpContainer.classList.add("blur");
+            loading.classList.remove("activated");
             failedPopupFooter.classList.add("active");
             setTimeout(() => {
               location.reload();

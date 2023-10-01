@@ -135,6 +135,10 @@
         </header>
         <p>Try Again.</p>
       </section>
+      <!-- EMAIL SENDING... -->
+      <section class="loading">
+        <div class="indication"></div>
+      </section>
     </div>
     <section class="shopping-cart">
       <header>
@@ -219,6 +223,8 @@
       const scriptURL =
         "https://script.google.com/macros/s/AKfycbxJGZwW3PUDqX6BzHzGdVozH5fZGH0bnSrEgC5DucOWlzDbGVcYx9CNIjkheibe3NNNHw/exec";
       const form = document.querySelector("#footer_form");
+      const popupContainer = document.querySelector(".popup_container");
+      const loading = document.querySelector(".loading");
       const successPopupFooter = document.querySelector(
         ".success_popup_footer"
       );
@@ -226,17 +232,25 @@
 
       form.addEventListener("submit", (e) => {
         e.preventDefault();
+
+        popupContainer.classList.add("blur");
+        loading.classList.add("activated");
+
         fetch(scriptURL, { method: "POST", body: new FormData(form) })
           .then(() => {
-            popUpContainer.classList.add("blur");
+            loading.classList.remove("activated");
             successPopupFooter.classList.add("active");
-            location.reload();
+            setTimeout(() => {
+              location.reload();
+              window.scrollTo(0, 0);
+            }, 2000);
           })
           .catch((err) => {
-            popUpContainer.classList.add("blur");
+            loading.classList.remove("activated");
             failedPopupFooter.classList.add("active");
             setTimeout(() => {
               location.reload();
+              window.scrollTo(0, 0);
             }, 2000);
           });
       });
