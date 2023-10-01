@@ -8,7 +8,7 @@ let cartArr = JSON.parse(localStorage.getItem("CART")) || [];
 const checkOutNames = [];
 const section = document.querySelector(".payment_page #payment_section");
 
-const paymentRendering = (obj, btn, checkOut) => {
+const paymentRendering = (btn, checkOut) => {
   btn.onclick = () => {
     // IDENTIFICATION
     const bankNo =
@@ -64,7 +64,7 @@ const paymentRendering = (obj, btn, checkOut) => {
         from_number: `+251${form.querySelector("#number").value}`,
         from_email: form.querySelector("#email").value,
         from_item: JSON.stringify(checkOutNames),
-        from_price: `$ETB {checkOut}`,
+        from_price: `$ETB ${checkOut}`,
         from_method: btn.innerText,
       };
       popUpContainer.classList.add("blur");
@@ -78,6 +78,7 @@ const paymentRendering = (obj, btn, checkOut) => {
           window.close();
         };
       });
+      localStorage.clear();
     });
   };
 };
@@ -139,7 +140,7 @@ for (let i = 0; i < cartArr.length; i++) {
     checkedIcon.classList.toggle("checkedIcon");
 
     paymentChoices.forEach((btn) => {
-      btn.addEventListener("click", paymentRendering(obj, btn, checkOut));
+      btn.addEventListener("click", paymentRendering(btn, checkOut));
       btn.innerHTML = `
       <a href="#payment_section">${btn.innerText}</a>
     `;

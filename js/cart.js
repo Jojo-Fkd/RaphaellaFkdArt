@@ -14,8 +14,6 @@ const checkOutTotal = document.querySelector(".checkout_total");
 
 const checkOutPriceContainer = document.querySelector(".checkout_price span");
 
-const checkOutBtn = document.querySelector(".checkout_btn");
-
 let checkOutPrice = Number(
   document.querySelector(".checkout_price span").textContent
 );
@@ -71,21 +69,6 @@ for (let i = 0; i < cartArr.length; i++) {
   checkOutPrice += addedPriceFinal;
 
   checkOutPriceContainer.innerText = Number(checkOutPrice);
-
-  /* checkOutBtn.onclick = () => {
-    const checkOutObj = {
-      checkOutImg: obj.itemImg,
-      checkOutName: obj.itemName,
-      checkOutTotal: Number(checkOutPrice),
-    };
-    let nameCondition = checkOutArr.some((item) => {
-      return item.checkOutName === checkOutObj.checkOutName;
-    });
-    if (nameCondition === false) {
-      checkOutArr.push(checkOutObj);
-      localStorage.setItem("checkOutArr", JSON.stringify(checkOutArr));
-    }
-  }; */
 }
 
 /* EMPTY CONDITION BUTTON TO SHOP LINKAGE */
