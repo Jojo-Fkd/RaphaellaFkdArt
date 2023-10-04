@@ -147,17 +147,12 @@ originalShopData.forEach((value) => {
             <li class="date">${value.completionDate}</li>
             <li class="availability">${value.itemAvailability}</li>
             <div>
-              <button class="purchase">
-                <a href="purchase.html" target="_blank">Purchase</a>
-              </button>
               <button class="add_to_cart_btn">Add To Cart</button>
             </div>
           </ul>
         </figcaption>
     `;
-    const purchaseBtn = figure.querySelector(
-      "figcaption ul div button.purchase"
-    );
+
     if (value.itemAvailability === "Sold") {
       const figcaptionDiv = figure.querySelector("figcaption ul div");
       figcaptionDiv.style.display = "none";
@@ -207,15 +202,6 @@ originalShopData.forEach((value) => {
         location.reload();
         return;
       }
-    };
-
-    purchaseBtn.onclick = () => {
-      let itemObj = {
-        itemImg: value.firstImage,
-        itemName: value.itemName,
-        itemPrice: value.itemPrice,
-      };
-      localStorage.setItem("purchaseItem", JSON.stringify(itemObj));
     };
   };
 });
