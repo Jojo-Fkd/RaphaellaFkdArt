@@ -185,10 +185,6 @@ const initApp2 = () => {
         body.classList.remove("covered");
         galleryOpenBg.classList.remove("active");
       };
-      galleryOpenBg.onclick = () => {
-        body.classList.remove("covered");
-        galleryOpenBg.classList.remove("active");
-      };
     };
   });
 };

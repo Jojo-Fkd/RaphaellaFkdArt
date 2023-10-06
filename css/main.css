@@ -548,7 +548,7 @@ body {
   top: 0%;
   left: 0%;
   width: 100vw;
-  height: 100vh;
+  height: 105vh;
   display: grid;
   text-align: center;
   place-content: center;
@@ -865,7 +865,7 @@ body {
 }
 
 #payment_method ul li:hover {
-  color: white;
+  color: var(--BACKGROUND);
 }
 
 #payment_method ul li:hover::after {
@@ -963,7 +963,7 @@ body {
 }
 
 .cancel_confirm_buttons button:hover {
-  color: white;
+  color: var(--BACKGROUND);
 }
 
 .cancel_confirm_buttons button:hover::after {
@@ -1205,7 +1205,7 @@ body {
 }
 
 #payment_section article button:hover {
-  color: white;
+  color: var(--BACKGROUND);
 }
 
 #payment_section article button:hover::after {
