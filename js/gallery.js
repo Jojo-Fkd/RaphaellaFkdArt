@@ -180,13 +180,14 @@ const initApp2 = () => {
       body.classList.add("covered");
       galleryOpenBg.classList.add("active");
       const closeBtn = galleryOpenBg.querySelector("section");
+
       closeBtn.onclick = () => {
-        galleryOpenBg.classList.remove("active");
         body.classList.remove("covered");
+        galleryOpenBg.classList.remove("active");
       };
       galleryOpenBg.onclick = () => {
-        galleryOpenBg.classList.remove("active");
         body.classList.remove("covered");
+        galleryOpenBg.classList.remove("active");
       };
     };
   });

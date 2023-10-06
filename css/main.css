@@ -62,10 +62,6 @@ button {
   background: rgba(0, 0, 0, 0.5);
 }
 
-body {
-  overflow-x: hidden;
-}
-
 body.covered {
   overflow: hidden;
 }
@@ -480,6 +476,7 @@ body {
   position: absolute;
   bottom: -7px;
   right: -10px;
+  color: var(--BTNCOLOR);
 }
 
 /* MOBILE VERSION NAVIGATION */
@@ -861,15 +858,14 @@ body {
   left: -10px;
   height: inherit;
   width: 0;
-  background: #6a2828;
   transform: skewX(-20deg);
   transition: all 0.6s;
   z-index: -1;
+  background: var(--BTNCOLOR);
 }
 
 #payment_method ul li:hover {
   color: white;
-  border: 1px solid #6a2828;
 }
 
 #payment_method ul li:hover::after {
@@ -960,19 +956,19 @@ body {
   left: -10px;
   height: inherit;
   width: 0;
-  background: #6a2828;
   transform: skewX(-20deg);
   transition: all 0.6s;
   z-index: -1;
+  background: var(--BTNCOLOR);
 }
 
 .cancel_confirm_buttons button:hover {
   color: white;
-  border: 1px solid #6a2828;
 }
 
 .cancel_confirm_buttons button:hover::after {
   width: 150px;
+  background: var(--BTNCOLOR);
 }
 
 /* PURCHASE PAGE (LAST STEP OF PURCHASE) RESPONSIVE DESIGN*/
@@ -1202,15 +1198,14 @@ body {
   left: -10px;
   height: inherit;
   width: 0;
-  background: #6a2828;
   transform: skewX(-20deg);
   transition: all 0.6s;
   z-index: -1;
+  background: var(--BTNCOLOR);
 }
 
 #payment_section article button:hover {
   color: white;
-  border: 1px solid #6a2828;
 }
 
 #payment_section article button:hover::after {
@@ -1263,7 +1258,8 @@ body {
 #main_footer_content {
   display: flex;
   align-items: center;
-  width: 100vw;
+  justify-content: space-between;
+  width: 95vw;
 }
 
 .sign_up {
@@ -1347,7 +1343,7 @@ body {
   font-family: var(--PRICE_FONT);
   font-size: 1.2rem;
   font-weight: lighter;
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
 }
@@ -1474,13 +1470,17 @@ body {
 }
 
 @media screen and (max-width: 761px) {
+  #main_footer_content {
+    width: 100vw;
+  }
+
   .sign_up form label input {
     height: 35px;
     width: 270px;
   }
 
   .sign_up form label button {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .advertisement {
