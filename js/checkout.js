@@ -8,7 +8,7 @@ let cartArr = JSON.parse(localStorage.getItem("CART")) || [];
 const checkOutNames = [];
 const section = document.querySelector(".payment_page #payment_section");
 
-const paymentRendering = (btn, checkOut) => {
+const paymentRendering = (i, btn, checkOut) => {
   btn.onclick = () => {
     // IDENTIFICATION
     const bankNo =
@@ -38,7 +38,7 @@ const paymentRendering = (btn, checkOut) => {
               <ul>
                 <li class="indetification">My Indentification: ${bankNo}</li>
                 <li>Total Amount: ${JSON.stringify(checkOut)}</li>
-                <li>Reason: Multiple Original Pieces purchase.</li>
+                <li class="transaction_reason">Reason: <span></span>.</li>
               </ul>
               <ol class="steps">
                 <li>
@@ -52,10 +52,17 @@ const paymentRendering = (btn, checkOut) => {
               </section>
             </article>
           `;
+    const reason = section.querySelector(".transaction_reason span");
+    reason.innerText =
+      i === 1
+        ? "Original Piece Purchase"
+        : i >= 2
+        ? "Multiple Original Pieces Purchase"
+        : "Original Piece Purchase";
     const form = document.querySelector("#checkout_page form");
     const popUpContainer = document.querySelector(".popup_container");
     const loading = document.querySelector(".loading");
-    body.classList.add("covered");
+
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       let params = {
@@ -68,16 +75,23 @@ const paymentRendering = (btn, checkOut) => {
         from_method: btn.innerText,
       };
       popUpContainer.classList.add("blur");
+      body.classList.add("covered");
       loading.classList.add("activated");
-      emailjs.send("service_b6cs0jg", "template_fj566gr", params).then(() => {
-        loading.classList.remove("activated");
-        const paymentPopup = popUpContainer.querySelector(".payment_popup");
-        paymentPopup.classList.add("active");
-        const okBtn = paymentPopup.querySelector("ul li");
-        okBtn.onclick = () => {
+      emailjs
+        .send("service_b6cs0jg", "template_fj566gr", params)
+        .then(() => {
+          loading.classList.remove("activated");
+          const paymentPopup = popUpContainer.querySelector(".payment_popup");
+          paymentPopup.classList.add("active");
+          const okBtn = paymentPopup.querySelector("ul li");
+          okBtn.onclick = () => {
+            window.close();
+          };
+        })
+        .catch(() => {
+          alert("Purchase Failed, Try Again");
           window.close();
-        };
-      });
+        });
       localStorage.clear();
     });
   };
@@ -140,7 +154,10 @@ for (let i = 0; i < cartArr.length; i++) {
     checkedIcon.classList.toggle("checkedIcon");
 
     paymentChoices.forEach((btn) => {
-      btn.addEventListener("click", paymentRendering(btn, checkOut));
+      btn.addEventListener(
+        "click",
+        paymentRendering(cartArr.length, btn, checkOut)
+      );
       btn.innerHTML = `
       <a href="#payment_section">${btn.innerText}</a>
     `;

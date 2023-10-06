@@ -80,9 +80,7 @@ const originalShopData = [
 const cartArr = JSON.parse(localStorage.getItem("CART")) || [];
 
 const soldOutStatus = originalShopData.every((item) => {
-  return (
-    item.itemAvailability === "Sold" || item.itemAvailability === "Unavailable"
-  );
+  return item.itemAvailability === "Sold";
 });
 
 if (soldOutStatus === true) {
