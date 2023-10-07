@@ -240,22 +240,28 @@ const initApp2 = () => {
         }
       };
       let id = value.id;
+      if (id === 1) {
+        preBtn.style.opacity = "0.4";
+      }
+      if (id === 23) {
+        nextBtn.style.opacity = "0.4";
+      }
       preBtn.onclick = () => {
-        nextBtn.style.display = "block";
+        nextBtn.style.opacity = "1";
         id--;
         if (id === 1) {
-          preBtn.style.display = "none";
+          preBtn.style.opacity = "0.4";
         }
         anotherImageRendering(id);
       };
       let lastItem = galleryItemData.slice(-1);
       nextBtn.onclick = () => {
-        preBtn.style.display = "block";
+        preBtn.style.opacity = "1";
         id++;
         anotherImageRendering(id);
         lastItem.forEach((value) => {
           if (id === value.id) {
-            nextBtn.style.display = "none";
+            nextBtn.style.opacity = "0.4";
           }
         });
       };
