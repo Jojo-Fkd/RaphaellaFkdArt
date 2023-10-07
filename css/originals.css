@@ -297,11 +297,11 @@
   }
 
   #proceed_page .item {
-    width: 80vw;
+    width: 60vw;
   }
 
   #proceed_page figcaption {
-    width: 80vw;
+    width: 60vw;
     transform: translateX(-15px);
   }
 
@@ -314,13 +314,7 @@
   }
 }
 
-@media screen and (max-width: 775px) {
-  .item_details div {
-    width: 90vw;
-  }
-}
-
-@media screen and (max-width: 415px) {
+@media screen and (max-width: 755px) {
   #proceed_page .item-name {
     font-size: 2.3rem;
   }
@@ -345,7 +339,7 @@
   }
 }
 
-@media screen and (max-width: 340px) {
+@media screen and (max-width: 460px) {
   #proceed_page .back_btn_container {
     padding: 1rem;
   }
