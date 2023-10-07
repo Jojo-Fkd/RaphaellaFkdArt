@@ -161,8 +161,8 @@ for (let i = 0; i < cartArr.length; i++) {
   const checkBox = document.querySelector("#enabler_check label article");
   const checkedIcon = document.querySelector("#enabler_check label img");
 
-  checkBox.onclick = () => {
-    checkedIcon.classList.toggle("checkedIcon");
+  checkBox.addEventListener("click", () => {
+    checkedIcon.classList.add("checkedIcon");
 
     paymentChoices.forEach((btn) => {
       btn.addEventListener(
@@ -173,7 +173,21 @@ for (let i = 0; i < cartArr.length; i++) {
       <a href="#payment_section">${btn.innerText}</a>
     `;
     });
-  };
+    checkBox.removeEventListener("click", () => {
+      checkedIcon.classList.add("checkedIcon");
+
+      paymentChoices.forEach((btn) => {
+        btn.addEventListener(
+          "click",
+          paymentRendering(cartArr.length, btn, checkOut)
+        );
+        btn.innerHTML = `
+      <a href="#payment_section">${btn.innerText}</a>
+    `;
+      });
+    });
+  });
+
   const cancelBtn = document.querySelector(".cancel_btn");
   cancelBtn.onclick = () => {
     window.close();
