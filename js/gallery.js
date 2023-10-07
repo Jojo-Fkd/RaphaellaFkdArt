@@ -197,7 +197,7 @@ const initApp2 = () => {
                 <div class="gallery_close_btn"></div>
             </section>
             <div class="pre_container">
-              <button id="previous">Pre</button>
+              <button id="previous">Previous</button>
             </div>
             <div class="gallery_open_item ${value.itemClass}">
               <img id="${value.id}" oncontextmenu="return false;" draggable="false" loading="lazy" alt="image of ${value.itemSrc}" src="${value.itemSrc}" />
@@ -209,6 +209,7 @@ const initApp2 = () => {
             `;
       body.classList.add("covered");
       galleryOpenBg.classList.add("active");
+      galleryOpenBg.classList.add(`${value.itemClass}`);
       const closeBtn = galleryOpenBg.querySelector("section");
 
       closeBtn.onclick = () => {
