@@ -172,6 +172,7 @@
   cursor: pointer;
   color: var(--BTNCOLOR);
   padding: 0.1rem 1rem;
+  border: 1px solid var(--BTNCOLOR);
   border-radius: 2px;
   background: rgba(255, 255, 255, 0.5);
 }
