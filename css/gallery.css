@@ -170,6 +170,7 @@
   font-family: var(--NAVIGATION_FONT);
   font-size: 1.5rem;
   transition: all 0.4s;
+  cursor: pointer;
 }
 
 .gallery_open_item {
