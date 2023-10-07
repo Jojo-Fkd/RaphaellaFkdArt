@@ -156,6 +156,14 @@
   transform: rotate(-100deg);
 }
 
+.pre_container,
+.next_container {
+  height: 40px;
+  width: 40px;
+  display: grid;
+  place-content: center;
+}
+
 .gallery_open_item {
   position: relative;
   margin: 2rem;

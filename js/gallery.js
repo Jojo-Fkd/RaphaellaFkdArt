@@ -15,144 +15,168 @@ const initApp2 = () => {
       itemName: "End Times",
       itemClass: "unclassed",
       itemLoading: "eager",
+      id: 1,
     },
     {
       itemSrc: `img/brothers.jpeg`,
       itemName: "Brothers",
       itemClass: "unclassed",
       itemLoading: "eager",
+      id: 2,
     },
     {
       itemSrc: `img/eye-buoquet-in-a-vase.jpeg`,
       itemName: "Eye Bouquet in a vase",
       itemClass: "unclassed",
       itemLoading: "eager",
+      id: 3,
     },
     {
       itemSrc: `img/the-silenced-queen-original-piece.jpeg`,
       itemName: "The Silenced Queen",
       itemClass: "unclassed",
       itemLoading: "lazy",
+      id: 4,
     },
     {
       itemSrc: `img/forever-flower.jpeg`,
       itemName: "Forever Flower",
       itemClass: "unclassed",
       itemLoading: "lazy",
+      id: 5,
     },
     {
       itemSrc: `img/self-portrait_1.jpeg`,
       itemName: "Self Portrait",
       itemClass: "unclassed",
       itemLoading: "lazy",
+      id: 6,
     },
     {
       itemSrc: `img/under-the-red-moon.jpeg`,
       itemName: "Under The Red Moon",
       itemClass: "unclassed",
       itemLoading: "lazy",
+      id: 7,
     },
     {
       itemSrc: `img/self-portrait_9.jpg`,
       itemName: "Self Portrait",
       itemClass: "smaller",
       itemLoading: "lazy",
+      id: 8,
     },
     {
       itemSrc: `img/self-portrait_2.jpeg`,
       itemName: "Self Portrait",
       itemClass: "unclassed",
       itemLoading: "lazy",
+      id: 9,
     },
     {
       itemSrc: `img/self-portrait_3.jpeg`,
       itemName: "Self Portrait",
       itemClass: "unclassed",
       itemLoading: "lazy",
+      id: 10,
     },
     {
       itemSrc: `img/self_portrait_4.JPEG`,
       itemName: "Self Portrait",
       itemClass: "unclassed",
       itemLoading: "lazy",
+      id: 11,
     },
     {
       itemSrc: `img/the-three-maidens-original-piece.jpeg`,
       itemName: "The Three Maidens",
       itemClass: "unclassed",
       itemLoading: "lazy",
+      id: 12,
     },
     {
       itemSrc: `img/under-the-white-moon.jpeg`,
       itemName: "Under The White Moon",
       itemClass: "unclassed",
       itemLoading: "lazy",
+      id: 13,
     },
     {
       itemSrc: `img/self-portrait_10.jpeg`,
       itemName: "Self Portrait",
       itemClass: "smaller",
       itemLoading: "lazy",
+      id: 14,
     },
     {
       itemSrc: `img/self-portrait_5.jpeg`,
       itemName: "Self Portrait",
       itemClass: "unclassed",
       itemLoading: "lazy",
+      id: 15,
     },
     {
       itemSrc: `img/self-portrait_6.JPEG`,
       itemName: "Self Portrait",
       itemClass: "unclassed",
       itemLoading: "lazy",
+      id: 16,
     },
     {
       itemSrc: `img/kifu-ayin-original-piece.JPEG`,
       itemName: "<span>(ክፉ ዓይን)</span>",
       itemClass: "unclassed",
       itemLoading: "lazy",
+      id: 17,
     },
     {
       itemSrc: `img/damsel-in-distress-original-piece.JPEG`,
       itemName: "Damsel In Distress",
       itemClass: "unclassed",
       itemLoading: "lazy",
+      id: 18,
     },
     {
       itemSrc: `img/aynamawa-original-piece.jpeg`,
       itemName: "Aynamawa <span>(ኣይናማዋ)",
       itemClass: "unclassed",
       itemLoading: "lazy",
+      id: 19,
     },
     {
       itemSrc: `img/affinity.jpeg`,
       itemName: "Affinity",
       itemClass: "smaller",
       itemLoading: "lazy",
+      id: 20,
     },
     {
       itemSrc: `img/self-portrait_7.jpg`,
       itemName: "Self Portrait",
       itemClass: "unclassed",
       itemLoading: "lazy",
+      id: 21,
     },
     {
       itemSrc: `img/self-portrait_8.jpg`,
       itemName: "Self Portrait",
       itemClass: "unclassed",
       itemLoading: "lazy",
+      id: 22,
     },
     {
       itemSrc: `img/gemboye-original.jpeg`,
       itemName: "Gemboye <span>(ገምቦዬ)</span>",
       itemClass: "unclassed",
       itemLoading: "lazy",
+      id: 23,
     },
   ];
+
   galleryItemData.forEach((value) => {
     let li = document.createElement("li");
     li.innerHTML = `
-        <img oncontextmenu="return false;" draggable="false" src="${value.itemSrc}" loading="${value.itemLoading}" alt="image of ${value.itemName}" />
+        <img id="${value.id}" oncontextmenu="return false;" draggable="false" src="${value.itemSrc}" loading="${value.itemLoading}" alt="image of ${value.itemName}" />
         <div class="image_blur"></div>
         <div class="image_name">${value.itemName}</div>
     `;
@@ -172,9 +196,15 @@ const initApp2 = () => {
             <section>
                 <div class="gallery_close_btn"></div>
             </section>
+            <div class="pre_container">
+              <button id="previous">Pre</button>
+            </div>
             <div class="gallery_open_item ${value.itemClass}">
-              <img oncontextmenu="return false;" draggable="false" loading="lazy" alt="image of ${value.itemSrc}" src="${value.itemSrc}" />
+              <img id="${value.id}" oncontextmenu="return false;" draggable="false" loading="lazy" alt="image of ${value.itemSrc}" src="${value.itemSrc}" />
               <div class="gallery_open_item_name"><span>${value.itemName}</span></div>
+            </div>
+            <div class="next_container">
+              <button id="next">Next</button>
             </div>
             `;
       body.classList.add("covered");
@@ -184,6 +214,49 @@ const initApp2 = () => {
       closeBtn.onclick = () => {
         body.classList.remove("covered");
         galleryOpenBg.classList.remove("active");
+      };
+
+      const preBtn = galleryOpenBg.querySelector("#previous");
+      const nextBtn = galleryOpenBg.querySelector("#next");
+
+      const anotherImageRendering = (id) => {
+        let idCheck = galleryItemData.filter((value) => {
+          return value.id === id;
+        });
+        if (idCheck) {
+          idCheck.forEach((obj) => {
+            const galleryOpenItem =
+              galleryOpenBg.querySelector(".gallery_open_item");
+            const img = galleryOpenBg.querySelector("img");
+            const itemName = galleryOpenBg.querySelector(
+              ".gallery_open_item_name span"
+            );
+            galleryOpenItem.className = `gallery_open_item ${obj.itemClass}`;
+            img.id = id;
+            img.src = obj.itemSrc;
+            itemName.innerHTML = obj.itemName;
+          });
+        }
+      };
+      let id = value.id;
+      preBtn.onclick = () => {
+        nextBtn.style.display = "block";
+        id--;
+        if (id === 1) {
+          preBtn.style.display = "none";
+        }
+        anotherImageRendering(id);
+      };
+      let lastItem = galleryItemData.slice(-1);
+      nextBtn.onclick = () => {
+        preBtn.style.display = "block";
+        id++;
+        anotherImageRendering(id);
+        lastItem.forEach((value) => {
+          if (id === value.id) {
+            nextBtn.style.display = "none";
+          }
+        });
       };
     };
   });
