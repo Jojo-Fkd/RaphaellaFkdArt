@@ -6,6 +6,8 @@ let cartArr = JSON.parse(localStorage.getItem("CART")) || [];
 
 /* CHECKOUT PAGE JS */
 const checkOutNames = [];
+const paymentPage = document.querySelector(".payment_page");
+paymentPage.style.display = "none";
 const section = document.querySelector(".payment_page #payment_section");
 
 const paymentRendering = (i, btn, checkOut) => {
@@ -47,11 +49,20 @@ const paymentRendering = (i, btn, checkOut) => {
                 <li>When the transaction is successful, click Done.</li>
               </ol>
               <section>
-                <button type="button"><a href="#">Back</a></button>
+                <button type="button">Back</button>
                 <button type="submit" id="done">Done</button>
               </section>
             </article>
           `;
+    paymentPage.style.display = "block";
+    const backBtn = section.querySelector("section button:first-child");
+    backBtn.onclick = () => {
+      window.scrollTo(0, 0);
+      setTimeout(() => {
+        section.innerHTML = ``;
+        paymentPage.style.display = "none";
+      }, 500);
+    };
     const reason = section.querySelector(".transaction_reason span");
     reason.innerText =
       i === 1
