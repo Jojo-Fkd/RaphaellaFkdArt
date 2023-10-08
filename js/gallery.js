@@ -11,16 +11,16 @@ const initApp2 = () => {
 
   const galleryItemData = [
     {
-      itemSrc: `img/end-time-original.jpeg`,
-      itemName: "End Times",
+      itemSrc: `img/brothers.jpeg`,
+      itemName: "Brothers",
       itemClass: "unclassed",
       itemLoading: "eager",
       id: 1,
     },
     {
-      itemSrc: `img/brothers.jpeg`,
-      itemName: "Brothers",
-      itemClass: "unclassed",
+      itemSrc: `img/end-time-original-gallery.jpeg`,
+      itemName: "End Times",
+      itemClass: "square",
       itemLoading: "eager",
       id: 2,
     },
@@ -52,31 +52,32 @@ const initApp2 = () => {
       itemLoading: "lazy",
       id: 6,
     },
-    {
-      itemSrc: `img/under-the-red-moon.jpeg`,
-      itemName: "Under The Red Moon",
-      itemClass: "unclassed",
-      itemLoading: "lazy",
-      id: 7,
-    },
+
     {
       itemSrc: `img/self-portrait_9.jpg`,
       itemName: "Self Portrait",
       itemClass: "smaller",
       itemLoading: "lazy",
-      id: 8,
+      id: 7,
     },
     {
       itemSrc: `img/self-portrait_2.jpeg`,
       itemName: "Self Portrait",
       itemClass: "unclassed",
       itemLoading: "lazy",
-      id: 9,
+      id: 8,
     },
     {
       itemSrc: `img/self-portrait_3.jpeg`,
       itemName: "Self Portrait",
       itemClass: "unclassed",
+      itemLoading: "lazy",
+      id: 9,
+    },
+    {
+      itemSrc: `img/under-the-red-moon.jpeg`,
+      itemName: "Under The Red Moon",
+      itemClass: "rectangle",
       itemLoading: "lazy",
       id: 10,
     },
@@ -95,9 +96,9 @@ const initApp2 = () => {
       id: 12,
     },
     {
-      itemSrc: `img/under-the-white-moon.jpeg`,
+      itemSrc: `img/under-the-white-moon (2).jpeg`,
       itemName: "Under The White Moon",
-      itemClass: "unclassed",
+      itemClass: "rectangle",
       itemLoading: "lazy",
       id: 13,
     },
@@ -137,28 +138,28 @@ const initApp2 = () => {
       id: 18,
     },
     {
-      itemSrc: `img/aynamawa-original-piece.jpeg`,
-      itemName: "Aynamawa <span>(ኣይናማዋ)",
+      itemSrc: `img/self-portrait_8.jpg`,
+      itemName: "Self Portrait",
       itemClass: "unclassed",
       itemLoading: "lazy",
       id: 19,
+    },
+    {
+      itemSrc: `img/aynamawa-original-piece-gallery.jpeg`,
+      itemName: "Aynamawa <span>(ኣይናማዋ)",
+      itemClass: "square",
+      itemLoading: "lazy",
+      id: 20,
     },
     {
       itemSrc: `img/affinity.jpeg`,
       itemName: "Affinity",
       itemClass: "smaller",
       itemLoading: "lazy",
-      id: 20,
-    },
-    {
-      itemSrc: `img/self-portrait_7.jpg`,
-      itemName: "Self Portrait",
-      itemClass: "unclassed",
-      itemLoading: "lazy",
       id: 21,
     },
     {
-      itemSrc: `img/self-portrait_8.jpg`,
+      itemSrc: `img/self-portrait_7.jpg`,
       itemName: "Self Portrait",
       itemClass: "unclassed",
       itemLoading: "lazy",
@@ -170,6 +171,13 @@ const initApp2 = () => {
       itemClass: "unclassed",
       itemLoading: "lazy",
       id: 23,
+    },
+    {
+      itemSrc: `img/self-portrait_11.jpg`,
+      itemName: "Self Portrait",
+      itemClass: "unclassed",
+      itemLoading: "lazy",
+      id: 24,
     },
   ];
 
@@ -208,8 +216,9 @@ const initApp2 = () => {
             </div>
             `;
       body.classList.add("covered");
+
+      galleryOpenBg.id = value.itemClass;
       galleryOpenBg.classList.add("active");
-      galleryOpenBg.classList.add(`${value.itemClass}`);
       const closeBtn = galleryOpenBg.querySelector("section");
 
       closeBtn.onclick = () => {
