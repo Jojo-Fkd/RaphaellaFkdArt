@@ -36,10 +36,11 @@
 .gallery ul li {
   position: relative;
   margin-bottom: 2rem;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .gallery ul li img {
+  border-radius: 10px;
   width: 22vw;
 }
 
