@@ -96,13 +96,6 @@ const initApp2 = () => {
       id: 12,
     },
     {
-      itemSrc: `img/under-the-white-moon (2).jpeg`,
-      itemName: "Under The White Moon",
-      itemClass: "rectangle",
-      itemLoading: "lazy",
-      id: 13,
-    },
-    {
       itemSrc: `img/self-portrait_10.jpeg`,
       itemName: "Self Portrait",
       itemClass: "smaller",
