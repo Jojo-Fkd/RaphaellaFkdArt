@@ -178,8 +178,6 @@ const initApp2 = () => {
     let li = document.createElement("li");
     li.innerHTML = `
         <img id="${value.id}" oncontextmenu="return false;" draggable="false" src="${value.itemSrc}" loading="${value.itemLoading}" alt="image of ${value.itemName}" />
-        <div class="image_blur"></div>
-        <div class="image_name">${value.itemName}</div>
     `;
     li.className = value.itemClass;
     galleryContainer.appendChild(li);
@@ -234,6 +232,7 @@ const initApp2 = () => {
             const itemName = galleryOpenBg.querySelector(
               ".gallery_open_item_name span"
             );
+
             galleryOpenItem.className = `gallery_open_item ${obj.itemClass}`;
             img.id = id;
             img.src = obj.itemSrc;
