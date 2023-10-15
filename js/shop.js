@@ -5,7 +5,8 @@ const mainSection = document.querySelector("#main-content");
 const proceedPage = document.querySelector("#proceed_page");
 const popUpContainer = document.querySelector(".popup_container");
 proceedPage.style.display = "none";
-
+let clientX = 0;
+let clientY = 0;
 // ORIGINAL SHOP GENERATION AND DATA
 
 const item = document.querySelectorAll(".item");
