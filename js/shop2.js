@@ -37,7 +37,7 @@ proceedData.forEach((proceedData) => {
 
   const backBtn = proceedPage.querySelector(".back_btn");
   backBtn.onclick = () => {
-    window.close();
+    History.back();
   };
 
   // IMAGE SWITCH
@@ -73,11 +73,11 @@ proceedData.forEach((proceedData) => {
       popUpContainer.classList.add("blur");
       const backBtn = confirmationPopup.querySelector("ul li:first-child");
       backBtn.onclick = () => {
-        window.close();
+        History.back();
       };
     } else {
       alert("Item has already been added to your cart.");
-      window.close();
+      History.back();
       return;
     }
   };

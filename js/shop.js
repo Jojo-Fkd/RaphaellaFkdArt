@@ -90,7 +90,7 @@ originalShopData.forEach((value) => {
   const figure = document.createElement("figure");
   figure.innerHTML = `
             <ul class="item">
-              <a href="proceed.html" target="_blank">
+              <a href="proceed.html">
                 <li class="first_item">
                   <img oncontextmenu="return false;" draggable="false" src="${value.firstImage}" alt="image of ${value.itemName}"/>
                 </li>
