@@ -2,15 +2,12 @@ const body = document.querySelector("body");
 const proceedShopUp = document.querySelector(".proceed_dialog");
 const originalShop = document.querySelector("#original_shop");
 const mainSection = document.querySelector("#main-content");
-const proceedPage = document.querySelector("#proceed_page");
-const popUpContainer = document.querySelector(".popup_container");
-proceedPage.style.display = "none";
+
 let clientX = 0;
 let clientY = 0;
 // ORIGINAL SHOP GENERATION AND DATA
 
 const item = document.querySelectorAll(".item");
-const backBtn = proceedPage.querySelector("button");
 
 const originalShopData = [
   {
@@ -78,8 +75,6 @@ const originalShopData = [
   },
 ];
 
-const cartArr = JSON.parse(localStorage.getItem("CART")) || [];
-
 const soldOutStatus = originalShopData.every((item) => {
   return item.itemAvailability === "Sold";
 });
@@ -95,12 +90,14 @@ originalShopData.forEach((value) => {
   const figure = document.createElement("figure");
   figure.innerHTML = `
             <ul class="item">
-              <li class="first_item">
-                <img oncontextmenu="return false;" draggable="false" src="${value.firstImage}" alt="image of ${value.itemName}"/>
-              </li>
-              <li class="second_item">
-                <img oncontextmenu="return false;" draggable="false" src="${value.secondImage}" />
-              </li>
+              <a href="proceed.html" target="_blank">
+                <li class="first_item">
+                  <img oncontextmenu="return false;" draggable="false" src="${value.firstImage}" alt="image of ${value.itemName}"/>
+                </li>
+                <li class="second_item">
+                  <img oncontextmenu="return false;" draggable="false" src="${value.secondImage}" />
+                </li>
+              </a>
             </ul>
             <figcaption>
               <ul class="item_details">
@@ -126,81 +123,17 @@ originalShopData.forEach((value) => {
   // ORIGINAL SHOP ITEMS LINKAGE TO SECOND STEP OF PURCHASE
 
   figure.onclick = () => {
-    mainSection.style.display = "none";
-    proceedPage.style.display = "block";
-    const figure = document.createElement("figure");
-    figure.innerHTML = `
-        <ul class="item">
-          <li class="first_item">
-            <img oncontextmenu="return false;" draggable="false" src="${value.firstImage}" alt="image of ${value.itemName}"/>
-          </li>
-          <li class="second_item">
-            <img oncontextmenu="return false;" draggable="false" src="${value.secondImage}" />
-          </li>
-        </ul>
-        <figcaption>
-          <ul class="item_details">
-            <li class="item-name">${value.itemName}</li>
-            <li class="price">${value.itemPrice}</li>
-            <li class="value">${value.itemValue}</li>
-            <li class="date">${value.completionDate}</li>
-            <li class="availability">${value.itemAvailability}</li>
-            <div>
-              <button class="add_to_cart_btn">Add To Cart</button>
-            </div>
-          </ul>
-        </figcaption>
-    `;
-
-    if (value.itemAvailability === "Sold") {
-      const figcaptionDiv = figure.querySelector("figcaption ul div");
-      figcaptionDiv.style.display = "none";
-    }
-    proceedPage.appendChild(figure);
-    window.scrollTo(0, 0);
-    const backBtn = proceedPage.querySelector(".back_btn");
-    backBtn.onclick = () => {
-      proceedPage.removeChild(figure);
-      mainSection.style.display = "block";
-      proceedPage.style.display = "none";
-      window.scrollTo(0, 0);
-    };
-    // IMAGE SWITCH
-    const firstItem2 = figure.querySelector(".first_item img");
-
-    firstItem2.style.transition = "all 0.5s";
-    setInterval(() => {
-      firstItem2.style.opacity === "1"
-        ? (firstItem2.style.opacity = "0")
-        : (firstItem2.style.opacity = "1");
-    }, 3000);
-
-    // PROCEEDING TO SHOPPING CART
-
-    const addToCartBtn = figure.querySelector(".add_to_cart_btn");
-
-    addToCartBtn.onclick = () => {
-      let itemObj = {
-        itemImg: value.firstImage,
+    const proceedData = [
+      {
+        firstImg: value.firstImage,
+        secondImg: value.secondImage,
         itemName: value.itemName,
-        itemValue: value.itemValue,
+        itemAvailability: value.itemAvailability,
         itemPrice: value.itemPrice,
-      };
-
-      const nameCondition = cartArr.some((item) => {
-        return item.itemName === itemObj.itemName;
-      });
-      if (nameCondition === false) {
-        cartArr.push(itemObj);
-        localStorage.setItem("CART", JSON.stringify(cartArr));
-        const confirmationPopup = document.querySelector(".confirmation_popup");
-        confirmationPopup.classList.add("active");
-        popUpContainer.classList.add("blur");
-      } else {
-        alert("Item has already been added to your cart.");
-        location.reload();
-        return;
-      }
-    };
+        itemValue: value.itemValue,
+        itemCompletionDate: value.completionDate,
+      },
+    ];
+    localStorage.setItem("proceedData", JSON.stringify(proceedData));
   };
 });
