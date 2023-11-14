@@ -103,7 +103,7 @@ const initApp2 = () => {
     },
     {
       itemSrc: `img/kifu-ayin-original-piece.JPEG`,
-      itemName: "<span>(ክፉ ዓይን)</span>",
+      itemName: "Kifu Ayin <span>(ክፉ ዓይን)</span>",
       itemClass: "unclassed",
       itemLoading: "lazy",
       id: 14,

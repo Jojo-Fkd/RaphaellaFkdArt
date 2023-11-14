@@ -132,14 +132,17 @@
   }
 }
 
-/* PROCEED_PAGE */
+/* PROCEED_PAGE / EDIT SECTION (ADMIN) PAGE */
 
-#proceed_page .back_btn_container {
+#proceed_page .back_btn_container,
+#edit_section .back_btn_container {
   max-width: 100vw;
   padding: 1.2rem 4.5rem;
+  display: flex;
+  justify-content: space-between;
 }
 
-#proceed_page .back_btn {
+.back_btn_container button {
   font-family: var(--DESCRIPTION_FONT);
   font-size: 1.3rem;
   text-transform: uppercase;
@@ -149,18 +152,21 @@
   color: black;
 }
 
-#proceed_page figure {
+#proceed_page figure,
+#edit_section figure {
   display: flex;
   padding: 0 4.5rem;
   gap: 2rem;
 }
 
-#proceed_page .item {
+#proceed_page .item,
+#edit_section .item {
   width: 50vw;
   aspect-ratio: 3 / 4;
 }
 
-#proceed_page .item_details {
+#proceed_page .item_details,
+#edit_section .item_details {
   display: flex;
   gap: 0.5em;
   flex-direction: column;
@@ -168,18 +174,25 @@
   width: 40vw;
 }
 
-#proceed_page .item-name {
+#proceed_page .item-name,
+#edit_section .item-name div {
   font-size: 3.8rem;
   font-family: var(--DESCRIPTION_FONT);
+  display: flex;
+  align-items: flex-end;
 }
 
 #proceed_page .price,
 #proceed_page .value,
-#proceed_page .date {
+#proceed_page .date,
+#edit_section .price,
+#edit_section .value,
+#edit_section .date {
   display: block;
 }
 
-#proceed_page .price {
+#proceed_page .price,
+#edit_section .price {
   font-family: var(--PRICE_FONT);
   font-size: 1.7rem;
   font-weight: lighter;
@@ -189,19 +202,27 @@
 
 #proceed_page .availability,
 #proceed_page .value,
-#proceed_page .date {
+#proceed_page .date,
+#edit_section .availability,
+#edit_section .value,
+#edit_section .date {
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
 #proceed_page .availability,
 #proceed_page .value,
-#proceed_page .date {
+#proceed_page .date,
+#edit_section .availability,
+#edit_section .value,
+#edit_section .date {
   margin-bottom: 1rem;
 }
 
 #proceed_page .value,
-#proceed_page .date {
+#proceed_page .date,
+#edit_section .value,
+#edit_section .date {
   font-family: var(--DESCRIPTION_FONT);
 }
 
@@ -254,22 +275,26 @@
 /* ADD TO CART PAGE RESPONSIVE DESIGN */
 
 @media screen and (max-width: 990px) {
-  #proceed_page .back_btn_container {
+  #proceed_page .back_btn_container,
+  #edit_section .back_btn_container {
     padding: 1rem 2.5rem;
   }
 
-  #proceed_page figure {
+  #proceed_page figure,
+  #edit_section figure {
     display: flex;
     gap: 1.5rem;
     padding: 0 2.5rem;
     justify-content: space-evenly;
   }
 
-  #proceed_page .item {
+  #proceed_page .item,
+  #edit_section .item {
     width: 60vw;
   }
 
-  #proceed_page .item-name {
+  #proceed_page .item-name,
+  #edit_section .item-name {
     font-size: 2.9rem;
     white-space: nowrap;
   }
@@ -277,30 +302,31 @@
   #proceed_page .availability,
   #proceed_page .value,
   #proceed_page .date,
-  #proceed_page .price {
+  #proceed_page .price,
+  #edit_section .availability,
+  #edit_section .value,
+  #edit_section .date,
+  #edit_section .price {
     font-size: 1.4rem;
-  }
-
-  #proceed_page .purchase {
-    width: 170px;
-    height: 40px;
-    font-size: 1.1rem;
   }
 }
 
 @media screen and (max-width: 800px) {
-  #proceed_page figure {
+  #proceed_page figure,
+  #edit_section figure {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
 
-  #proceed_page .item {
+  #proceed_page .item,
+  #edit_section .item {
     width: 60vw;
   }
 
-  #proceed_page figcaption {
+  #proceed_page figcaption,
+  #edit_section figcaption {
     width: 60vw;
     transform: translateX(-15px);
   }
@@ -309,20 +335,30 @@
   #proceed_page .availability,
   #proceed_page .price,
   #proceed_page .value,
-  #proceed_page .date {
+  #proceed_page .date,
+  #edit_section .item-name,
+  #edit_section .availability,
+  #edit_section .price,
+  #edit_section .value,
+  #edit_section .date {
     width: 80vw;
   }
 }
 
 @media screen and (max-width: 755px) {
-  #proceed_page .item-name {
+  #proceed_page .item-name,
+  #edit_section .item-name {
     font-size: 2.3rem;
   }
 
   #proceed_page .availability,
   #proceed_page .value,
   #proceed_page .date,
-  #proceed_page .price {
+  #proceed_page .price,
+  #edit_section .availability,
+  #edit_section .value,
+  #edit_section .date,
+  #edit_section .price {
     font-size: 1.2rem;
   }
 }
@@ -340,22 +376,29 @@
 }
 
 @media screen and (max-width: 460px) {
-  #proceed_page .back_btn_container {
+  #proceed_page .back_btn_container,
+  #edit_section .back_btn_container {
     padding: 1rem;
   }
 
-  #proceed_page .item {
+  #proceed_page .item,
+  #edit_section .item {
     width: 90vw;
   }
 
-  #proceed_page figcaption {
+  #proceed_page figcaption,
+  #edit_section figcaption {
     width: 90vw;
   }
 
   #proceed_page .item-name,
   #proceed_page .availability,
   #proceed_page .value,
-  #proceed_page .date {
+  #proceed_page .date,
+  #edit_section .item-name,
+  #edit_section .availability,
+  #edit_section .value,
+  #edit_section .date {
     width: 90vw;
   }
 }

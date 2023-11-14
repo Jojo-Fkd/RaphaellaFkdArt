@@ -1,7 +1,7 @@
 window.scrollTo(0, 0);
 
 let cartArr = JSON.parse(localStorage.getItem("CART")) || [];
-console.log(cartArr);
+
 let checkOutArr = JSON.parse(localStorage.getItem("checkOutArr"));
 
 const emptyCondition = document.querySelector(".empty_condition");
