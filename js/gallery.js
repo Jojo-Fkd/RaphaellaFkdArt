@@ -222,7 +222,7 @@ const initApp2 = () => {
       if (id === 1) {
         preBtn.style.opacity = "0.4";
       }
-      if (id === 23) {
+      if (id === 20) {
         nextBtn.style.opacity = "0.4";
       }
       preBtn.onclick = () => {

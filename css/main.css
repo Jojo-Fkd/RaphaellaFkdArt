@@ -89,7 +89,7 @@ body.covered {
 }
 
 .popup_container.blur {
-  z-index: 1000;
+  z-index: 10000;
   opacity: 1;
 }
 
