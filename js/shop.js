@@ -91,6 +91,15 @@ const originalShopData = [
     completionDate: "2023",
     itemAvailability: "Available",
   },
+  {
+    firstImage: `img/untitled-original-piece.jpeg`,
+    secondImage: `img/untitled-original-piece-2.jpeg`,
+    itemName: "Untitled",
+    itemPrice: "ETB 2,500",
+    itemValue: "30 x 30 cm Image Transfer On Canvas.",
+    completionDate: "2023",
+    itemAvailability: "Available",
+  },
 ];
 
 const soldOutStatus = originalShopData.every((item) => {
