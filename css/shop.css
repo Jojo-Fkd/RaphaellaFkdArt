@@ -259,7 +259,6 @@
   gap: 0.5em;
   flex-direction: column;
   align-items: unset;
-  border: 1px solid;
 }
 
 #proceed_page .item-name {
