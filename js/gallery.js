@@ -11,144 +11,82 @@ const initApp2 = () => {
 
   const galleryItemData = [
     {
-      itemSrc: `img/brothers.jpeg`,
-      itemName: "Brothers",
-      itemClass: "unclassed",
+      itemSrc: `original-images/end-time-original-gallery.jpeg`,
+      itemName: "End Times",
       itemLoading: "eager",
       id: 1,
     },
     {
-      itemSrc: `img/end-time-original-gallery.jpeg`,
-      itemName: "End Times",
-      itemClass: "square",
+      itemSrc: `original-images/eye-buoquet-in-a-vase.jpeg`,
+      itemName: "Eye Bouquet in a vase",
       itemLoading: "eager",
       id: 2,
     },
     {
-      itemSrc: `img/eye-buoquet-in-a-vase.jpeg`,
-      itemName: "Eye Bouquet in a vase",
-      itemClass: "unclassed",
-      itemLoading: "eager",
+      itemSrc: `original-images/the-silenced-queen-original-piece.jpeg`,
+      itemName: "The Silenced Queen",
+      itemLoading: "lazy",
       id: 3,
     },
     {
-      itemSrc: `img/the-silenced-queen-original-piece.jpeg`,
-      itemName: "The Silenced Queen",
-      itemClass: "unclassed",
+      itemSrc: `original-images/forever-flower.jpeg`,
+      itemName: "Forever Flower",
       itemLoading: "lazy",
       id: 4,
     },
     {
-      itemSrc: `img/forever-flower.jpeg`,
-      itemName: "Forever Flower",
-      itemClass: "unclassed",
+      itemSrc: `original-images/self-portrait_1.jpeg`,
+      itemName: "Self Portrait",
       itemLoading: "lazy",
       id: 5,
     },
     {
-      itemSrc: `img/self-portrait_1.jpeg`,
+      itemSrc: `original-images/self-portrait_2.jpeg`,
       itemName: "Self Portrait",
-      itemClass: "unclassed",
       itemLoading: "lazy",
       id: 6,
     },
     {
-      itemSrc: `img/self-portrait_2.jpeg`,
+      itemSrc: `original-images/self-portrait_3.jpeg`,
       itemName: "Self Portrait",
-      itemClass: "unclassed",
       itemLoading: "lazy",
       id: 7,
     },
     {
-      itemSrc: `img/self-portrait_3.jpeg`,
-      itemName: "Self Portrait",
-      itemClass: "unclassed",
+      itemSrc: `original-images/the-three-maidens-original-piece.jpeg`,
+      itemName: "The Three Maidens",
       itemLoading: "lazy",
       id: 8,
     },
     {
-      itemSrc: `img/self_portrait_4.JPEG`,
-      itemName: "Self Portrait",
-      itemClass: "unclassed",
+      itemSrc: `original-images/kifu-ayin-original-piece.JPEG`,
+      itemName: "Kifu Ayin <span>(ክፉ ዓይን)</span>",
       itemLoading: "lazy",
       id: 9,
     },
     {
-      itemSrc: `img/the-three-maidens-original-piece.jpeg`,
-      itemName: "The Three Maidens",
-      itemClass: "unclassed",
+      itemSrc: `original-images/damsel-in-distress-original-piece.JPEG`,
+      itemName: "Damsel In Distress",
       itemLoading: "lazy",
       id: 10,
     },
     {
-      itemSrc: `img/self-portrait_10.jpeg`,
-      itemName: "Self Portrait",
-      itemClass: "smaller",
+      itemSrc: `original-images/aynamawa-original-piece-gallery.jpeg`,
+      itemName: "Aynamawa <span>(ኣይናማዋ)",
       itemLoading: "lazy",
       id: 11,
     },
     {
-      itemSrc: `img/self-portrait_5.jpeg`,
-      itemName: "Self Portrait",
-      itemClass: "unclassed",
+      itemSrc: `original-images/affinity.jpeg`,
+      itemName: "Affinity",
       itemLoading: "lazy",
       id: 12,
     },
     {
-      itemSrc: `img/self-portrait_6.JPEG`,
-      itemName: "Self Portrait",
-      itemClass: "unclassed",
+      itemSrc: `original-images/gemboye-original.jpeg`,
+      itemName: "Gemboye <span>(ገምቦዬ)</span>",
       itemLoading: "lazy",
       id: 13,
-    },
-    {
-      itemSrc: `img/kifu-ayin-original-piece.JPEG`,
-      itemName: "Kifu Ayin <span>(ክፉ ዓይን)</span>",
-      itemClass: "unclassed",
-      itemLoading: "lazy",
-      id: 14,
-    },
-    {
-      itemSrc: `img/damsel-in-distress-original-piece.JPEG`,
-      itemName: "Damsel In Distress",
-      itemClass: "unclassed",
-      itemLoading: "lazy",
-      id: 15,
-    },
-    {
-      itemSrc: `img/self-portrait_8.jpg`,
-      itemName: "Self Portrait",
-      itemClass: "unclassed",
-      itemLoading: "lazy",
-      id: 16,
-    },
-    {
-      itemSrc: `img/aynamawa-original-piece-gallery.jpeg`,
-      itemName: "Aynamawa <span>(ኣይናማዋ)",
-      itemClass: "square",
-      itemLoading: "lazy",
-      id: 17,
-    },
-    {
-      itemSrc: `img/affinity.jpeg`,
-      itemName: "Affinity",
-      itemClass: "smaller",
-      itemLoading: "lazy",
-      id: 18,
-    },
-    {
-      itemSrc: `img/self-portrait_7.jpg`,
-      itemName: "Self Portrait",
-      itemClass: "unclassed",
-      itemLoading: "lazy",
-      id: 19,
-    },
-    {
-      itemSrc: `img/gemboye-original.jpeg`,
-      itemName: "Gemboye <span>(ገምቦዬ)</span>",
-      itemClass: "unclassed",
-      itemLoading: "lazy",
-      id: 20,
     },
   ];
 
@@ -157,36 +95,21 @@ const initApp2 = () => {
     li.innerHTML = `
         <img id="${value.id}" oncontextmenu="return false;" draggable="false" src="${value.itemSrc}" loading="${value.itemLoading}" alt="image of ${value.itemName}" />
     `;
-    li.className = value.itemClass;
     galleryContainer.appendChild(li);
-    li.addEventListener("mouseover", () => {
-      li.classList.add("active");
-      setTimeout(() => {
-        li.classList.remove("active");
-      }, 3000);
-    });
-    li.addEventListener("mouseout", () => {
-      li.classList.remove("active");
-    });
     li.onclick = () => {
       galleryOpenBg.innerHTML = `
             <section>
                 <div class="gallery_close_btn"></div>
             </section>
-            <div class="pre_container">
               <button id="previous">Previous</button>
-            </div>
-            <div class="gallery_open_item ${value.itemClass}">
+            <div class="gallery_open_item">
               <img id="${value.id}" oncontextmenu="return false;" draggable="false" loading="lazy" alt="image of ${value.itemSrc}" src="${value.itemSrc}" />
-              <div class="gallery_open_item_name"><span>${value.itemName}</span></div>
+              <div class="gallery_open_item_name">${value.itemName}</div>
             </div>
-            <div class="next_container">
               <button id="next">Next</button>
-            </div>
             `;
       body.classList.add("covered");
 
-      galleryOpenBg.id = value.itemClass;
       galleryOpenBg.classList.add("active");
       const closeBtn = galleryOpenBg.querySelector("section");
 
@@ -204,14 +127,11 @@ const initApp2 = () => {
         });
         if (idCheck) {
           idCheck.forEach((obj) => {
-            const galleryOpenItem =
-              galleryOpenBg.querySelector(".gallery_open_item");
             const img = galleryOpenBg.querySelector("img");
             const itemName = galleryOpenBg.querySelector(
-              ".gallery_open_item_name span"
+              ".gallery_open_item .gallery_open_item_name"
             );
 
-            galleryOpenItem.className = `gallery_open_item ${obj.itemClass}`;
             img.id = id;
             img.src = obj.itemSrc;
             itemName.innerHTML = obj.itemName;

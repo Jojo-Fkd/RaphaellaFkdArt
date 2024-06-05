@@ -3,19 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Second step of purchase" />
-    <meta property="title" content="Proceed - Raphaella Fkd Art" />
+    <meta
+      name="description"
+      content="Shop page where artist's original artworks are displayed for sale"
+    />
+    <meta property="title" content="Originals Shop - Raphaella Fkd Art" />
     <meta name="author" content="JFKD" />
-    <title>Originals - Raphaella Fkd Art</title>
+    <title>Shop - Raphaella Fkd Art</title>
     <link rel="icon" href="img/raphaella-logo.JPEG" />
     <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/originals.css" />
-    <script defer src="js/script.js"></script>
-    <script defer src="js/shop2.js"></script>
+    <link rel="stylesheet" href="css/shop.css" />
+    <script defer src="js/main.js"></script>
+    <script defer src="js/shop.js"></script>
+    <script defer src="js/originals.js"></script>
+    <script defer src="js/sketchbooks.js"></script>
+    <script defer src="js/stickers.js"></script>
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
     ></script>
+
     <script type="text/javascript">
       emailjs.init("ZUDnRYEvqyg-8BU2F");
     </script>
@@ -23,7 +30,7 @@
   <body>
     <nav id="navigation">
       <h1 class="logo">
-        <a href="index.html" aria-label="Link to home page"
+        <a href="index.html" aria-label="link to gallery"
           ><img width="90px" src="img/raphaella-logo.JPEG" alt="company_logo" />
           <img
             width="115px"
@@ -33,75 +40,44 @@
         </a>
       </h1>
       <ul class="nav-elements">
-        <li>Shop</li>
         <li>
-          <a href="index.html" aria-label="link to home page">Gallery</a>
+          <a href="index.html" aria-label="link to gallery">Gallery</a>
+          <div class="indicator"></div>
+        </li>
+        <li class="page">
+          <a href="shop.html" aria-label="link to shop">Shop</a>
+          <div class="indicator"></div>
         </li>
         <li>
           <a href="about.html" aria-label="link to about page">About</a>
+          <div class="indicator"></div>
         </li>
         <li>
-          <a href="cart.html" aria-label="shopping cart link">Cart</a>
-          <sub class="cart_amount"></sub>
+          <a href="contact.html">Contact</a>
+          <div class="indicator"></div>
         </li>
-      </ul>
-      <section id="main_nav_mobile">
-        <a class="cart_icon" href="cart.html" aria-label="shopping cart link">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="1.5rem"
-            viewBox="0 0 576 512"
+        <li>
+          <a
+            class="cart_icon"
+            href="cart.html"
+            aria-label="link to shopping cart"
           >
-            <path
-              d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
-            />
-          </svg>
-          <sub class="cart_amount"></sub>
-        </a>
-        <div class="side_bar_container">
-          <div class="side_bar_icon_container">
-            <div class="side_bar_icon"></div>
-          </div>
-          <div class="side_bar_close_container">
-            <div class="side_bar_close"></div>
-          </div>
-        </div>
-      </section>
-      <ul class="side_bar_elements">
-        <li>
-          <a href="originals.html" aria-label="link to original arts shop"
-            >Originals</a
-          >
-        </li>
-        <li>
-          <a href="prints.html" aria-label="link to print arts shop">Prints</a>
-        </li>
-        <li><a href="index.html" aria-label="link to home page">Gallery</a></li>
-        <li>
-          <a href="about.html" aria-label="link to about page">About</a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="1.5rem"
+              viewBox="0 0 576 512"
+            >
+              <path
+                d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+              />
+            </svg>
+            <sub class="cart_amount"></sub>
+            <div class="indicator"></div>
+          </a>
         </li>
       </ul>
     </nav>
     <div class="popup_container">
-      <section class="shopping-option_popup shop_popup">
-        <button class="back_btn">Back</button>
-        <header>
-          <h3>Shop</h3>
-          <div class="styler"></div>
-        </header>
-        <ul>
-          <li>
-            <a href="originals.html" aria-label="link to original arts shop"
-              >Originals</a
-            >
-          </li>
-          <li>
-            <a href="prints.html" aria-label="link to print arts shop"
-              >Prints</a
-            >
-          </li>
-        </ul>
-      </section>
       <section class="shopping-option_popup confirmation_popup">
         <header>
           <h3>Item Added</h3>
@@ -109,13 +85,11 @@
         </header>
         <ul>
           <li>
-            <a href="originals.html">Back To Shopping</a>
-          </li>
-          <li>
             <a href="cart.html" aria-label="link to shopping cart"
               >Go To Cart</a
             >
           </li>
+          <li class="ok-btn">Ok</li>
         </ul>
       </section>
       <!-- FOOTER SIGN UP POPUPS -->
@@ -139,14 +113,49 @@
       </section>
     </div>
 
-    <!-- PROCEED SECTION -->
+    <!-- SHOP CONTENT -->
+
+    <!-- PROCEED PAGE -->
 
     <section id="proceed_page">
-      <div class="back_btn_container">
-        <button class="back_btn">Back</button>
+      <div class="close-btn">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="30px"
+          height="30px"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="var(--BTNCOLOR)"
+            d="m13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29l-4.3 4.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0l4.29-4.3l4.29 4.3a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.42Z"
+          />
+        </svg>
       </div>
       <figure></figure>
     </section>
+
+    <main id="main-content">
+      <article class="shop-head">
+        <ul>
+          <li class="stickers">
+            Stickers
+            <div class="indicator"></div>
+          </li>
+          <li class="originals active">
+            Originals
+            <div class="indicator"></div>
+          </li>
+          <li class="sketchbooks">
+            Sketchbooks
+            <div class="indicator"></div>
+          </li>
+        </ul>
+      </article>
+      <section class="sectors" id="stickers"></section>
+      <section class="sectors" id="originals"></section>
+      <section class="sectors" id="sketchbooks"></section>
+    </main>
+    <!-- PROCEED PAGE (SECOND STEP OF PURCHASE) -->
 
     <footer>
       <section id="footer_section">

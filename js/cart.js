@@ -38,20 +38,28 @@ for (let i = 0; i < cartArr.length; i++) {
             <ul>
               <li class="cartItem-name">${obj.itemName}</li>
               <li class="cartItem-description">
-                ${obj.itemValue}
+                ${obj.itemValue}, ${obj.itemAmount}
               </li>
             </ul>
             <ul>
               <li class="cartItem-price">${obj.itemPrice}</li>
               <li class="delete_btn">
-                <span></span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30px"
+                  height="30px"
+                  viewBox="0 0 24 24"
+                >
+                <path 
+                fill="var(--BTNCOLOR)"
+                d="m13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29l-4.3 4.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0l4.29-4.3l4.29 4.3a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.42Z"
+                />
               </li>
             </ul>
         </figcaption>
   `;
 
   shoppingCartContainer.appendChild(figure);
-
   const cancelBtn = figure.querySelector(".delete_btn");
   cancelBtn.onclick = () => {
     cartArr.splice(i, 1);
@@ -69,23 +77,7 @@ for (let i = 0; i < cartArr.length; i++) {
   checkOutPrice += addedPriceFinal;
 
   checkOutPriceContainer.innerText = Number(checkOutPrice);
+  pageState();
 }
-
-/* EMPTY CONDITION BUTTON TO SHOP LINKAGE */
-
-const popUpContainer = document.querySelector(".popup_container");
-const popup = document.querySelector(".shop_popup");
-const backBtn = popup.querySelector(".back_btn");
-
-const goShoppingBtn = document.querySelector(".empty_condition button");
-
-goShoppingBtn.onclick = () => {
-  popup.classList.add("active");
-  popUpContainer.classList.add("blur");
-  backBtn.onclick = () => {
-    popup.classList.remove("active");
-    popUpContainer.classList.remove("blur");
-  };
-};
 
 pageState();
