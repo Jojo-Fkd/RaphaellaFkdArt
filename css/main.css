@@ -50,18 +50,6 @@ button {
   outline-color: none;
 }
 
-::-webkit-scrollbar {
-  width: 15px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--BACKGROUND);
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.5);
-}
-
 body.covered {
   overflow: hidden;
 }
