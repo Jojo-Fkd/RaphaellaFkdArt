@@ -11,7 +11,7 @@ sortNavs.forEach((navs) => {
     sectors.forEach((sector) => {
       sector.style.display = "none";
       if (navType[0] === sector.id) {
-        sector.style.display = "flex";
+        sector.style.display = "grid";
       }
     });
   };
@@ -19,7 +19,7 @@ sortNavs.forEach((navs) => {
   sectors.forEach((sector) => {
     if (navs.classList.value === `${navType[0]} active`) {
       if (navType[0] === sector.id) {
-        sector.style.display = "flex";
+        sector.style.display = "grid";
       } else {
         sector.style.display = "none";
       }

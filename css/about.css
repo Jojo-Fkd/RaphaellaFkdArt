@@ -1,9 +1,9 @@
 .about_container {
-  margin-top: 3rem;
   display: flex;
   gap: 2rem;
   justify-content: space-between;
-  padding: 2rem;
+  align-items: flex-start;
+  padding: 1rem 2rem;
 }
 
 .about_container h3 {
@@ -53,7 +53,7 @@
 
 .about_container img {
   position: relative;
-  width: 600px;
+  width: 500px;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   animation: expand 1.4s ease;
@@ -84,45 +84,46 @@
 /* ABOUT PAGE RESPONSIVE DESIGN */
 
 @media screen and (max-width: 990px) {
-  #main-content article h3 {
-    font-size: 2rem;
-  }
-
-  #main-content article p {
-    font-size: 1.2rem;
-  }
-
-  .about-image {
-    width: 50vw;
-  }
-}
-
-@media screen and (max-width: 650px) {
   .about_container {
-    flex-flow: column-reverse;
-    align-items: center;
-    justify-content: center;
+    gap: 1.8rem;
+    padding: 2rem;
   }
 
-  .about-image {
-    width: 80vw;
+  .about_container h3 {
+    font-size: 2.5rem;
+    margin-bottom: 0.7rem;
   }
 
-  #main-content article {
-    width: 80vw;
+  .about_container p {
+    font-size: 1.3rem;
+    line-height: 1.5;
+  }
+
+  .about_container img {
+    width: 400px;
   }
 }
 
-@media screen and (max-width: 372px) {
-  #main-content article h3 {
-    font-size: 1.6rem;
+@media screen and (max-width: 860px) {
+  .about_container {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .about_container {
+    padding: 1rem;
   }
 
-  #main-content article p {
-    font-size: 1rem;
-    line-height: 30px;
-    animation: appearp 1.4s ease;
-    color: #6a2828;
+  .about_container img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .about_container h3 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
   }
 }
 

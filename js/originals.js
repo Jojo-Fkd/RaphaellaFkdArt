@@ -1,4 +1,3 @@
-const body = document.querySelector("body");
 const proceedShopUp = document.querySelector(".proceed_dialog");
 const originalShop = document.querySelector("#originals");
 const mainSection = document.querySelector("#main-content");
@@ -144,6 +143,7 @@ originalShopData.forEach((value) => {
 
   figure.onclick = () => {
     proceedPage.classList.add("active");
+    body.classList.add("covered");
     const figure = proceedPage.querySelector("figure");
     figure.innerHTML = `
         <ul class="item">
@@ -173,6 +173,7 @@ originalShopData.forEach((value) => {
     proceedPage.querySelector(".close-btn").onclick = () => {
       proceedPage.classList.remove("active");
       figure.classList.remove("active");
+      body.classList.remove("covered");
     };
 
     if (value.itemAvailability === "Sold") {

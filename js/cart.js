@@ -31,6 +31,7 @@ const pageState = () => {
 
 for (let i = 0; i < cartArr.length; i++) {
   let obj = cartArr[i];
+
   const figure = document.createElement("figure");
   figure.innerHTML = `
         <img oncontextmenu="return false;" draggable="false" src="${obj.itemImg}" alt="image of ${obj.itemName}" />
@@ -58,6 +59,12 @@ for (let i = 0; i < cartArr.length; i++) {
             </ul>
         </figcaption>
   `;
+
+  if (obj.itemAmount === undefined) {
+    figure.querySelector(
+      "figcaption ul li.cartItem-description"
+    ).innerHTML = `${obj.itemValue}`;
+  }
 
   shoppingCartContainer.appendChild(figure);
   const cancelBtn = figure.querySelector(".delete_btn");

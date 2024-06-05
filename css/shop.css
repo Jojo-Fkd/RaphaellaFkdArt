@@ -50,15 +50,35 @@
   opacity: 1;
 }
 
+@media screen and (max-width: 680px) {
+  .shop-head ul li {
+    width: 150px;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .shop-head ul li {
+    flex-direction: column-reverse;
+    width: 100px;
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 365px) {
+  .shop-head ul li {
+    width: 80px;
+    font-size: 1rem;
+  }
+}
+
 /* ORIGINAL WORKS SECTOR */
 
 #stickers,
 #originals,
 #sketchbooks {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   padding: 0 1rem;
   padding-top: 2rem;
@@ -68,7 +88,7 @@
 
 .item {
   position: relative;
-  width: 30vw;
+  width: 100%;
   aspect-ratio: 3 / 4;
   border-radius: 10px;
   overflow: hidden;
@@ -116,6 +136,7 @@
 .item-name {
   font-size: 2rem;
   font-family: var(--DESCRIPTION_FONT);
+  text-align: center;
 }
 
 .item-name span {
@@ -132,29 +153,25 @@
   font-family: var(--PRICE_FONT);
 }
 
-/* MAIN CONTENT ITEMS RESPONSIVE DESIGN */
-
-@media screen and (max-width: 955px) {
-  .item {
-    width: 45vw;
+@media screen and (max-width: 750px) {
+  #stickers,
+  #originals,
+  #sketchbooks {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-@media screen and (max-width: 610px) {
-  .item {
-    width: 80vw;
+@media screen and (max-width: 450px) {
+  #stickers,
+  #originals,
+  #sketchbooks {
+    grid-template-columns: 1fr;
   }
 }
 
-@media screen and (max-width: 430px) {
-  .item-name {
-    font-size: 1.6rem;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .item {
-    width: 90vw;
+@media screen and (max-width: 380px) {
+  .item_details .item-name {
+    font-size: 1.4rem;
   }
 }
 
@@ -169,16 +186,19 @@
   display: flex;
   gap: 1rem;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   backdrop-filter: blur(5px);
   opacity: 0;
   z-index: -1;
   transition: all 0.3s ease;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-left: 1rem;
 }
 
 #proceed_page.active {
   opacity: 1;
-  z-index: 10;
+  z-index: 100;
 }
 
 #proceed_page .close-btn {
@@ -194,14 +214,18 @@
 
 #proceed_page figure {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
   gap: 2rem;
-  height: 100%;
-  width: 80%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 90%;
   background: var(--BACKGROUND);
   border-left: 1px solid var(--BTNCOLOR);
   padding: 1rem;
-  transform: translateX(100%);
+  transform: translateX(50%);
   transition: all 0.6s ease;
   z-index: 100;
 }
@@ -211,10 +235,23 @@
 }
 
 #proceed_page .item {
-  width: 400px;
-  object-fit: fill;
   position: relative;
-  align-self: center;
+  width: 400px;
+  aspect-ratio: 3 / 4;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#proceed_page .item li img {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  transition: all 0.4s ease;
+  animation: appear ease 0.6s;
+  object-fit: cover;
 }
 
 #proceed_page .item_details {
@@ -222,6 +259,7 @@
   gap: 0.5em;
   flex-direction: column;
   align-items: unset;
+  border: 1px solid;
 }
 
 #proceed_page .item-name {
@@ -229,6 +267,7 @@
   font-family: var(--DESCRIPTION_FONT);
   display: flex;
   align-items: flex-end;
+  text-align: left;
 }
 
 #proceed_page .price {
@@ -281,4 +320,66 @@
   border: 1.5px solid var(--BTNCOLOR);
   background: transparent;
   color: var(--BTNCOLOR);
+}
+
+@media screen and (max-width: 990px) {
+  #proceed_page figure .item {
+    width: 360px;
+  }
+
+  #proceed_page .item-name {
+    font-size: 3.4rem;
+  }
+
+  #proceed_page .price {
+    font-size: 1.4rem;
+  }
+
+  #proceed_page .availability,
+  #proceed_page .value,
+  #proceed_page .date {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 610px) {
+  #proceed_page {
+    padding-left: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  #proceed_page figure {
+    justify-content: center;
+    width: 80%;
+  }
+
+  #proceed_page figure .item {
+    width: 320px;
+  }
+
+  #proceed_page .item-name {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  #proceed_page .price {
+    font-size: 1.2rem;
+  }
+
+  #proceed_page .availability,
+  #proceed_page .value,
+  #proceed_page .date {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  #proceed_page figure .item {
+    width: 100%;
+  }
+
+  #proceed_page .item-name {
+    font-size: 2.5rem;
+  }
 }

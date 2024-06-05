@@ -114,8 +114,8 @@ bookShopData.forEach((value) => {
             </ul>
             <figcaption>
               <ul class="item_details">
-                <li style="font-weight: bolder" class="english item-name">
-                  ${value.itemName} ~ ${value.itemSize}
+                <li style="font-weight: bolder" class="item-name">
+                  ${value.itemName} <br/> ~ ${value.itemSize}
                 </li>
                 <li class="availability">${value.itemAvailability} ~ ${value.itemPrice}</li> 
               </ul>
