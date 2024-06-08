@@ -3,7 +3,7 @@ const stickersShop = document.querySelector("#stickers");
 const stickerShopData = [
   {
     firstImage: `sticker-images/sticker-1-display.JPEG`,
-    secondImage: `sticker-images/sticker-1.JPG`,
+    secondImage: `sticker-images/sticker-1.JPEG`,
     itemName: "Untitled",
     itemPrice: ["ETB 75", "ETB 90"],
     itemSize: "small / large",
@@ -14,7 +14,7 @@ const stickerShopData = [
   },
   {
     firstImage: `sticker-images/sticker-2-display.JPEG`,
-    secondImage: `sticker-images/sticker-2.JPG`,
+    secondImage: `sticker-images/sticker-2.JPEG`,
     itemName: "Untitled",
     itemPrice: ["ETB 75", "ETB 90"],
     itemSize: "small / large",
@@ -25,7 +25,7 @@ const stickerShopData = [
   },
   {
     firstImage: `sticker-images/sticker-3-display.JPEG`,
-    secondImage: `sticker-images/sticker-3.JPG`,
+    secondImage: `sticker-images/sticker-3.JPEG`,
     itemName: "Untitled",
     itemPrice: ["ETB 75", "ETB 90"],
     itemSize: "small / large",
@@ -36,7 +36,7 @@ const stickerShopData = [
   },
   {
     firstImage: `sticker-images/sticker-4-display.JPEG`,
-    secondImage: `sticker-images/sticker-4.JPG`,
+    secondImage: `sticker-images/sticker-4.JPEG`,
     itemName: "Eye bouquet in a vase",
     itemPrice: ["ETB 75", "ETB 90"],
     itemSize: "small / large",
@@ -47,7 +47,7 @@ const stickerShopData = [
   },
   {
     firstImage: `sticker-images/sticker-5-display.JPEG`,
-    secondImage: `sticker-images/sticker-5.JPG`,
+    secondImage: `sticker-images/sticker-5.JPEG`,
     itemName: "Preety eyes",
     itemPrice: ["ETB 75", "ETB 90"],
     itemSize: "small / large",
@@ -58,7 +58,7 @@ const stickerShopData = [
   },
   {
     firstImage: `sticker-images/sticker-7-display.JPEG`,
-    secondImage: `sticker-images/sticker-7.JPG`,
+    secondImage: `sticker-images/sticker-7.JPEG`,
     itemName: "yin",
     itemPrice: ["ETB 75", "ETB 90"],
     itemSize: "small / large",
@@ -69,7 +69,7 @@ const stickerShopData = [
   },
   {
     firstImage: `sticker-images/sticker-6-display.JPEG`,
-    secondImage: `sticker-images/sticker-6.JPG`,
+    secondImage: `sticker-images/sticker-6.JPEG`,
     itemName: "yang",
     itemPrice: ["ETB 75", "ETB 90"],
     itemSize: "small / large",
@@ -80,7 +80,7 @@ const stickerShopData = [
   },
   {
     firstImage: `sticker-images/sticker-8-display.JPEG`,
-    secondImage: `sticker-images/sticker-8.JPG`,
+    secondImage: `sticker-images/sticker-8.JPEG`,
     itemName: "untitled",
     itemPrice: ["ETB 75", "ETB 90"],
     itemSize: "small / large",
@@ -91,7 +91,7 @@ const stickerShopData = [
   },
   {
     firstImage: `sticker-images/sticker-9-display.JPEG`,
-    secondImage: `sticker-images/sticker-9.JPG`,
+    secondImage: `sticker-images/sticker-9.JPEG`,
     itemName: "untitled",
     itemPrice: ["ETB 75", "ETB 90"],
     itemSize: "small / large",
@@ -102,7 +102,7 @@ const stickerShopData = [
   },
   {
     firstImage: `sticker-images/sticker-10-display.JPEG`,
-    secondImage: `sticker-images/sticker-10.JPG`,
+    secondImage: `sticker-images/sticker-10.JPEG`,
     itemName: "untitled",
     itemPrice: ["ETB 75", "ETB 90"],
     itemSize: "small / large",
@@ -113,7 +113,7 @@ const stickerShopData = [
   },
   {
     firstImage: `sticker-images/sticker-11-display.JPEG`,
-    secondImage: `sticker-images/sticker-11.JPG`,
+    secondImage: `sticker-images/sticker-11.JPEG`,
     itemName: "Blossom",
     itemPrice: ["ETB 75", "ETB 90"],
     itemSize: "small / large",
@@ -124,7 +124,7 @@ const stickerShopData = [
   },
   {
     firstImage: `sticker-images/sticker-12-display.JPEG`,
-    secondImage: `sticker-images/sticker-12.JPG`,
+    secondImage: `sticker-images/sticker-12.JPEG`,
     itemName: "Untitled",
     itemPrice: ["ETB 75", "ETB 90"],
     itemSize: "small / large",

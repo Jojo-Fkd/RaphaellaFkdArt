@@ -416,6 +416,12 @@ body {
   background: var(--BACKGROUND);
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--BACKGROUND);
+  }
+}
+
 /* NAVIGATION STYLES */
 
 #navigation {

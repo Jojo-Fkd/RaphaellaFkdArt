@@ -15,7 +15,7 @@ const bookShopData = [
   },
   {
     firstImage: `sketchbook-images/sketchbook-2.JPEG`,
-    secondImage: `sketchbook-images/sketchbook-2-open.JPG`,
+    secondImage: `sketchbook-images/sketchbook-2-open.JPEG`,
     itemName: "Sketchbook",
     itemPrice: "ETB 800",
     itemSize: "12 x 17cm",
@@ -63,7 +63,7 @@ const bookShopData = [
   },
   {
     firstImage: `sketchbook-images/sketchbook-6.JPEG`,
-    secondImage: `sketchbook-images/sketchbook-6-open.JPG`,
+    secondImage: `sketchbook-images/sketchbook-6-open.JPEG`,
     itemName: "Sketchbook",
     itemPrice: "ETB 200",
     itemSize: "8 x 12cm",
