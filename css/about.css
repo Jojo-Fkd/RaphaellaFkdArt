@@ -54,7 +54,6 @@
 .about_container img {
   position: relative;
   width: 500px;
-  aspect-ratio: 4 / 3;
   object-fit: cover;
   animation: expand 1.4s ease;
   border-radius: 20px;
@@ -110,7 +109,7 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 560px) {
   .about_container {
     padding: 1rem;
   }
