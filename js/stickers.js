@@ -5,7 +5,6 @@ const stickerShopData = [
     firstImage: `sticker-images/sticker-1-display.JPEG`,
     secondImage: `sticker-images/sticker-1.JPEG`,
     itemName: "Untitled",
-    itemPrice: ["ETB 75", "ETB 90"],
     itemSize: "small / large",
     itemValue: "",
     completionDate: "2024",
@@ -16,7 +15,6 @@ const stickerShopData = [
     firstImage: `sticker-images/sticker-2-display.JPEG`,
     secondImage: `sticker-images/sticker-2.JPEG`,
     itemName: "Untitled",
-    itemPrice: ["ETB 75", "ETB 90"],
     itemSize: "small / large",
     itemValue: "",
     completionDate: "2024",
@@ -27,7 +25,6 @@ const stickerShopData = [
     firstImage: `sticker-images/sticker-3-display.JPEG`,
     secondImage: `sticker-images/sticker-3.JPEG`,
     itemName: "Untitled",
-    itemPrice: ["ETB 75", "ETB 90"],
     itemSize: "small / large",
     itemValue: "",
     completionDate: "2024",
@@ -38,7 +35,6 @@ const stickerShopData = [
     firstImage: `sticker-images/sticker-4-display.JPEG`,
     secondImage: `sticker-images/sticker-4.JPEG`,
     itemName: "Eye bouquet in a vase",
-    itemPrice: ["ETB 75", "ETB 90"],
     itemSize: "small / large",
     itemValue: "",
     completionDate: "2024",
@@ -49,7 +45,6 @@ const stickerShopData = [
     firstImage: `sticker-images/sticker-5-display.JPEG`,
     secondImage: `sticker-images/sticker-5.JPEG`,
     itemName: "Preety eyes",
-    itemPrice: ["ETB 75", "ETB 90"],
     itemSize: "small / large",
     itemValue: "",
     completionDate: "2024",
@@ -60,7 +55,6 @@ const stickerShopData = [
     firstImage: `sticker-images/sticker-7-display.JPEG`,
     secondImage: `sticker-images/sticker-7.JPEG`,
     itemName: "yin",
-    itemPrice: ["ETB 75", "ETB 90"],
     itemSize: "small / large",
     itemValue: "",
     completionDate: "2024",
@@ -71,7 +65,6 @@ const stickerShopData = [
     firstImage: `sticker-images/sticker-6-display.JPEG`,
     secondImage: `sticker-images/sticker-6.JPEG`,
     itemName: "yang",
-    itemPrice: ["ETB 75", "ETB 90"],
     itemSize: "small / large",
     itemValue: "",
     completionDate: "2024",
@@ -82,7 +75,6 @@ const stickerShopData = [
     firstImage: `sticker-images/sticker-8-display.JPEG`,
     secondImage: `sticker-images/sticker-8.JPEG`,
     itemName: "untitled",
-    itemPrice: ["ETB 75", "ETB 90"],
     itemSize: "small / large",
     itemValue: "",
     completionDate: "2024",
@@ -93,7 +85,6 @@ const stickerShopData = [
     firstImage: `sticker-images/sticker-9-display.JPEG`,
     secondImage: `sticker-images/sticker-9.JPEG`,
     itemName: "untitled",
-    itemPrice: ["ETB 75", "ETB 90"],
     itemSize: "small / large",
     itemValue: "",
     completionDate: "2024",
@@ -104,7 +95,6 @@ const stickerShopData = [
     firstImage: `sticker-images/sticker-10-display.JPEG`,
     secondImage: `sticker-images/sticker-10.JPEG`,
     itemName: "untitled",
-    itemPrice: ["ETB 75", "ETB 90"],
     itemSize: "small / large",
     itemValue: "",
     completionDate: "2024",
@@ -115,7 +105,6 @@ const stickerShopData = [
     firstImage: `sticker-images/sticker-11-display.JPEG`,
     secondImage: `sticker-images/sticker-11.JPEG`,
     itemName: "Blossom",
-    itemPrice: ["ETB 75", "ETB 90"],
     itemSize: "small / large",
     itemValue: "",
     completionDate: "2024",
@@ -126,7 +115,6 @@ const stickerShopData = [
     firstImage: `sticker-images/sticker-12-display.JPEG`,
     secondImage: `sticker-images/sticker-12.JPEG`,
     itemName: "Untitled",
-    itemPrice: ["ETB 75", "ETB 90"],
     itemSize: "small / large",
     itemValue: "",
     completionDate: "2024",
@@ -189,7 +177,7 @@ stickerShopData.forEach((value) => {
         <figcaption>
           <ul class="item_details">
             <li class="item-name">${value.itemName}</li>
-            <li class="price">${value.itemPrice[0]}</li>
+            <li class="price">ETB 50</li>
             <label class="size" for="small">
               <input type="radio" id="small" name="size" checked></input>
               <span class="input-label">Small</span>
@@ -199,7 +187,7 @@ stickerShopData.forEach((value) => {
               <span class="input-label">Large</span>
             </label>
             <label for="amount">
-              <input type="number" min="1" placeholder="1" id="amount" name="amount" />
+              <input type="number" min="1" value="1" placeholder="1" id="amount" name="amount" />
             </label>
             <li class="date">${value.completionDate}</li>
             <li class="availability">${value.itemAvailability}</li>
@@ -233,9 +221,9 @@ stickerShopData.forEach((value) => {
         let price;
         if (radio.checked) {
           if (radio.id === "small") {
-            price = 75;
+            price = 50;
           } else if (radio.id === "large") {
-            price = 90;
+            price = 75;
           }
         } else {
           return;
@@ -247,11 +235,13 @@ stickerShopData.forEach((value) => {
     itemRadios.forEach((radio) => {
       radio.onclick = () => {
         if (radio.id === "small") {
-          figure.querySelector("figcaption .item_details .price").innerText =
-            value.itemPrice[0];
+          figure.querySelector(
+            "figcaption .item_details .price"
+          ).innerText = `ETB ${50 * numInput.value}`;
         } else if (radio.id === "large") {
-          figure.querySelector("figcaption .item_details .price").innerText =
-            value.itemPrice[1];
+          figure.querySelector(
+            "figcaption .item_details .price"
+          ).innerText = `ETB ${75 * numInput.value}`;
         }
       };
 
