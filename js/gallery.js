@@ -42,13 +42,13 @@ const initApp2 = () => {
     },
 
     {
-      itemSrc: `gallery-images/character_1.JPEG`,
+      itemSrc: `gallery-images/character-1.JPEG`,
       itemName: "Character",
       itemLoading: "lazy",
       id: 6,
     },
     {
-      itemSrc: `gallery-images/character_2.JPEG`,
+      itemSrc: `gallery-images/character-2.JPEG`,
       itemName: "Character",
       itemLoading: "lazy",
       id: 7,
@@ -60,7 +60,7 @@ const initApp2 = () => {
       id: 8,
     },
     {
-      itemSrc: `gallery-images/character_3.JPEG`,
+      itemSrc: `gallery-images/character-3.JPEG`,
       itemName: "Character",
       itemLoading: "lazy",
       id: 9,
@@ -78,13 +78,13 @@ const initApp2 = () => {
       id: 11,
     },
     {
-      itemSrc: `gallery-images/character_4.JPEG`,
+      itemSrc: `gallery-images/character-4.JPEG`,
       itemName: "Character",
       itemLoading: "lazy",
       id: 12,
     },
     {
-      itemSrc: `gallery-images/character_5.JPEG`,
+      itemSrc: `gallery-images/character-5.JPEG`,
       itemName: "Character",
       itemLoading: "lazy",
       id: 13,
@@ -96,7 +96,7 @@ const initApp2 = () => {
       id: 14,
     },
     {
-      itemSrc: `gallery-images/character_6.JPEG`,
+      itemSrc: `gallery-images/character-6.JPEG`,
       itemName: "Character",
       itemLoading: "lazy",
       id: 15,
@@ -133,7 +133,7 @@ const initApp2 = () => {
       id: 20,
     },
     {
-      itemSrc: `gallery-images/character_7.JPEG`,
+      itemSrc: `gallery-images/character-7.JPEG`,
       itemName: "Character",
       itemLoading: "lazy",
       id: 21,
@@ -157,13 +157,13 @@ const initApp2 = () => {
       id: 24,
     },
     {
-      itemSrc: `gallery-images/character_8.JPEG`,
+      itemSrc: `gallery-images/character-8.JPEG`,
       itemName: "Character",
       itemLoading: "lazy",
       id: 25,
     },
     {
-      itemSrc: `gallery-images/character_9.JPEG`,
+      itemSrc: `gallery-images/character-9.JPEG`,
       itemName: "Character",
       itemLoading: "lazy",
       id: 26,
@@ -182,7 +182,7 @@ const initApp2 = () => {
       id: 28,
     },
     {
-      itemSrc: `gallery-images/character_10.JPEG`,
+      itemSrc: `gallery-images/character-10.JPEG`,
       itemName: "Character",
       itemLoading: "lazy",
       id: 29,

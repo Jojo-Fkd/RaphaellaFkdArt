@@ -44,7 +44,7 @@ sortNavs.forEach((navs) => {
       localStorage.setItem("active", activeStorage);
       location.reload();
     }
-    const navType = navs.classList;
+    const navType = navs.className;
     sectors.forEach((sector) => {
       sector.style.display = "none";
       if (navType[0] === sector.id) {
