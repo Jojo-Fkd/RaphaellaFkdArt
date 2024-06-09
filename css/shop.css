@@ -387,7 +387,7 @@
   #proceed_page figure {
     flex-direction: column;
     height: auto;
-    align-items: center;
+    align-items: flex-start;
   }
 
   #proceed_page .item {
