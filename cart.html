@@ -149,113 +149,23 @@
     </section>
 
     <footer>
-      <section id="footer_section">
-        <section id="main_footer_content">
-          <section class="sign_up">
-            <form id="footer_form">
-              <span class="input-label"
-                >Sign up to receive news and updates !</span
-              >
-              <label for="email">
-                <input type="email" name="Email" placeholder="Email" />
-                <button>Sign up</button>
-              </label>
-            </form>
-          </section>
-          <p class="advertisement"><span>Powered by</span> JFKD</p>
-        </section>
-        <section id="sub_footer_content">
-          <ul>
-            <li class="ad">
-              <div class="description">
-                <p>
-                  Explore my art works while connecting with me and my other
-                  audiences.
-                </p>
-                <div class="description_tail"></div>
-              </div>
-              <a
-                href="https://www.instagram.com/raphaellafkdart"
-                target="_blank"
-              >
-                <img
-                  width="25px"
-                  class="instagramIcon"
-                  alt="instagramIcon"
-                  src="img/instagram.svg"
-                />
-              </a>
-            </li>
-            <li id="copyright">Raphaellafkdart, 2023</li>
-            <li class="ad">
-              <div class="description email_description">
-                <p>Personally reach out to me if you have any questions.</p>
-                <div class="description_tail"></div>
-              </div>
-              <a href="contact.html">
-                <img
-                  width="28px"
-                  class="emailIcon"
-                  alt="emailIcon"
-                  src="img/envelope-regular.svg"
-                />
-              </a>
-            </li>
-          </ul>
-        </section>
-      </section>
+      <a href="https://www.instagram.com/raphaellafkdart" target="_blank">
+        <img
+          width="25px"
+          class="instagramIcon"
+          alt="instagramIcon"
+          src="img/instagram.svg"
+        />
+      </a>
+      <p id="copyright">Raphaellafkdart, 2023</p>
+      <a href="contact.html">
+        <img
+          width="28px"
+          class="emailIcon"
+          alt="emailIcon"
+          src="img/envelope-regular.svg"
+        />
+      </a>
     </footer>
-    <script>
-      const scriptURL =
-        "https://script.google.com/macros/s/AKfycbxJGZwW3PUDqX6BzHzGdVozH5fZGH0bnSrEgC5DucOWlzDbGVcYx9CNIjkheibe3NNNHw/exec";
-      const form = document.querySelector("#footer_form");
-      const popupContainer = document.querySelector(".popup_container");
-      const loading = document.querySelector(".loading");
-      const successPopupFooter = document.querySelector(
-        ".success_popup_footer"
-      );
-      const failedPopupFooter = document.querySelector(".failed_popup_footer");
-
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-
-        popupContainer.classList.add("blur");
-        loading.classList.add("activated");
-
-        fetch(scriptURL, { method: "POST", body: new FormData(form) })
-          .then(() => {
-            loading.classList.remove("activated");
-            successPopupFooter.classList.add("active");
-            setTimeout(() => {
-              location.reload();
-              window.scrollTo(0, 0);
-            }, 2000);
-          })
-          .catch((err) => {
-            loading.classList.remove("activated");
-            failedPopupFooter.classList.add("active");
-            setTimeout(() => {
-              location.reload();
-              window.scrollTo(0, 0);
-            }, 2000);
-          });
-      });
-      const instagramIcon = document.querySelector(".instagramIcon");
-      instagramIcon.addEventListener("mouseenter", () => {
-        const description = document.querySelector(".description:first-child");
-        description.classList.add("hover");
-        instagramIcon.addEventListener("mouseleave", () => {
-          description.classList.remove("hover");
-        });
-      });
-      const emailIcon = document.querySelector(".emailIcon");
-      emailIcon.addEventListener("mouseenter", () => {
-        const description = document.querySelector(".email_description");
-        description.classList.add("hover");
-        emailIcon.addEventListener("mouseleave", () => {
-          description.classList.remove("hover");
-        });
-      });
-    </script>
   </body>
 </html>

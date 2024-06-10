@@ -1,0 +1,241 @@
+header {
+  position: relative;
+  height: 120px;
+  display: grid;
+  place-content: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+header h1 img {
+  height: 100px;
+}
+
+header h2 {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  font-family: var(--NAVIGATION_FONT);
+  font-size: 2.6rem;
+  font-weight: 300;
+}
+
+/* CHECKOUT MAIN CONTENT */
+
+main {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 1rem;
+}
+
+#summary {
+  height: 500px;
+  overflow: auto;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+}
+
+#summary .checkout-items figure {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1.5px solid rgba(0, 0, 0, 0.4);
+}
+
+#summary .checkout-items figure img {
+  width: 150px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--BTNCOLOR);
+}
+
+#summary .checkout-items figure ul li:first-child {
+  font-size: 2rem;
+  font-family: var(--NAVIGATION_FONT);
+}
+
+#summary .checkout-items figure ul li:last-child {
+  font-family: var(--DESCRIPTION_FONT);
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+  color: var(--BTNCOLOR);
+}
+
+#summary .checkout-items figure figcaption p.price {
+  font-family: var(--PRICE_FONT);
+  font-size: 1.2rem;
+  color: var(--BTNCOLOR);
+  padding-top: 1.8rem;
+}
+
+#summary .delivery {
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+#summary .delivery h3 {
+  font-family: var(--NAVIGATION_FONT);
+  font-size: 2rem;
+  font-weight: lighter;
+  color: var(--BTNCOLOR);
+}
+
+#summary label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.3rem;
+  font-family: var(--PRICE_FONT);
+}
+
+#form {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+#form label {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  font-family: var(--NAVIGATION_FONT);
+}
+
+#form label input:not(input[type="radio"]) {
+  height: 40px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+  padding-left: 1rem;
+  font-family: var(--NAVIGATION_FONT);
+  border: none;
+  outline: 1px solid rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+#form label input:not(input[type="radio"]):focus {
+  outline: 1px solid rgba(0, 0, 0, 0.6);
+}
+
+#form label[for="phone-num"] div {
+  display: flex;
+  gap: 1rem;
+  align-items: CENTER;
+  font-size: 1.3rem;
+}
+
+#payment {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  padding-top: 1rem;
+}
+
+#payment h3 {
+  font-family: var(--NAVIGATION_FONT);
+  font-weight: lighter;
+  font-size: 2rem;
+  color: var(--BTNCOLOR);
+}
+
+#payment .options {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 1rem;
+}
+
+#payment .options label {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 0.3rem;
+  font-size: 1.5rem;
+}
+
+#payment .options label input {
+  width: 20px;
+}
+
+.payment-information {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  display: grid;
+  gap: 1rem;
+  place-content: center;
+  padding: 1rem;
+}
+
+.payment-information h4 {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment-information h4 {
+  font-family: var(--PRICE_FONT);
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.payment-information h4 svg {
+  width: unset;
+}
+
+.payment-information article {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.payment-information article p {
+  font-family: var(--NAVIGATION_FONT);
+}
+
+.payment-information article input {
+  width: 300px;
+  height: 40px;
+  text-align: center;
+}
+
+#form p.notice {
+  color: var(--BTNCOLOR);
+  font-family: var(--DESCRIPTION_FONT);
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+
+#form .btns {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#form button {
+  height: 50px;
+  background: var(--BTNCOLOR);
+  color: white;
+  font-family: var(--PRICE_FONT);
+  font-size: 1.2rem;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+
+#form button:first-child {
+  background: transparent;
+  border: 1px solid black;
+  color: black;
+}

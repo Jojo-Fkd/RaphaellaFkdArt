@@ -13,194 +13,114 @@
     <link rel="icon" href="img/raphaella-logo.JPEG" />
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/checkout.css" />
-    <link rel="stylesheet" href="css/cart.css" />
-    <script defer src="js/script.js"></script>
-    <script defer src="js/checkout.js"></script>
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-    ></script>
-
-    <script type="text/javascript">
-      emailjs.init("ZUDnRYEvqyg-8BU2F");
-    </script>
   </head>
   <body>
-    <nav id="navigation">
-      <h1 class="logo">
-        <img width="90px" src="img/raphaella-logo.JPEG" alt="company_logo" />
-        <img
-          width="115px"
-          src="img/raphaella-logo_extension.PNG"
-          alt="logo extension"
-        />
+    <header>
+      <h1>
+        <img src="img/raphaella-logo.JPEG" alt="company logo" />
       </h1>
-    </nav>
-    <div class="popup_container">
-      <!-- PAYMENT SUCCESS POPUP -->
-      <section class="shopping-option_popup payment_popup">
-        <header>
-          <h3>Purchase Submitted</h3>
-          <div class="styler"></div>
-        </header>
-        <p>
-          Thank you for your application.
-          <span>You'll recieve an email, confirming your purchase.</span>
-        </p>
-        <ul>
-          <li>Ok</li>
-        </ul>
-      </section>
-      <section class="shopping-option_popup failed_payment_popup">
-        <header>
-          <h3>Submition Failed</h3>
-          <div class="styler"></div>
-        </header>
-        <p>
-          Try Again.
-          <span>This may be due to poor or no internet connection.</span>
-        </p>
-        <ul>
-          <li>Ok</li>
-        </ul>
-      </section>
+      <h2>Checkout</h2>
+    </header>
 
-      <!-- FOOTER SIGN UP POPUPS -->
-      <section class="shopping-option_popup success_popup_footer">
-        <header>
-          <h3>Successful</h3>
-          <div class="styler"></div>
-        </header>
-        <p>You'll recieve notifications to your email inbox.</p>
-      </section>
-      <section class="shopping-option_popup failed_popup_footer">
-        <header>
-          <h3>Failed</h3>
-          <div class="styler"></div>
-        </header>
-        <p>Try Again.</p>
-      </section>
-      <!-- PURCHASE LOADING -->
-      <section class="loading">
-        <div class="indication"></div>
-      </section>
-    </div>
-    <section id="checkout_page" class="final_page">
-      <form action="">
-        <!-- INFORMATION FOR PURCHASE -->
-        <ol>
-          <div class="form_header">
-            <h2 class="checkout_header">Checkout</h2>
-          </div>
-          <section id="contact_info">
-            <li class="contact_header">Contact Information</li>
-            <article>
-              <label for="full_name">
-                <section id="full_name_input">
-                  <input
-                    required
-                    type="text"
-                    name="full_name"
-                    id="full_name"
-                    autocomplete="off"
-                    autofocus="on"
-                    placeholder="Full Name"
-                  />
-                </section>
-              </label>
-              <label for="physical_address">
-                <section class="physical_address_input">
-                  <input
-                    required
-                    type="text"
-                    name="physical_address"
-                    id="physical_address"
-                    autocomplete="off"
-                    placeholder="Physical Address"
-                  />
-                </section>
-              </label>
-              <label for="number">
-                <section id="phone_input">
-                  <div>+251</div>
-                  <input
-                    required
-                    type="tel"
-                    name="number"
-                    id="number"
-                    autocomplete="off"
-                    placeholder="Phone Number"
-                  />
-                </section>
-              </label>
-              <label for="email">
-                <section id="email_input">
-                  <div>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="25"
-                      height="25"
-                      viewBox="0 0 24 24"
-                      style="fill: rgba(0, 0, 0, 0.8)"
-                    >
-                      <path
-                        d="M20 4H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 2v.511l-8 6.223-8-6.222V6h16zM4 18V9.044l7.386 5.745a.994.994 0 0 0 1.228 0L20 9.044 20.002 18H4z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <input
-                    required
-                    type="email"
-                    name="email"
-                    id="email"
-                    autocomplete="off"
-                    placeholder="Email"
-                  />
-                </section>
-              </label>
-            </article>
-          </section>
-
-          <section id="payment_method">
-            <li class="payment_header">Payment Method</li>
+    <main>
+      <section id="summary">
+        <div class="checkout-items">
+          <figure>
+            <img src="original-images/end-time-original.jpeg" alt="" />
             <ul>
-              <li><button>Telebirr</button></li>
-              <li>
-                <button>CBE</button>
-              </li>
-              <li>
-                <button>BOA</button>
-              </li>
+              <li class="item-name">End Times</li>
+              <li class="item-description">description, amount</li>
             </ul>
-          </section>
-        </ol>
-        <figure>
-          <ul class="checkout_images"></ul>
-          <ul class="name_collection"></ul>
-          <figcaption class="checkout_item_details item_details">
-            <div class="divider"></div>
-            <ul class="main_details">
-              <ul class="charges">
-                <li>Sub total:</li>
-                <li>Delivery:</li>
-                <li>Total:</li>
-              </ul>
-              <ul class="prices">
-                <li class="sub_total">ETB <span></span></li>
-                <li class="delivery_cost">ETB <span>100</span></li>
-                <li class="total">ETB <span></span></li>
-              </ul>
-            </ul>
-            <div class="divider"></div>
-            <div class="cancel_confirm_buttons">
-              <button type="button" class="cancel_btn">Cancel</button>
-            </div>
-          </figcaption>
-        </figure>
-        <section class="payment_page">
-          <section id="payment_section"></section>
-        </section>
+            <figcaption>
+              <p class="price">ETB 5,000</p>
+            </figcaption>
+          </figure>
+        </div>
+        <article class="delivery">
+          <h3>Pick up points</h3>
+          <label for="point-1">
+            <input type="radio" name="delivery" id="point-1" checked />
+            <p>4 Kilo</p>
+          </label>
+          <label for="point-2">
+            <input type="radio" name="delivery" id="point-2" />
+            <p>Ayat Zone 3</p>
+          </label>
+        </article>
+      </section>
+      <form id="form">
+        <label for="name">
+          <span class="input-label">Full Name</span>
+          <input type="text" id="name" name="name" autofocus="off" required />
+        </label>
+        <label for="email">
+          <span class="input-label">Email Address</span>
+          <input type="email" id="email" name="email" required />
+        </label>
+        <label for="phone-num">
+          <span class="input-label">Phone Number</span>
+          <div>
+            <p>+251</p>
+            <input type="tel" id="phone-num" name="phone-num" required />
+          </div>
+        </label>
+        <article id="payment">
+          <h3>Payment Information</h3>
+          <div class="options">
+            <label for="cbe">
+              <input type="radio" name="payment" id="cbe" checked />
+              <span class="input-label">CBE</span>
+            </label>
+            <label for="telebirr">
+              <input type="radio" name="payment" id="cbe" />
+              <span class="input-label">Telebirr</span>
+            </label>
+            <label for="Boa">
+              <input type="radio" name="payment" id="boa" />
+              <span class="input-label">BOA</span>
+            </label>
+          </div>
+          <div class="payment-information">
+            <h4>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30p"
+                height="30px"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="var(--BTNCOLOR)"
+                  d="M11.5 1L2 6v2h19V6m-5 4v7h3v-7M2 22h19v-3H2m8-9v7h3v-7m-9 0v7h3v-7z"
+                />
+              </svg>
+              Commercial Bank Of Ethiopia
+            </h4>
+            <article>
+              <p>Name</p>
+              <input
+                type="text"
+                disabled
+                placeholder="RAFFAELA FEKADU TESFAYE"
+              />
+            </article>
+            <article>
+              <p>Account no.</p>
+              <input type="text" disabled placeholder="1000116036138" />
+            </article>
+            <article>
+              <p>Total Amount</p>
+              <input type="text" disabled placeholder="5000" />
+            </article>
+          </div>
+        </article>
+        <p class="notice">
+          * Order will be cancelled if payment is not made within 24 hours.
+        </p>
+        <div class="btns">
+          <button type="button">Preview</button>
+          <button type="submit">Checkout</button>
+        </div>
       </form>
-    </section>
+    </main>
   </body>
 </html>
