@@ -169,7 +169,13 @@ const initApp2 = () => {
     let li = document.createElement("li");
     li.innerHTML = `
         <img id="${value.id}" oncontextmenu="return false;" draggable="false" src="${value.itemSrc}" loading="${value.itemLoading}" alt="image of ${value.itemName}" />
-    `;
+        <div class="img-loading"></div>
+        `;
+    const image = li.querySelector("img");
+    image.onload = () => {
+      li.querySelector(".img-loading").style.display = "none";
+      li.className = "loaded";
+    };
     galleryContainer.appendChild(li);
     li.onclick = () => {
       galleryOpenBg.innerHTML = `

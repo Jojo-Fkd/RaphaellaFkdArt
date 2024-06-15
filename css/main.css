@@ -710,6 +710,7 @@ footer {
   padding: 2rem;
   margin-top: 2rem;
   display: flex;
+  align-items: center;
   gap: 1rem;
   justify-content: center;
   border-top: 1px solid rgba(0, 0, 0, 0.2);
@@ -717,7 +718,8 @@ footer {
 
 footer #copyright {
   font-family: var(--NAVIGATION_FONT);
-  font-size: 1.4rem;
+  font-size: clamp(0.9rem, 4vw, 1.4rem);
+  width: fit-content;
 }
 
 footer a:any-link {
