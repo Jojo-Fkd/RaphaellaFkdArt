@@ -149,7 +149,7 @@ const initApp2 = () => {
     },
 
     {
-      itemSrc: `original-images/aynamawa-original-piece-gallery.jpeg`,
+      itemSrc: `original-images/aynamawa-original-piece.jpeg`,
       itemName: "Aynamawa <span>(ኣይናማዋ)",
       itemLoading: "lazy",
     },
