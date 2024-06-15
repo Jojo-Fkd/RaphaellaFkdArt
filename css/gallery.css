@@ -10,47 +10,14 @@
 .gallery ul li {
   position: relative;
   margin-bottom: 0.6rem;
-  border: 1px solid;
-  height: fit-content;
 }
 
 .gallery ul li img {
   transition: all 0.3s;
   width: 100%;
-  filter: blur(5px) brightness(80%);
   border: 2px solid transparent;
   border-radius: 10px;
   transition: all 0.3s ease;
-}
-
-.gallery ul li.loaded img {
-  filter: none;
-}
-
-.gallery ul li.loaded:hover img {
-  border: 2px solid var(--BTNCOLOR);
-}
-
-.gallery ul li .img-loading {
-  border: 3px solid var(--BTNCOLOR);
-  border-top: 3px solid transparent;
-  height: 80px;
-  width: 80px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  animation: imgLoading 1s linear infinite;
-}
-
-@keyframes imgLoading {
-  from {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
 }
 
 .image_name {
