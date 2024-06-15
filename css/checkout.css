@@ -78,6 +78,11 @@ header h2 {
   flex-direction: column;
 }
 
+.preview-content h3 {
+  font-family: var(--DESCRIPTION_FONT);
+  margin-bottom: 1rem;
+}
+
 .preview-content label,
 .preview-content article p {
   display: grid;
@@ -136,7 +141,7 @@ main {
 }
 
 #summary {
-  height: 500px;
+  height: 620px;
   overflow: auto;
   padding: 1rem;
   position: sticky;
@@ -145,36 +150,41 @@ main {
 
 #summary .checkout-items figure {
   display: flex;
-  justify-content: space-between;
+  gap: 1rem;
   padding: 1rem;
-  border-bottom: 1.5px solid rgba(0, 0, 0, 0.4);
+  border-bottom: 1.5px solid var(--BTNCOLOR);
 }
 
 #summary .checkout-items figure img {
-  width: 150px;
+  width: 130px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   border: 1px solid var(--BTNCOLOR);
 }
 
-#summary .checkout-items figure ul li:first-child {
-  font-size: 2rem;
+#summary .checkout-items figure figcaption {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+#summary .checkout-items figure figcaption ul li:first-child {
+  font-size: 1.4rem;
   font-family: var(--NAVIGATION_FONT);
 }
 
-#summary .checkout-items figure ul li:last-child {
+#summary .checkout-items figure figcaption ul li:last-child {
   font-family: var(--DESCRIPTION_FONT);
-  font-weight: bold;
-  font-size: 1.3rem;
+  font-weight: 500;
+  font-size: 1.2rem;
   margin-top: 0.5rem;
   color: var(--BTNCOLOR);
 }
 
 #summary .checkout-items figure figcaption p.price {
   font-family: var(--PRICE_FONT);
-  font-size: 1.2rem;
-  color: var(--BTNCOLOR);
-  padding-top: 1.8rem;
+  font-size: 1.1rem;
+  color: black;
 }
 
 #summary .delivery {
@@ -356,4 +366,8 @@ main {
   background: transparent;
   border: 1px solid black;
   color: black;
+}
+
+#form button:first-child:disabled {
+  opacity: 0.5;
 }

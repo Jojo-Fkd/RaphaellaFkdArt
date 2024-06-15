@@ -31,48 +31,7 @@
       <article class="preview-card">
         <h2>Checkout Preview</h2>
         <div class="preview-content">
-          <label for="name">
-            <span class="input-label">Full Name:</span>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="John Doe"
-              disabled
-            />
-          </label>
-          <label for="email">
-            <span class="input-label">Email Address:</span>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="john-doe@gmail.com"
-              disabled
-            />
-          </label>
-          <label for="phone-num">
-            <span class="input-label">Phone Number:</span>
-            <div>
-              <p>+251</p>
-              <input
-                type="tel"
-                id="phone-num"
-                name="phone-num"
-                placeholder="912345678"
-                disabled
-              />
-            </div>
-          </label>
-          <article class="delivery-preview">
-            <p>Pick up point: <span>4 Kilo</span></p>
-          </article>
-          <article class="payment-preview">
-            <p>Payment Method: <span>CBE</span></p>
-          </article>
-          <article class="total-preview">
-            <p>Total: <span>ETB 5,000</span></p>
-          </article>
+          <h3>You have not filled out the form yet.</h3>
         </div>
         <button type="button">Back</button>
       </article>
@@ -80,26 +39,26 @@
 
     <main>
       <section id="summary">
-        <div class="checkout-items">
-          <figure>
-            <img src="original-images/end-time-original.jpeg" alt="" />
-            <ul>
-              <li class="item-name">End Times</li>
-              <li class="item-description">description, amount</li>
-            </ul>
-            <figcaption>
-              <p class="price">ETB 5,000</p>
-            </figcaption>
-          </figure>
-        </div>
+        <div class="checkout-items"></div>
         <article class="delivery">
           <h3>Pick up point</h3>
           <label for="point-1">
-            <input type="radio" name="delivery" id="point-1" checked />
+            <input
+              type="radio"
+              name="delivery"
+              id="point-1"
+              checked
+              class="main-input"
+            />
             <p>4 Kilo</p>
           </label>
           <label for="point-2">
-            <input type="radio" name="delivery" id="point-2" />
+            <input
+              type="radio"
+              name="delivery"
+              id="point-2"
+              class="main-input"
+            />
             <p>Ayat Zone 3</p>
           </label>
         </article>
@@ -114,6 +73,7 @@
             autofocus="off"
             required
             placeholder="John Doe"
+            class="main-input"
           />
         </label>
         <label for="email">
@@ -124,6 +84,7 @@
             name="email"
             required
             placeholder="john-doe@gmail.com"
+            class="main-input"
           />
         </label>
         <label for="phone-num">
@@ -136,6 +97,7 @@
               name="phone-num"
               required
               placeholder="912345678"
+              class="main-input"
             />
           </div>
         </label>
@@ -143,15 +105,26 @@
           <h3>Payment Information</h3>
           <div class="options">
             <label for="cbe">
-              <input type="radio" name="payment" id="cbe" checked />
+              <input
+                type="radio"
+                name="payment"
+                id="cbe"
+                checked
+                class="main-input"
+              />
               <span class="input-label">CBE</span>
             </label>
             <label for="telebirr">
-              <input type="radio" name="payment" id="telebirr" />
+              <input
+                type="radio"
+                name="payment"
+                id="telebirr"
+                class="main-input"
+              />
               <span class="input-label">Telebirr</span>
             </label>
             <label for="boa">
-              <input type="radio" name="payment" id="boa" />
+              <input type="radio" name="payment" id="boa" class="main-input" />
               <span class="input-label">BOA</span>
             </label>
           </div>
