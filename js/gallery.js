@@ -31,18 +31,18 @@ const initApp2 = () => {
       itemLoading: "lazy",
     },
     {
-      itemSrc: `gallery-images/piece-pic.JPEG`,
+      itemSrc: `gallery-images/piece-pic.jpeg`,
       itemName: "Original Piece",
       itemLoading: "lazy",
     },
 
     {
-      itemSrc: `gallery-images/character1.JPEG`,
+      itemSrc: `gallery-images/character1.jpeg`,
       itemName: "Character",
       itemLoading: "lazy",
     },
     {
-      itemSrc: `gallery-images/character2.JPEG`,
+      itemSrc: `gallery-images/character2.jpeg`,
       itemName: "Character",
       itemLoading: "lazy",
     },
@@ -52,7 +52,7 @@ const initApp2 = () => {
       itemLoading: "lazy",
     },
     {
-      itemSrc: `gallery-images/character3.JPEG`,
+      itemSrc: `gallery-images/character3.jpeg`,
       itemName: "Character",
       itemLoading: "lazy",
     },
@@ -67,12 +67,12 @@ const initApp2 = () => {
       itemLoading: "lazy",
     },
     {
-      itemSrc: `gallery-images/character4.JPEG`,
+      itemSrc: `gallery-images/character4.jpeg`,
       itemName: "Character",
       itemLoading: "lazy",
     },
     {
-      itemSrc: `gallery-images/character5.JPEG`,
+      itemSrc: `gallery-images/character5.jpeg`,
       itemName: "Character",
       itemLoading: "lazy",
     },
@@ -82,7 +82,7 @@ const initApp2 = () => {
       itemLoading: "lazy",
     },
     {
-      itemSrc: `gallery-images/character6.JPEG`,
+      itemSrc: `gallery-images/character6.jpeg`,
       itemName: "Character",
       itemLoading: "lazy",
     },
@@ -98,7 +98,7 @@ const initApp2 = () => {
     },
 
     {
-      itemSrc: `original-images/kifu-ayin-original-piece.JPEG`,
+      itemSrc: `original-images/kifu-ayin-original-piece.jpeg`,
       itemName: "Kifu Ayin <span>(ክፉ ዓይን)</span>",
       itemLoading: "lazy",
     },
@@ -108,17 +108,17 @@ const initApp2 = () => {
       itemLoading: "lazy",
     },
     {
-      itemSrc: `original-images/damsel-in-distress-original-piece.JPEG`,
+      itemSrc: `original-images/damsel-in-distress-original-piece.jpeg`,
       itemName: "Damsel In Distress",
       itemLoading: "lazy",
     },
     {
-      itemSrc: `gallery-images/character7.JPEG`,
+      itemSrc: `gallery-images/character7.jpeg`,
       itemName: "Character",
       itemLoading: "lazy",
     },
     {
-      itemSrc: `gallery-images/sketchbook_character.JPEG`,
+      itemSrc: `gallery-images/sketchbook_character.jpeg`,
       itemName: "Character",
       itemLoading: "lazy",
     },
@@ -133,17 +133,17 @@ const initApp2 = () => {
       itemLoading: "lazy",
     },
     {
-      itemSrc: `gallery-images/character8.JPEG`,
+      itemSrc: `gallery-images/character8.jpeg`,
       itemName: "Character",
       itemLoading: "lazy",
     },
     {
-      itemSrc: `gallery-images/character9.JPEG`,
+      itemSrc: `gallery-images/character9.jpeg`,
       itemName: "Character",
       itemLoading: "lazy",
     },
     {
-      itemSrc: `gallery-images/under-the-white-moon (2).JPEG`,
+      itemSrc: `gallery-images/under-the-white-moon (2).jpeg`,
       itemName: "Character",
       itemLoading: "lazy",
     },
@@ -154,7 +154,7 @@ const initApp2 = () => {
       itemLoading: "lazy",
     },
     {
-      itemSrc: `gallery-images/character10.JPEG`,
+      itemSrc: `gallery-images/character10.jpeg`,
       itemName: "Character",
       itemLoading: "lazy",
     },
