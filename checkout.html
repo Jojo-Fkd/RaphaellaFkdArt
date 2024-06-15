@@ -11,16 +11,72 @@
     <meta name="author" content="JFKD" />
     <title>Checkout - Raphaella Fkd Art</title>
     <link rel="icon" href="img/raphaella-logo.JPEG" />
+    <script defer src="js/checkout.js"></script>
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/checkout.css" />
   </head>
   <body>
+    <!-- HEADER -->
+
     <header>
       <h1>
         <img src="img/raphaella-logo.JPEG" alt="company logo" />
       </h1>
       <h2>Checkout</h2>
     </header>
+
+    <!-- MAIN CONTENT -->
+
+    <div class="preview-popup">
+      <article class="preview-card">
+        <h2>Checkout Preview</h2>
+        <div class="preview-content">
+          <label for="name">
+            <span class="input-label">Full Name:</span>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="John Doe"
+              disabled
+            />
+          </label>
+          <label for="email">
+            <span class="input-label">Email Address:</span>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="john-doe@gmail.com"
+              disabled
+            />
+          </label>
+          <label for="phone-num">
+            <span class="input-label">Phone Number:</span>
+            <div>
+              <p>+251</p>
+              <input
+                type="tel"
+                id="phone-num"
+                name="phone-num"
+                placeholder="912345678"
+                disabled
+              />
+            </div>
+          </label>
+          <article class="delivery-preview">
+            <p>Pick up point: <span>4 Kilo</span></p>
+          </article>
+          <article class="payment-preview">
+            <p>Payment Method: <span>CBE</span></p>
+          </article>
+          <article class="total-preview">
+            <p>Total: <span>ETB 5,000</span></p>
+          </article>
+        </div>
+        <button type="button">Back</button>
+      </article>
+    </div>
 
     <main>
       <section id="summary">
@@ -37,7 +93,7 @@
           </figure>
         </div>
         <article class="delivery">
-          <h3>Pick up points</h3>
+          <h3>Pick up point</h3>
           <label for="point-1">
             <input type="radio" name="delivery" id="point-1" checked />
             <p>4 Kilo</p>
@@ -51,17 +107,36 @@
       <form id="form">
         <label for="name">
           <span class="input-label">Full Name</span>
-          <input type="text" id="name" name="name" autofocus="off" required />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            autofocus="off"
+            required
+            placeholder="John Doe"
+          />
         </label>
         <label for="email">
           <span class="input-label">Email Address</span>
-          <input type="email" id="email" name="email" required />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="john-doe@gmail.com"
+          />
         </label>
         <label for="phone-num">
           <span class="input-label">Phone Number</span>
           <div>
             <p>+251</p>
-            <input type="tel" id="phone-num" name="phone-num" required />
+            <input
+              type="tel"
+              id="phone-num"
+              name="phone-num"
+              required
+              placeholder="912345678"
+            />
           </div>
         </label>
         <article id="payment">
@@ -72,19 +147,19 @@
               <span class="input-label">CBE</span>
             </label>
             <label for="telebirr">
-              <input type="radio" name="payment" id="cbe" />
+              <input type="radio" name="payment" id="telebirr" />
               <span class="input-label">Telebirr</span>
             </label>
-            <label for="Boa">
+            <label for="boa">
               <input type="radio" name="payment" id="boa" />
               <span class="input-label">BOA</span>
             </label>
           </div>
-          <div class="payment-information">
+          <div id="CBE-method" class="payment-information checked">
             <h4>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="30p"
+                width="30px"
                 height="30px"
                 viewBox="0 0 24 24"
               >
@@ -112,12 +187,91 @@
               <input type="text" disabled placeholder="5000" />
             </article>
           </div>
+          <div id="Telebirr-method" class="payment-information">
+            <h4>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30px"
+                height="30px"
+                viewBox="0 0 512 512"
+              >
+                <rect
+                  width="416"
+                  height="288"
+                  x="48"
+                  y="144"
+                  fill="none"
+                  stroke="var(--BTNCOLOR)"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                  rx="48"
+                  ry="48"
+                />
+                <path
+                  fill="none"
+                  stroke="var(--BTNCOLOR)"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                  d="M411.36 144v-30A50 50 0 0 0 352 64.9L88.64 109.85A50 50 0 0 0 48 159v49"
+                />
+                <path
+                  fill="var(--BTNCOLOR)"
+                  d="M368 320a32 32 0 1 1 32-32a32 32 0 0 1-32 32"
+                />
+              </svg>
+              Telebirr
+            </h4>
+            <article>
+              <p>Name</p>
+              <input type="text" disabled placeholder="---" />
+            </article>
+            <article>
+              <p>Account no.</p>
+              <input type="text" disabled placeholder="0946190202" />
+            </article>
+            <article>
+              <p>Total Amount</p>
+              <input type="text" disabled placeholder="5000" />
+            </article>
+          </div>
+          <div id="BOA-method" class="payment-information">
+            <h4>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30px"
+                height="30px"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="var(--BTNCOLOR)"
+                  d="M11.5 1L2 6v2h19V6m-5 4v7h3v-7M2 22h19v-3H2m8-9v7h3v-7m-9 0v7h3v-7z"
+                />
+              </svg>
+              Bank Of Abyssinia
+            </h4>
+            <article>
+              <p>Name</p>
+              <input
+                type="text"
+                disabled
+                placeholder="RAFAELA FEKADU TESFAYE"
+              />
+            </article>
+            <article>
+              <p>Account no.</p>
+              <input type="text" disabled placeholder="185247511" />
+            </article>
+            <article>
+              <p>Total Amount</p>
+              <input type="text" disabled placeholder="5000" />
+            </article>
+          </div>
         </article>
         <p class="notice">
           * Order will be cancelled if payment is not made within 24 hours.
         </p>
         <div class="btns">
-          <button type="button">Preview</button>
+          <button type="button" id="preview-btn">Preview</button>
           <button type="submit">Checkout</button>
         </div>
       </form>

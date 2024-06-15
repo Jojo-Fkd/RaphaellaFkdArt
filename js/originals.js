@@ -92,7 +92,17 @@ const originalShopData = [
   },
   {
     firstImage: `original-images/untitled-original-piece.jpeg`,
-    secondImage: `original-images/untitled-original-piece-2.jpeg`,
+    secondImage: `original-images/untitled-original-piece_2.jpeg`,
+    itemName: "Untitled",
+    itemPrice: "ETB 2,500",
+    itemValue: "30 x 30 cm Image Transfer On Canvas.",
+    completionDate: "2023",
+    itemAvailability: "Available",
+    id: 8,
+  },
+  {
+    firstImage: `original-images/untitled-original-piece(2).jpeg`,
+    secondImage: `original-images/untitled-original-piece(2)_2.jpeg`,
     itemName: "Untitled",
     itemPrice: "ETB 2,500",
     itemValue: "30 x 30 cm Image Transfer On Canvas.",

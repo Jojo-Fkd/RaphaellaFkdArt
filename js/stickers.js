@@ -141,7 +141,7 @@ stickerShopData.forEach((value) => {
                 <li style="font-weight: bolder" class="english item-name">
                   ${value.itemName} 
                 </li>
-                <li class="availability">${value.itemAvailability}</li> 
+                <li class="availability">${value.itemAvailability} ~ From ETB 50</li> 
               </ul>
             </figcaption>
   `;

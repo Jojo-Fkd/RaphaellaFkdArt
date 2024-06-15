@@ -86,6 +86,12 @@
   position: relative;
 }
 
+#stickers figure,
+#originals figure,
+#sketchbooks figure {
+  cursor: pointer;
+}
+
 .item {
   position: relative;
   width: 100%;
@@ -214,7 +220,7 @@
 
 #proceed_page figure {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 2rem;
   height: 100%;
   position: fixed;
