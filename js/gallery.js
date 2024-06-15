@@ -37,12 +37,12 @@ const initApp2 = () => {
     },
 
     {
-      itemSrc: `gallery-images/character-1.JPEG`,
+      itemSrc: `gallery-images/character1.JPEG`,
       itemName: "Character",
       itemLoading: "lazy",
     },
     {
-      itemSrc: `gallery-images/character-2.JPEG`,
+      itemSrc: `gallery-images/character2.JPEG`,
       itemName: "Character",
       itemLoading: "lazy",
     },
@@ -52,7 +52,7 @@ const initApp2 = () => {
       itemLoading: "lazy",
     },
     {
-      itemSrc: `gallery-images/character-3.JPEG`,
+      itemSrc: `gallery-images/character3.JPEG`,
       itemName: "Character",
       itemLoading: "lazy",
     },
@@ -67,12 +67,12 @@ const initApp2 = () => {
       itemLoading: "lazy",
     },
     {
-      itemSrc: `gallery-images/character-4.JPEG`,
+      itemSrc: `gallery-images/character4.JPEG`,
       itemName: "Character",
       itemLoading: "lazy",
     },
     {
-      itemSrc: `gallery-images/character-5.JPEG`,
+      itemSrc: `gallery-images/character5.JPEG`,
       itemName: "Character",
       itemLoading: "lazy",
     },
@@ -82,7 +82,7 @@ const initApp2 = () => {
       itemLoading: "lazy",
     },
     {
-      itemSrc: `gallery-images/character-6.JPEG`,
+      itemSrc: `gallery-images/character6.JPEG`,
       itemName: "Character",
       itemLoading: "lazy",
     },
@@ -113,7 +113,7 @@ const initApp2 = () => {
       itemLoading: "lazy",
     },
     {
-      itemSrc: `gallery-images/character-7.JPEG`,
+      itemSrc: `gallery-images/character7.JPEG`,
       itemName: "Character",
       itemLoading: "lazy",
     },
@@ -133,12 +133,12 @@ const initApp2 = () => {
       itemLoading: "lazy",
     },
     {
-      itemSrc: `gallery-images/character-8.JPEG`,
+      itemSrc: `gallery-images/character8.JPEG`,
       itemName: "Character",
       itemLoading: "lazy",
     },
     {
-      itemSrc: `gallery-images/character-9.JPEG`,
+      itemSrc: `gallery-images/character9.JPEG`,
       itemName: "Character",
       itemLoading: "lazy",
     },
@@ -154,7 +154,7 @@ const initApp2 = () => {
       itemLoading: "lazy",
     },
     {
-      itemSrc: `gallery-images/character-10.JPEG`,
+      itemSrc: `gallery-images/character10.JPEG`,
       itemName: "Character",
       itemLoading: "lazy",
     },
