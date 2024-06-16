@@ -133,6 +133,37 @@ header h2 {
   color: var(--BTNCOLOR);
 }
 
+@media screen and (max-width: 480px) {
+  .preview-card {
+    width: 320px;
+    padding: 1rem;
+  }
+
+  .preview-content label {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .preview-content label input {
+    height: 35px;
+    padding-left: 0.7rem;
+  }
+
+  .preview-content label div {
+    gap: 0.3rem;
+  }
+
+  .preview-content article p {
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .preview-card button {
+    height: 35px;
+    font-size: 0.9rem;
+  }
+}
+
 main {
   display: grid;
   gap: 1rem;
