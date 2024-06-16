@@ -22,7 +22,7 @@ header h2 {
   display: flex;
   align-items: center;
   font-family: var(--NAVIGATION_FONT);
-  font-size: 2.6rem;
+  font-size: clamp(1.8rem, 8vw, 2.6rem);
   font-weight: 300;
 }
 
@@ -169,14 +169,14 @@ main {
 }
 
 #summary .checkout-items figure figcaption ul li:first-child {
-  font-size: 1.4rem;
+  font-size: clamp(1rem, 4vw, 1.4rem);
   font-family: var(--NAVIGATION_FONT);
 }
 
 #summary .checkout-items figure figcaption ul li:last-child {
   font-family: var(--DESCRIPTION_FONT);
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 3vw, 1.2rem);
   margin-top: 0.5rem;
   color: var(--BTNCOLOR);
 }
@@ -196,7 +196,7 @@ main {
 
 #summary .delivery h3 {
   font-family: var(--NAVIGATION_FONT);
-  font-size: 2rem;
+  font-size: clamp(1.4rem, 6vw, 2rem);
   font-weight: lighter;
   color: var(--BTNCOLOR);
 }
@@ -215,6 +215,12 @@ main {
   gap: 1rem;
   flex-direction: column;
   padding: 2rem;
+}
+
+#form article {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
 }
 
 #form label {
@@ -257,7 +263,7 @@ main {
 #payment h3 {
   font-family: var(--NAVIGATION_FONT);
   font-weight: lighter;
-  font-size: 2rem;
+  font-size: clamp(1.4rem, 6vw, 2rem);
   color: var(--BTNCOLOR);
 }
 
@@ -323,9 +329,9 @@ main {
 }
 
 .payment-information article {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
-  justify-content: space-between;
 }
 
 .payment-information article p {
@@ -333,7 +339,6 @@ main {
 }
 
 .payment-information article input {
-  width: 300px;
   height: 40px;
   text-align: center;
 }
@@ -370,4 +375,74 @@ main {
 
 #form button:first-child:disabled {
   opacity: 0.5;
+}
+
+@media screen and (max-width: 920px) {
+  main {
+    gap: 2rem;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  #summary {
+    position: unset;
+    padding: 0;
+    height: unset;
+  }
+
+  #payment {
+    padding-top: 0;
+  }
+
+  #form {
+    padding: 0;
+  }
+
+  #form section {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .payment-information {
+    align-self: center;
+    padding: 2rem;
+  }
+
+  .payment-information h4 {
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  #form section {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media screen and (max-width: 460px) {
+  header h1 img {
+    height: 80px;
+  }
+
+  #summary .checkout-items figure img {
+    width: 110px;
+  }
+
+  #payment .options label {
+    gap: 0.2rem;
+    font-size: 1.2rem;
+  }
+
+  #payment .options label input {
+    width: 15px;
+  }
+
+  .payment-information {
+    padding: 1rem;
+    align-self: stretch;
+  }
+
+  .payment-information article input {
+    width: 100%;
+  }
 }

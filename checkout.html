@@ -64,182 +64,191 @@
         </article>
       </section>
       <form id="form">
-        <label for="name">
-          <span class="input-label">Full Name</span>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            autofocus="off"
-            required
-            placeholder="John Doe"
-            class="main-input"
-          />
-        </label>
-        <label for="email">
-          <span class="input-label">Email Address</span>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            placeholder="john-doe@gmail.com"
-            class="main-input"
-          />
-        </label>
-        <label for="phone-num">
-          <span class="input-label">Phone Number</span>
-          <div>
-            <p>+251</p>
-            <input
-              type="tel"
-              id="phone-num"
-              name="phone-num"
-              required
-              placeholder="912345678"
-              class="main-input"
-            />
-          </div>
-        </label>
-        <article id="payment">
-          <h3>Payment Information</h3>
-          <div class="options">
-            <label for="cbe">
-              <input
-                type="radio"
-                name="payment"
-                id="cbe"
-                checked
-                class="main-input"
-              />
-              <span class="input-label">CBE</span>
-            </label>
-            <label for="telebirr">
-              <input
-                type="radio"
-                name="payment"
-                id="telebirr"
-                class="main-input"
-              />
-              <span class="input-label">Telebirr</span>
-            </label>
-            <label for="boa">
-              <input type="radio" name="payment" id="boa" class="main-input" />
-              <span class="input-label">BOA</span>
-            </label>
-          </div>
-          <div id="CBE-method" class="payment-information checked">
-            <h4>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="30px"
-                height="30px"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="var(--BTNCOLOR)"
-                  d="M11.5 1L2 6v2h19V6m-5 4v7h3v-7M2 22h19v-3H2m8-9v7h3v-7m-9 0v7h3v-7z"
-                />
-              </svg>
-              Commercial Bank Of Ethiopia
-            </h4>
-            <article>
-              <p>Name</p>
+        <section>
+          <article>
+            <label for="name">
+              <span class="input-label">Full Name</span>
               <input
                 type="text"
-                disabled
-                placeholder="RAFFAELA FEKADU TESFAYE"
+                id="name"
+                name="name"
+                autofocus="off"
+                required
+                placeholder="John Doe"
+                class="main-input"
               />
-            </article>
-            <article>
-              <p>Account no.</p>
-              <input type="text" disabled placeholder="1000116036138" />
-            </article>
-            <article>
-              <p>Total Amount</p>
-              <input type="text" disabled placeholder="5000" />
-            </article>
-          </div>
-          <div id="Telebirr-method" class="payment-information">
-            <h4>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="30px"
-                height="30px"
-                viewBox="0 0 512 512"
-              >
-                <rect
-                  width="416"
-                  height="288"
-                  x="48"
-                  y="144"
-                  fill="none"
-                  stroke="var(--BTNCOLOR)"
-                  stroke-linejoin="round"
-                  stroke-width="32"
-                  rx="48"
-                  ry="48"
-                />
-                <path
-                  fill="none"
-                  stroke="var(--BTNCOLOR)"
-                  stroke-linejoin="round"
-                  stroke-width="32"
-                  d="M411.36 144v-30A50 50 0 0 0 352 64.9L88.64 109.85A50 50 0 0 0 48 159v49"
-                />
-                <path
-                  fill="var(--BTNCOLOR)"
-                  d="M368 320a32 32 0 1 1 32-32a32 32 0 0 1-32 32"
-                />
-              </svg>
-              Telebirr
-            </h4>
-            <article>
-              <p>Name</p>
-              <input type="text" disabled placeholder="---" />
-            </article>
-            <article>
-              <p>Account no.</p>
-              <input type="text" disabled placeholder="0946190202" />
-            </article>
-            <article>
-              <p>Total Amount</p>
-              <input type="text" disabled placeholder="5000" />
-            </article>
-          </div>
-          <div id="BOA-method" class="payment-information">
-            <h4>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="30px"
-                height="30px"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="var(--BTNCOLOR)"
-                  d="M11.5 1L2 6v2h19V6m-5 4v7h3v-7M2 22h19v-3H2m8-9v7h3v-7m-9 0v7h3v-7z"
-                />
-              </svg>
-              Bank Of Abyssinia
-            </h4>
-            <article>
-              <p>Name</p>
+            </label>
+            <label for="email">
+              <span class="input-label">Email Address</span>
               <input
-                type="text"
-                disabled
-                placeholder="RAFAELA FEKADU TESFAYE"
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="john-doe@gmail.com"
+                class="main-input"
               />
-            </article>
-            <article>
-              <p>Account no.</p>
-              <input type="text" disabled placeholder="185247511" />
-            </article>
-            <article>
-              <p>Total Amount</p>
-              <input type="text" disabled placeholder="5000" />
-            </article>
-          </div>
-        </article>
+            </label>
+            <label for="phone-num">
+              <span class="input-label">Phone Number</span>
+              <div>
+                <p>+251</p>
+                <input
+                  type="tel"
+                  id="phone-num"
+                  name="phone-num"
+                  required
+                  placeholder="912345678"
+                  class="main-input"
+                />
+              </div>
+            </label>
+          </article>
+          <article id="payment">
+            <h3>Payment Information</h3>
+            <div class="options">
+              <label for="cbe">
+                <input
+                  type="radio"
+                  name="payment"
+                  id="cbe"
+                  checked
+                  class="main-input"
+                />
+                <span class="input-label">CBE</span>
+              </label>
+              <label for="telebirr">
+                <input
+                  type="radio"
+                  name="payment"
+                  id="telebirr"
+                  class="main-input"
+                />
+                <span class="input-label">Telebirr</span>
+              </label>
+              <label for="boa">
+                <input
+                  type="radio"
+                  name="payment"
+                  id="boa"
+                  class="main-input"
+                />
+                <span class="input-label">BOA</span>
+              </label>
+            </div>
+            <div id="CBE-method" class="payment-information checked">
+              <h4>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30px"
+                  height="30px"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="var(--BTNCOLOR)"
+                    d="M11.5 1L2 6v2h19V6m-5 4v7h3v-7M2 22h19v-3H2m8-9v7h3v-7m-9 0v7h3v-7z"
+                  />
+                </svg>
+                Commercial Bank Of Ethiopia
+              </h4>
+              <article>
+                <p>Name</p>
+                <input
+                  type="text"
+                  disabled
+                  placeholder="RAFFAELA FEKADU TESFAYE"
+                />
+              </article>
+              <article>
+                <p>Account no.</p>
+                <input type="text" disabled placeholder="1000116036138" />
+              </article>
+              <article>
+                <p>Total Amount</p>
+                <input type="text" disabled placeholder="5000" />
+              </article>
+            </div>
+            <div id="Telebirr-method" class="payment-information">
+              <h4>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30px"
+                  height="30px"
+                  viewBox="0 0 512 512"
+                >
+                  <rect
+                    width="416"
+                    height="288"
+                    x="48"
+                    y="144"
+                    fill="none"
+                    stroke="var(--BTNCOLOR)"
+                    stroke-linejoin="round"
+                    stroke-width="32"
+                    rx="48"
+                    ry="48"
+                  />
+                  <path
+                    fill="none"
+                    stroke="var(--BTNCOLOR)"
+                    stroke-linejoin="round"
+                    stroke-width="32"
+                    d="M411.36 144v-30A50 50 0 0 0 352 64.9L88.64 109.85A50 50 0 0 0 48 159v49"
+                  />
+                  <path
+                    fill="var(--BTNCOLOR)"
+                    d="M368 320a32 32 0 1 1 32-32a32 32 0 0 1-32 32"
+                  />
+                </svg>
+                Telebirr
+              </h4>
+              <article>
+                <p>Name</p>
+                <input type="text" disabled placeholder="---" />
+              </article>
+              <article>
+                <p>Account no.</p>
+                <input type="text" disabled placeholder="0946190202" />
+              </article>
+              <article>
+                <p>Total Amount</p>
+                <input type="text" disabled placeholder="5000" />
+              </article>
+            </div>
+            <div id="BOA-method" class="payment-information">
+              <h4>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30px"
+                  height="30px"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="var(--BTNCOLOR)"
+                    d="M11.5 1L2 6v2h19V6m-5 4v7h3v-7M2 22h19v-3H2m8-9v7h3v-7m-9 0v7h3v-7z"
+                  />
+                </svg>
+                Bank Of Abyssinia
+              </h4>
+              <article>
+                <p>Name</p>
+                <input
+                  type="text"
+                  disabled
+                  placeholder="RAFAELA FEKADU TESFAYE"
+                />
+              </article>
+              <article>
+                <p>Account no.</p>
+                <input type="text" disabled placeholder="185247511" />
+              </article>
+              <article>
+                <p>Total Amount</p>
+                <input type="text" disabled placeholder="5000" />
+              </article>
+            </div>
+          </article>
+        </section>
         <p class="notice">
           * Order will be cancelled if payment is not made within 24 hours.
         </p>
