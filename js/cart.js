@@ -12,10 +12,12 @@ const shoppingCartContainer = document.querySelector(".shopping-cart section");
 
 const checkOutTotal = document.querySelector(".checkout_total");
 
-const checkOutPriceContainer = document.querySelector(".checkout_price span");
+const checkOutPriceContainer = document.querySelector(
+  ".checkout_total .total span"
+);
 
 let checkOutPrice = Number(
-  document.querySelector(".checkout_price span").textContent
+  document.querySelector(".checkout_total .total span").textContent
 );
 
 const pageState = () => {

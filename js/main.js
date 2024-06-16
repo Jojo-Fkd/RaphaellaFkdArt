@@ -23,6 +23,11 @@ dropIcon.onclick = () => {
   dropIcon.classList.toggle("active");
   sideBarElements.classList.toggle("active");
 
+  window.addEventListener("popstate", () => {
+    dropIcon.classList.remove("active");
+    sideBarElements.classList.remove("active");
+  });
+
   if (dropIcon.classList.value === "drop-icon active") {
     body.style.overflow = "hidden";
   } else {
